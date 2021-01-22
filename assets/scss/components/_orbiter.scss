@@ -1,0 +1,33 @@
+.orbiter {
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  width: 21.5rem;
+  transform: translateX(-50%);
+  &--last {
+    top: unset;
+    right: 0;
+    bottom: 40rem;
+    left: unset;
+    transform: translateX(50%);
+  }
+  &__ring {
+    animation: orbit 60s linear infinite;
+  }
+  &__planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18rem;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 100%;
+  }
+  @keyframes orbit {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

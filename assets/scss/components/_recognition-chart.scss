@@ -1,0 +1,22 @@
+.recognition-chart {
+  display: none;
+}
+.recognition-mobile {
+  margin-bottom: 10rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid currentColor;
+
+  &__section {
+    padding: 2rem 1.5rem 1rem;
+    border-top: 1px solid currentColor;
+  }
+  &__org {
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+  &__row {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+}

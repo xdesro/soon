@@ -1,0 +1,33 @@
+.social-links {
+  $gradient: (
+    #202527,
+    #202527,
+    #383838,
+    #454545,
+    #525252,
+    #5e5e5e,
+    #6b6b6b,
+    #777
+  );
+
+  margin-bottom: 20.5rem;
+  padding: 0;
+  list-style-type: none;
+  &__item {
+    margin-bottom: 0.25rem;
+    @for $i from 1 through 8 {
+      &:nth-child(#{$i}) {
+        color: nth($gradient, $i);
+      }
+    }
+  }
+  &__item-link {
+    display: flex;
+    padding: 0.25rem 0;
+    text-decoration: none;
+  }
+  &__item-icon {
+    width: 1rem;
+    margin-right: 0.75rem;
+  }
+}

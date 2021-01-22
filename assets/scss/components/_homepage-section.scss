@@ -7,6 +7,9 @@
   padding-top: 6rem;
   counter-increment: homepage-headers;
   &__link {
+    display: block;
+    padding-top: 16rem;
+    padding-bottom: 10rem;
     text-decoration: none;
   }
   &__title {
@@ -28,4 +31,50 @@
       transform: translateY(-100%);
     }
   }
+  &__additional-title {
+    font-family: $font--display;
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 0.9;
+    max-width: 15rem;
+    margin-top: 4.5rem;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+  }
+}
+
+.selected-works {
+  margin-bottom: 10rem;
+}
+
+.about {
+  position: relative;
+  padding-top: 31rem;
+  border-top: 1px solid currentColor;
+  &__intro {
+    font-family: $font--display;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  &__additional-content {
+    max-width: 15rem;
+    padding-left: 1.5rem;
+  }
+  &__subtitle {
+    font-weight: bold;
+    margin-top: 3.75rem;
+    text-transform: uppercase;
+  }
+  &__social-links {
+    padding: 0 1.5rem;
+  }
+  .homepage-section__additional-title {
+    padding-left: 1.5rem;
+  }
+}
+.writing {
+  padding: 0;
+  border-top: 1px solid currentColor;
 }
