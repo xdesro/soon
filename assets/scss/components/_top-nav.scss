@@ -1,0 +1,40 @@
+.top-nav {
+  font-size: 0.75rem;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  max-width: 100vw;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid currentColor;
+  background-color: #f5f5f5;
+  &__brand {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__links {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 1ch;
+    &:after {
+      grid-column: 2;
+      content: '—';
+    }
+  }
+  &__link {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.spotify-widget {
+  display: none;
+}

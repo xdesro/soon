@@ -1,0 +1,31 @@
+.homepage {
+  counter-reset: homepage-headers;
+}
+
+.homepage-section {
+  overflow-x: hidden;
+  padding-top: 6rem;
+  counter-increment: homepage-headers;
+  &__link {
+    text-decoration: none;
+  }
+  &__title {
+    font-family: $font--display;
+    font-size: 6rem;
+    font-weight: 100;
+    line-height: 0.9;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    &:before {
+      position: absolute;
+      top: 0;
+      content: counter(homepage-headers, upper-roman);
+      transform: translateY(-100%);
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.magazine-cover {
+  position: relative;
+  margin-bottom: 10rem;
+  &__title {
+    font-family: $font--display;
+    font-size: 7.25rem;
+    font-weight: 100;
+    position: relative;
+    z-index: -1;
+    margin-bottom: -6rem;
+    text-align: center;
+    letter-spacing: -0.25rem;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    font-size: 1rem;
+    font-weight: normal;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    left: 0;
+    max-width: 18rem;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    filter: blur(2px);
+  }
+  &__image-wrapper {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    height: 28rem;
+    &:before {
+      font-family: $font--display;
+      font-size: 7.25rem;
+      font-weight: 100;
+      position: absolute;
+      top: -5rem;
+      right: 0;
+      left: 0;
+      content: 'soon';
+      text-align: center;
+      letter-spacing: -0.25rem;
+      text-transform: uppercase;
+      filter: blur(2px);
+    }
+  }
+}
