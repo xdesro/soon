@@ -1,6 +1,6 @@
-require('dotenv').config()
-const { createClient } = require('./plugins/contentful')
-const contentfulClient = createClient()
+require('dotenv').config();
+const { createClient } = require('./plugins/contentful');
+const contentfulClient = createClient();
 
 export default {
   privateRuntimeConfig: {
@@ -33,12 +33,13 @@ export default {
     async routes() {
       const blogPosts = await contentfulClient.getEntries({
         content_type: 'blogPost',
-      })
-      return [
-        ...blogPosts.items.map(
-          (blogPost) => `/writing/${blogPost.fields.slug}`
-        ),
-      ]
+      });
+      return blogPosts.items.map((blogPost) => {
+        return {
+          route: `/writing/${blogPost.fields.slug}`,
+          payload: blogPost,
+        };
+      });
     },
   },
 
@@ -49,16 +50,11 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/markdownit'],
-  markdownit: {
-    preset: 'default',
-    html: true,
-    typographer: true,
-    breaks: true,
-    use: ['markdown-it-attrs'],
-    runtime: true,
-  },
+  // modules: ['@nuxtjs/markdownit'],
+  // markdownit: {
+
+  // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-}
+};

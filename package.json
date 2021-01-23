@@ -9,16 +9,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxt/content": "^1.11.1",
-    "@nuxtjs/markdownit": "^2.0.0",
     "contentful": "^8.1.7",
     "core-js": "^3.8.2",
     "dotenv": "^8.2.0",
-    "markdown-it-attrs": "^4.0.0",
+    "markdown-it": "^12.0.4",
+    "markdown-it-anchor": "^7.0.0",
     "nuxt": "^2.14.12",
     "sass": "^1.32.5",
-    "sass-loader": "^10.1.1",
-    "vue-markdown": "^2.2.4"
+    "sass-loader": "^10.1.1"
   },
   "devDependencies": {
     "eslint-config-prettier": "^7.1.0",

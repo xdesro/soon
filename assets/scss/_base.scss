@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: $font--text;
   margin: 0;
@@ -11,6 +14,9 @@ img {
   max-width: 100%;
 }
 .container {
+  padding: 0 1.5rem;
+}
+.grid {
   padding: 0 1.5rem;
 }
 .page-title {

@@ -1,0 +1,38 @@
+.table-of-contents {
+  text-transform: uppercase;
+  &__list {
+    padding: 0;
+    list-style-type: none;
+    counter-reset: toc;
+    &:before {
+      content: 'Table Of Contents';
+      margin-bottom: 1rem;
+      font-size: 0.75rem;
+      font-weight: bold;
+      display: block;
+    }
+  }
+  &__list-item {
+    border-top: 1px solid currentColor;
+    counter-increment: toc;
+  }
+  &__link {
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: 1.5rem 1fr auto;
+    grid-column-gap: 0.5rem;
+    align-items: end;
+    padding: 0.75rem 0;
+    &:before {
+      content: '0' counter(toc);
+    }
+    &:after {
+      content: '';
+      width: 0.75rem;
+      height: 0.75rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 13 13'%3E%3Cpath fill='%23202527' d='M12.02.7h-2v7.9L1.42 0 0 1.41l8.6 8.61H.7v2h11.32V.71z'/%3E%3C/svg%3E%0A");
+      background-size: contain;
+      display: inline-block;
+    }
+  }
+}
