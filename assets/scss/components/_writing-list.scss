@@ -1,0 +1,41 @@
+.writing-list {
+  padding: 0;
+  list-style-type: none;
+}
+.writing-list-item {
+  padding: 1.5rem;
+  border-bottom: 1px solid currentColor;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  &__article {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: start;
+  }
+  &__title {
+    font-size: 1.25rem;
+    font-weight: normal;
+    grid-column-end: span 2;
+    margin-top: 0;
+    text-transform: none;
+    margin-bottom: 2rem;
+  }
+  &__category {
+    grid-row: 1;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+  &__date {
+    grid-row: 1;
+    text-align: right;
+  }
+  &__tags {
+    padding: 0;
+    list-style-type: none;
+  }
+  &__link {
+    text-align: right;
+    align-self: end;
+  }
+}

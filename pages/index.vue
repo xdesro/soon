@@ -20,7 +20,7 @@
           />
         </div>
       </div>
-      <section class="homepage-section selected-works">
+      <section class="homepage-section selected-works" id="work">
         <h2 class="homepage-section__title">Selected Works</h2>
         <ul class="case-studies-list">
           <li class="case-study-list-item">
@@ -130,7 +130,7 @@
           </li>
           <li class="case-study-list-item">
             <article class="case-study-list-item__article">
-              <h1 class="case-study-list-item__title">Portfolio FW19</h1>
+              <h1 class="case-study-list-item__title">Portfo&shy;lio FW19</h1>
               <div class="case-study-list-item__meta">
                 <time class="case-study-list-item__date" datetime="2020-11-01">
                   (August 2019)
