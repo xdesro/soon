@@ -1,4 +1,12 @@
+require('dotenv').config()
+const { createClient } = require('./plugins/contentful')
+const contentfulClient = createClient()
+
 export default {
+  privateRuntimeConfig: {
+    contentfulSpaceId: process.env.CTF_SPACE_ID,
+    contentfulAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -20,7 +28,19 @@ export default {
   css: ['~/assets/scss/index.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/contentful'],
+  generate: {
+    async routes() {
+      const blogPosts = await contentfulClient.getEntries({
+        content_type: 'blogPost',
+      })
+      return [
+        ...blogPosts.items.map(
+          (blogPost) => `/writing/${blogPost.fields.slug}`
+        ),
+      ]
+    },
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -29,7 +49,15 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/markdownit'],
+  markdownit: {
+    preset: 'default',
+    html: true,
+    typographer: true,
+    breaks: true,
+    use: ['markdown-it-attrs'],
+    runtime: true,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

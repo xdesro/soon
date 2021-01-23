@@ -3,23 +3,23 @@
   list-style-type: none;
 }
 .writing-list-item {
-  padding: 1.5rem;
-  border-bottom: 1px solid currentColor;
   font-size: 0.75rem;
+  padding: 1.5rem;
   text-transform: uppercase;
+  border-bottom: 1px solid currentColor;
   &__article {
     display: grid;
     grid-template-columns: auto auto;
-    justify-content: space-between;
     align-items: start;
+    justify-content: space-between;
   }
   &__title {
     font-size: 1.25rem;
     font-weight: normal;
     grid-column-end: span 2;
     margin-top: 0;
-    text-transform: none;
     margin-bottom: 2rem;
+    text-transform: none;
   }
   &__category {
     grid-row: 1;
@@ -35,7 +35,7 @@
     list-style-type: none;
   }
   &__link {
-    text-align: right;
     align-self: end;
+    text-align: right;
   }
 }
