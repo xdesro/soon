@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "ELEVENTY_EXPERIMENTAL=true concurrently 'npx @11ty/eleventy --serve' 'gulp sass:watch' ",
-    "build": "ELEVENTY_EXPERIMENTAL=true gulp sass && npx @11ty/eleventy",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "build": "gulp sass && ELEVENTY_EXPERIMENTAL=true npx @11ty/eleventy"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
