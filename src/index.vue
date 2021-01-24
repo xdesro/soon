@@ -15,7 +15,7 @@
         <div class="magazine-cover__image-wrapper">
           <img
             class="magazine-cover__image"
-            src="~/assets/magazine-cover.png"
+            src="/img/magazine-cover.png"
             alt=""
           />
         </div>
@@ -36,7 +36,7 @@
               </div>
               <img
                 class="case-study-list-item__image"
-                src="~/assets/magazine-cover.png"
+                src="/img/magazine-cover.png"
                 alt=""
               />
               <nuxt-link class="case-study-list-item__link" to="#">
@@ -57,7 +57,7 @@
               </div>
               <img
                 class="case-study-list-item__image"
-                src="~/assets/magazine-cover.png"
+                src="/img/magazine-cover.png"
                 alt=""
               />
               <nuxt-link class="case-study-list-item__link" to="#">
@@ -78,7 +78,7 @@
               </div>
               <img
                 class="case-study-list-item__image"
-                src="~/assets/magazine-cover.png"
+                src="/img/magazine-cover.png"
                 alt=""
               />
               <nuxt-link class="case-study-list-item__link" to="#">
@@ -99,7 +99,7 @@
               </div>
               <img
                 class="case-study-list-item__image"
-                src="~/assets/magazine-cover.png"
+                src="/img/magazine-cover.png"
                 alt=""
               />
               <nuxt-link class="case-study-list-item__link" to="#">
@@ -120,7 +120,7 @@
               </div>
               <img
                 class="case-study-list-item__image"
-                src="~/assets/magazine-cover.png"
+                src="/img/magazine-cover.png"
                 alt=""
               />
               <nuxt-link class="case-study-list-item__link" to="#">
@@ -141,7 +141,7 @@
               </div>
               <img
                 class="case-study-list-item__image"
-                src="~/assets/magazine-cover.png"
+                src="/img/magazine-cover.png"
                 alt=""
               />
               <nuxt-link class="case-study-list-item__link" to="#">
@@ -448,7 +448,7 @@
               d="M497.56 187.95c5.78-2.5 9.3-5.52 10.49-9.1 1.18-3.57.62-8.37-1.74-14.37l-4.24-11.07c.22.58.34 1.04.3 2.11.04 1.1-.74 2.12-2.24 2.7l-27.68 10.62c-1.35.52-2.52.25-3.23-.6-.7-.79-.93-1.25-1.14-1.79l5.26 13.7c2.03 5.28 5.96 8.57 10.48 9.45 4.51.89 9.2.31 13.74-1.65zM472.9 177.4c-1.5-3.93-1.46-5.4 1.12-6.38l29.8-11.44a81.34 81.34 0 012.1 5.04c1.27 3.3 1.88 5.74 1.6 8.96a9.6 9.6 0 01-1.33 4.36c-1.44 2.62-4.77 5.4-9.82 7.5-6.79 2.77-12.4 3.37-17.13.78a12.14 12.14 0 01-5.33-6.2l-1-2.62zM496.26 206.13l5.3 31 .46-.07-5.3-31.01-.46.08z"
             />
           </svg>
-          <img class="orbiter__planet" src="~/assets/portrait-1.png" />
+          <img class="orbiter__planet" src="/img/portrait-1.png" />
         </div>
         <div class="orbiter orbiter--last" aria-hidden="">
           <svg
@@ -470,7 +470,7 @@
               d="M497.56 187.95c5.78-2.5 9.3-5.52 10.49-9.1 1.18-3.57.62-8.37-1.74-14.37l-4.24-11.07c.22.58.34 1.04.3 2.11.04 1.1-.74 2.12-2.24 2.7l-27.68 10.62c-1.35.52-2.52.25-3.23-.6-.7-.79-.93-1.25-1.14-1.79l5.26 13.7c2.03 5.28 5.96 8.57 10.48 9.45 4.51.89 9.2.31 13.74-1.65zM472.9 177.4c-1.5-3.93-1.46-5.4 1.12-6.38l29.8-11.44a81.34 81.34 0 012.1 5.04c1.27 3.3 1.88 5.74 1.6 8.96a9.6 9.6 0 01-1.33 4.36c-1.44 2.62-4.77 5.4-9.82 7.5-6.79 2.77-12.4 3.37-17.13.78a12.14 12.14 0 01-5.33-6.2l-1-2.62zM496.26 206.13l5.3 31 .46-.07-5.3-31.01-.46.08z"
             />
           </svg>
-          <img class="orbiter__planet" src="~/assets/portrait-2.png" />
+          <img class="orbiter__planet" src="/img/portrait-2.png" />
         </div>
       </section>
       <section class="homepage-section writing">
@@ -483,5 +483,14 @@
 </template>
 
 <script>
-export default {}
+import TopNav from './_includes/TopNav.vue';
+
+export default {
+  data: {
+    layout: 'layout.html'
+  },
+  components: {
+    TopNav
+  }
+};
 </script>

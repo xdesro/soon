@@ -11,23 +11,22 @@
           <ol class="table-of-contents__list">
             <li
               class="table-of-contents__list-item"
-              v-for="link in post.toc"
+              v-for="link in toc"
               :key="link.id"
             >
-              <a class="table-of-contents__link" :href="`#${link.id}`">{{
-                link.text
-              }}</a>
+              <a class="table-of-contents__link" :href="`#${link.id}`">
+                {{ link.text }}
+              </a>
             </li>
           </ol>
         </nav>
       </div>
-      <div v-html="post.body" class="grid"></div>
+      <div v-html="body" class="grid"></div>
     </main>
   </div>
 </template>
-
 <script>
-import { createClient } from '~/plugins/contentful.js';
+import TopNav from './_includes/TopNav.vue';
 
 const md = require('markdown-it')({
   preset: 'default',
@@ -40,7 +39,6 @@ const md = require('markdown-it')({
   permalinkBefore: true,
   permalinkSymbol: '⛓'
 });
-const client = createClient();
 const getTOC = (string) => {
   const tokens = md.parse(string);
   const toc = tokens
@@ -62,28 +60,27 @@ const getTOC = (string) => {
   return toc;
 };
 export default {
-  asyncData({ env, params, payload }) {
-    if (payload) {
-      return { post: payload };
-    } else {
-      return client
-        .getEntries({
-          content_type: 'blogPost',
-          'fields.slug': params.slug
-        })
-        .then((entries) => {
-          return {
-            post: {
-              ...entries.items[0].fields,
-              body: md.render(entries.items[0].fields.body),
-              toc: getTOC(entries.items[0].fields.body)
-            }
-          };
-        });
+  data() {
+    return {
+      layout: 'layout.html',
+      pagination: {
+        size: 1,
+        data: 'posts',
+        alias: 'post'
+      },
+      permalink: (data) => `writing/${data.post.slug}/index.html`
+    };
+  },
+  computed: {
+    toc() {
+      return getTOC(this.post.body);
+    },
+    body() {
+      return md.render(this.post.body);
     }
   },
-  computed: {}
+  components: {
+    TopNav
+  }
 };
 </script>
-
-<style></style>

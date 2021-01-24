@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/neue-haas-grotesk/neue-haas-grotesk.woff2') format('woff2'),
+    url('/fonts/neue-haas-grotesk/neue-haas-grotesk.woff') format('woff');
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url('/fonts/neue-haas-grotesk/neue-haas-grotesk-italic.woff2')
+      format('woff2'),
+    url('/fonts/neue-haas-grotesk/neue-haas-grotesk-italic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/neue-haas-grotesk/neue-haas-grotesk-medium.woff2')
+      format('woff2'),
+    url('/fonts/neue-haas-grotesk/neue-haas-grotesk-medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+  src: url('/fonts/neue-haas-grotesk/neue-haas-grotesk-medium-italic.woff2')
+      format('woff2'),
+    url('/fonts/neue-haas-grotesk/neue-haas-grotesk-medium-italic.woff')
+      format('woff');
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/neue-haas-grotesk/neue-haas-grotesk-bold.woff2')
+      format('woff2'),
+    url('/fonts/neue-haas-grotesk/neue-haas-grotesk-bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk';
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url('/fonts/neue-haas-grotesk/neue-haas-grotesk-bold-italic.woff2')
+      format('woff2'),
+    url('/fonts/neue-haas-grotesk/neue-haas-grotesk-bold-italic.woff')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'Silk Serif';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/silk-serif/silk-serif.woff2') format('woff2'),
+    url('/fonts/silk-serif/silk-serif.woff') format('woff');
+}

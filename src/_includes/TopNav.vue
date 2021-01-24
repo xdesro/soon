@@ -1,9 +1,9 @@
 <template>
   <nav class="top-nav">
-    <nuxt-link class="top-nav__brand" to="/">© SS21</nuxt-link>
+    <a class="top-nav__brand" href="/">© SS21</a>
     <div class="top-nav__links">
-      <nuxt-link class="top-nav__link" to="/#work">Work</nuxt-link>
-      <nuxt-link class="top-nav__link" to="/writing">Writing</nuxt-link>
+      <a class="top-nav__link" href="/#work">Work</a>
+      <a class="top-nav__link" href="/writing">Writing</a>
     </div>
     <div class="spotify-widget">
       <svg fill="currentColor" viewBox="0 0 12 12" width="12">
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style></style>
