@@ -26,7 +26,7 @@
   </div>
 </template>
 <script>
-import TopNav from './_includes/TopNav.vue';
+import TopNav from '../_includes/TopNav.vue';
 
 const md = require('markdown-it')({
   preset: 'default',
