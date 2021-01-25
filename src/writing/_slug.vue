@@ -21,7 +21,7 @@
           </ol>
         </nav>
       </div>
-      <div v-html="body" class="grid"></div>
+      <div v-html="body" class="grid rendered"></div>
     </main>
   </div>
 </template>
@@ -33,12 +33,16 @@ const md = require('markdown-it')({
   html: true,
   typographer: true,
   breaks: true
-}).use(require('markdown-it-anchor'), {
-  level: [2],
-  permalink: true,
-  permalinkBefore: true,
-  permalinkSymbol: '⛓'
-});
+})
+  .use(require('markdown-it-anchor'), {
+    level: [2],
+    permalink: true,
+    permalinkBefore: true,
+    permalinkSymbol: '⛓'
+  })
+  .use(require('markdown-it-prism'), {
+    defaultLanguageForUnknown: 'bash'
+  });
 const getTOC = (string) => {
   const tokens = md.parse(string);
   const toc = tokens

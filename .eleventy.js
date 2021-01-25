@@ -5,7 +5,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/fonts');
 
-  eleventyConfig.addWatchTarget('./src/css/');
+  eleventyConfig.setWatchThrottleWaitTime(150);
+  eleventyConfig.addWatchTarget('./src/scss/**/*.scss');
   eleventyConfig.addPlugin(eleventyVue);
 
   return {

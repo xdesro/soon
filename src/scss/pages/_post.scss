@@ -1,24 +1,25 @@
 .post {
   &__intro {
-    padding-left: 1.5rem;
+    margin-bottom: 5rem;
     padding-right: 1.5rem;
     padding-bottom: 6rem;
+    padding-left: 1.5rem;
     border-bottom: 1px solid currentColor;
   }
   &__title {
-    margin-top: 13rem;
-    font-size: 3rem;
-    line-height: 0.85;
-    font-weight: 100;
     font-family: $font--display;
-    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 100;
+    line-height: 0.85;
+    margin-top: 13rem;
     margin-bottom: 2.5rem;
+    text-transform: uppercase;
   }
   &__tags {
-    list-style-type: none;
-    padding: 0;
     font-size: 0.75rem;
     margin-bottom: 4.5rem;
+    padding: 0;
+    list-style-type: none;
     text-transform: uppercase;
   }
 }
