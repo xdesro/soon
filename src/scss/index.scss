@@ -1,8 +1,11 @@
+@import 'vendor/prism';
+
 @import 'abstract/variables';
 
 @import 'fonts';
 @import 'base';
 @import 'rendered';
+@import 'code';
 
 @import 'components/top-nav';
 @import 'components/bottom-nav';
@@ -14,5 +17,6 @@
 @import 'components/orbiter';
 @import 'components/writing-list';
 @import 'components/table-of-contents';
-
-@import 'pages/post';
+@import 'components/post-intro';
+@import 'components/project-intro';
+@import 'components/footer';

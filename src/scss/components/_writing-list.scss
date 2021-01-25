@@ -7,6 +7,9 @@
   padding: 1.5rem;
   text-transform: uppercase;
   border-bottom: 1px solid currentColor;
+  &:last-child {
+    border-bottom: none;
+  }
   &__article {
     display: grid;
     grid-template-columns: auto auto;

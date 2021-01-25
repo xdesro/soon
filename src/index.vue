@@ -39,9 +39,7 @@
                 src="/img/magazine-cover.png"
                 alt=""
               />
-              <nuxt-link class="case-study-list-item__link" to="#">
-                See the Work
-              </nuxt-link>
+              <a class="case-study-list-item__link" href="#"> See the Work </a>
             </article>
           </li>
           <li class="case-study-list-item">
@@ -60,9 +58,7 @@
                 src="/img/magazine-cover.png"
                 alt=""
               />
-              <nuxt-link class="case-study-list-item__link" to="#">
-                See the Work
-              </nuxt-link>
+              <a class="case-study-list-item__link" href="#"> See the Work </a>
             </article>
           </li>
           <li class="case-study-list-item">
@@ -81,9 +77,7 @@
                 src="/img/magazine-cover.png"
                 alt=""
               />
-              <nuxt-link class="case-study-list-item__link" to="#">
-                See the Work
-              </nuxt-link>
+              <a class="case-study-list-item__link" href="#"> See the Work </a>
             </article>
           </li>
           <li class="case-study-list-item">
@@ -102,9 +96,7 @@
                 src="/img/magazine-cover.png"
                 alt=""
               />
-              <nuxt-link class="case-study-list-item__link" to="#">
-                See the Work
-              </nuxt-link>
+              <a class="case-study-list-item__link" href="#"> See the Work </a>
             </article>
           </li>
           <li class="case-study-list-item">
@@ -123,9 +115,7 @@
                 src="/img/magazine-cover.png"
                 alt=""
               />
-              <nuxt-link class="case-study-list-item__link" to="#">
-                See the Work
-              </nuxt-link>
+              <a class="case-study-list-item__link" href="#"> See the Work </a>
             </article>
           </li>
           <li class="case-study-list-item">
@@ -144,9 +134,40 @@
                 src="/img/magazine-cover.png"
                 alt=""
               />
-              <nuxt-link class="case-study-list-item__link" to="#">
+              <a class="case-study-list-item__link" href="#"> See the Work </a>
+            </article>
+          </li>
+          <li
+            class="case-study-list-item"
+            v-for="project in projects"
+            :key="project.slug"
+          >
+            <article class="case-study-list-item__article">
+              <h1 class="case-study-list-item__title">{{ project.title }}</h1>
+              <div class="case-study-list-item__meta">
+                <time class="case-study-list-item__date" datetime="2020-11-01">
+                  ({{
+                    new Date(project.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long'
+                    })
+                  }})
+                </time>
+                <p class="case-study-list-item__involvement">
+                  Web Design & Development
+                </p>
+              </div>
+              <img
+                class="case-study-list-item__image"
+                :src="project.heroImage.fields.file.url"
+                alt=""
+              />
+              <a
+                class="case-study-list-item__link"
+                :href="`/work/${project.slug}`"
+              >
                 See the Work
-              </nuxt-link>
+              </a>
             </article>
           </li>
         </ul>
@@ -474,9 +495,9 @@
         </div>
       </section>
       <section class="homepage-section writing">
-        <nuxt-link class="homepage-section__link" to="/writing">
+        <a class="homepage-section__link" href="/writing">
           <h2 class="homepage-section__title">Writing</h2>
-        </nuxt-link>
+        </a>
       </section>
     </main>
   </div>

@@ -23,10 +23,12 @@
       </div>
       <div v-html="body" class="grid rendered"></div>
     </main>
+    <WritingFooter :posts="posts" :currentPost="post" />
   </div>
 </template>
 <script>
 import TopNav from '../_includes/TopNav.vue';
+import WritingFooter from '../_includes/WritingFooter.vue';
 
 const md = require('markdown-it')({
   preset: 'default',
@@ -84,7 +86,8 @@ export default {
     }
   },
   components: {
-    TopNav
+    TopNav,
+    WritingFooter
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="top-nav">
+  <nav :class="isWork ? 'top-nav top-nav--difference' : 'top-nav'">
     <a class="top-nav__brand" href="/">© SS21</a>
     <div class="top-nav__links">
       <a class="top-nav__link" href="/#work">Work</a>
@@ -20,7 +20,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isWork: this.page.url.includes('/work')
+    };
+  }
+};
 </script>
 
 <style></style>

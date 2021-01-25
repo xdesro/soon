@@ -1,0 +1,17 @@
+// pre[class*='language-'] {
+//   position: relative;
+//   margin-top: 3rem;
+//   &:before {
+//     position: absolute;
+//     color: #202527;
+//     font-size: 0.75rem;
+//     top: -1rem;
+//   }
+// }
+// pre {
+//   &.language-js {
+//     &:before {
+//       content: 'Javascript';
+//     }
+//   }
+// }
