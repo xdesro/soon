@@ -1,4 +1,8 @@
 $font--display: 'Silk Serif', serif;
 $font--text: 'Neue Haas Grotesk', 'Helvetica Neue', 'Helvetica', sans-serif;
 $font--mono: 'SF Mono', 'SFMono-Regular', 'Fira Code', Consolas,
-  'Liberation Mono', Menlo, Courier, monospace; ;
+  'Liberation Mono', Menlo, Courier, monospace;
+
+$breakpoints: (
+  sm: 37.5rem
+);

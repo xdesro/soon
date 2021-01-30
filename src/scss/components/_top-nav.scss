@@ -14,8 +14,8 @@
   border-bottom: 1px solid currentColor;
   background-color: #f5f5f5;
   &--difference {
-    background-color: transparent;
     color: #f5f5f5;
+    background-color: transparent;
     mix-blend-mode: difference;
   }
   &__brand {
@@ -42,4 +42,14 @@
 }
 .spotify-widget {
   display: none;
+
+  @include screen(sm) {
+    display: block;
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

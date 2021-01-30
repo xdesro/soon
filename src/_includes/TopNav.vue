@@ -2,7 +2,7 @@
   <nav :class="isWork ? 'top-nav top-nav--difference' : 'top-nav'">
     <a class="top-nav__brand" href="/">© SS21</a>
     <div class="top-nav__links">
-      <a class="top-nav__link" href="/#work">Work</a>
+      <a class="top-nav__link" href="/work">Work</a>
       <a class="top-nav__link" href="/writing">Writing</a>
     </div>
     <div class="spotify-widget">

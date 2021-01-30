@@ -11,6 +11,13 @@
     text-align: center;
     letter-spacing: -0.25rem;
     text-transform: uppercase;
+
+    @include screen(sm) {
+      // font-size: clamp(7.25rem, 19vw, 18rem)
+      font-size: 10rem;
+      margin-bottom: -5rem;
+      // margin-top: 10rem;
+    }
   }
   &__subtitle {
     font-size: 1rem;
@@ -25,12 +32,21 @@
     text-align: center;
     text-transform: uppercase;
     filter: blur(2px);
+
+    @include screen(sm) {
+      font-size: 1.5rem;
+      max-width: 25rem;
+    }
   }
   &__image-wrapper {
     position: relative;
     z-index: 0;
     overflow: hidden;
     height: 28rem;
+
+    @include screen(sm) {
+      height: 50rem;
+    }
     &:before {
       font-family: $font--display;
       font-size: 7.25rem;
@@ -44,6 +60,12 @@
       letter-spacing: -0.25rem;
       text-transform: uppercase;
       filter: blur(2px);
+
+      @include screen(sm) {
+        // font-size: clamp(7.25rem, 19vw, 18rem)
+        font-size: 10rem;
+        top: -7.2rem;
+      }
     }
   }
 }

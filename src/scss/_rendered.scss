@@ -1,6 +1,12 @@
 .rendered {
   margin-bottom: 6rem;
   counter-reset: h2s;
+  p,
+  h3,
+  h4,
+  ul {
+    max-width: 22.75rem;
+  }
   h2 {
     font-size: 2rem;
     font-weight: 100;

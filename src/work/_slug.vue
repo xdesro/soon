@@ -9,7 +9,7 @@
       />
       <div class="project__intro">
         <div class="project__intro-row">
-          <h1 class="project__title">{{ project.title }}</h1>
+          <h1 class="project__title">{{ project.clientName }}</h1>
           <div class="project__meta">
             <p>Typography Foundry</p>
             <time :datetime="project.date">{{
@@ -49,24 +49,24 @@
 <script>
 import TopNav from '../_includes/TopNav.vue';
 import WorkFooter from '../_includes/WorkFooter.vue';
-
-const md = require('markdown-it')({
-  preset: 'default',
-  html: true,
-  typographer: true,
-  breaks: true
-})
-  .use(require('markdown-it-anchor'), {
-    level: [2],
-    permalink: true,
-    permalinkBefore: true,
-    permalinkSymbol: '⛓'
-  })
-  .use(require('markdown-it-prism'), {
-    defaultLanguageForUnknown: 'bash'
-  });
+import { markdownRenderer } from '../_lib/utils';
+// const md = require('markdown-it')({
+//   preset: 'default',
+//   html: true,
+//   typographer: true,
+//   breaks: true
+// })
+//   .use(require('markdown-it-anchor'), {
+//     level: [2],
+//     permalink: true,
+//     permalinkBefore: true,
+//     permalinkSymbol: '⛓'
+//   })
+//   .use(require('markdown-it-prism'), {
+//     defaultLanguageForUnknown: 'bash'
+//   });
 const getTOC = (string) => {
-  const tokens = md.parse(string);
+  const tokens = markdownRenderer.parse(string);
   const toc = tokens
     .map((token, tokenIndex) => {
       if (token.type === 'heading_open' && token.tag === 'h2') {
@@ -102,7 +102,7 @@ export default {
       return getTOC(this.project.body);
     },
     body() {
-      return md.render(this.project.body);
+      return markdownRenderer.render(this.project.body);
     }
   },
   components: {
