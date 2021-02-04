@@ -24,6 +24,10 @@
     align-items: end;
     padding: 0.75rem 0;
     text-decoration: none;
+
+    @include screen(lg) {
+      align-items: start;
+    }
     &:before {
       content: '0' counter(toc);
     }

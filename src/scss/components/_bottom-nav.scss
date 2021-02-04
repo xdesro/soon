@@ -7,26 +7,32 @@
   text-transform: uppercase;
 
   @include screen(md) {
-    position: fixed;
-    z-index: 2;
+    position: absolute;
+    z-index: 1;
     right: 0;
     bottom: 0;
     left: 0;
+    display: grid;
+    grid-auto-flow: column;
+    // display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    max-width: calc(100vw - 3rem);
     margin: 0 auto 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: #fff;
-    // display: grid;
-    // grid-template-columns: auto auto;
-    // justify-content: space-between;
     border-top: 1px solid currentColor;
     mix-blend-mode: difference;
-    // div:nth-of-type(2) {
+    div:nth-of-type(2) {
+      justify-self: center;
+    }
     //   grid-column: 1;
     //   grid-row: 2;
     // }
-    // div:nth-of-type(3) {
-    //   grid-column: 2;
-    // }
+    div:nth-of-type(3) {
+      justify-self: end;
+      //   grid-column: 2;
+    }
   }
 }

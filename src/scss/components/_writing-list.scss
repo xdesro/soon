@@ -3,13 +3,54 @@
   list-style-type: none;
 }
 .writing-list-item {
+  $this: &;
+
   font-size: 0.75rem;
   position: relative;
+  max-width: 75rem;
+  margin: 0 auto;
   padding: 1.5rem;
   text-transform: uppercase;
   border-bottom: 1px solid currentColor;
+
+  @include screen(lg) {
+    padding-right: 0;
+    padding-left: 0;
+    &:first-of-type {
+      border-top: 1px solid currentColor;
+      #{$this}__category,
+      #{$this}__title,
+      #{$this}__tags,
+      #{$this}__date {
+        &:before {
+          font-size: 0.75rem;
+          font-weight: bold;
+          position: absolute;
+          top: 0;
+          margin-top: -2rem;
+          text-transform: uppercase;
+        }
+      }
+      #{$this}__category:before {
+        content: 'Category';
+      }
+      #{$this}__title:before {
+        content: 'Title';
+      }
+      #{$this}__tags:before {
+        content: 'Tags';
+      }
+      #{$this}__date:before {
+        content: 'Date';
+      }
+    }
+  }
   &:last-child {
     border-bottom: none;
+
+    @include screen(lg) {
+      border-bottom: 1px solid currentColor;
+    }
   }
   &__article {
     display: grid;
@@ -21,6 +62,10 @@
       grid-column-gap: 1rem;
       grid-template-columns: repeat(8, 1fr);
     }
+    @include screen(lg) {
+      grid-template-columns: repeat(16, 1fr);
+      align-items: end;
+    }
   }
   &__title {
     font-size: 1.25rem;
@@ -31,15 +76,23 @@
     text-transform: none;
 
     @include screen(sm) {
-      grid-column-start: 2;
-      grid-column-end: span 5;
+      grid-column: 2 / span 5;
       grid-row-end: span 3;
+    }
+    @include screen(lg) {
+      grid-column: 3 / span 7;
+      grid-row: 1;
+      margin-bottom: 0;
     }
   }
   &__category {
     grid-row: 1;
     margin-top: 0;
     margin-bottom: 1.5rem;
+
+    @include screen(lg) {
+      grid-column: 1 / span 2;
+    }
   }
   &__date {
     grid-row: 1;
@@ -47,6 +100,9 @@
 
     @include screen(sm) {
       grid-column: 7 / span 2;
+    }
+    @include screen(lg) {
+      grid-column: 13 / span 2;
     }
   }
   &__tags {
@@ -58,6 +114,11 @@
       margin-bottom: 1rem;
       text-align: right;
     }
+    @include screen(lg) {
+      grid-column: 11 / span 2;
+      margin-bottom: 0;
+      text-align: left;
+    }
   }
   &__link {
     align-self: end;
@@ -66,6 +127,9 @@
     @include screen(sm) {
       grid-column: 7 / span 2;
       align-self: unset;
+    }
+    @include screen(lg) {
+      grid-column: 16;
     }
     &:before {
       position: absolute;

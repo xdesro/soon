@@ -1,10 +1,31 @@
 .post {
   &__intro {
+    max-width: 75rem;
+    margin-right: auto;
     margin-bottom: 5rem;
+    margin-left: auto;
     padding-right: 1.5rem;
     padding-bottom: 6rem;
     padding-left: 1.5rem;
     border-bottom: 1px solid currentColor;
+
+    @include screen(lg) {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(16, 1fr);
+      margin-top: 13rem;
+      border-bottom: unset;
+      &:before {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100vw;
+        height: 1px;
+        margin-left: calc(50% - 50vw);
+        content: '';
+        background-color: currentColor;
+      }
+    }
   }
   &__title {
     font-family: $font--display;
@@ -14,6 +35,12 @@
     margin-top: 13rem;
     margin-bottom: 2.5rem;
     text-transform: uppercase;
+
+    @include screen(lg) {
+      font-size: 4.5rem;
+      grid-column-end: span 9;
+      margin-top: 0;
+    }
   }
   &__tags {
     font-size: 0.75rem;
@@ -21,5 +48,15 @@
     padding: 0;
     list-style-type: none;
     text-transform: uppercase;
+
+    @include screen(lg) {
+      grid-column-end: span 9;
+      grid-row: 2;
+    }
+  }
+  .table-of-contents {
+    @include screen(lg) {
+      grid-column: 11 / span 6;
+    }
   }
 }

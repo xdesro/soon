@@ -1,11 +1,13 @@
 <template>
   <footer class="more-writing">
     <h2 class="more-writing__title">More Writing</h2>
-    <WritingListItem
-      v-for="post in activePosts"
-      :post="post"
-      :key="post.slug"
-    />
+    <ul class="writing-list">
+      <WritingListItem
+        v-for="post in activePosts"
+        :post="post"
+        :key="post.slug"
+      />
+    </ul>
   </footer>
 </template>
 

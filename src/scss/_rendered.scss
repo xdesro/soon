@@ -1,11 +1,27 @@
 .rendered {
   margin-bottom: 6rem;
   counter-reset: h2s;
+
+  @include screen(lg) {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    max-width: 75rem;
+    margin: 0 auto;
+    > :last-child {
+      margin-bottom: 10rem;
+    }
+  }
   p,
   h3,
   h4,
-  ul {
+  ul,
+  ol,
+  .editors-note {
     max-width: 22.75rem;
+
+    @include screen(lg) {
+      grid-column: 8 / span 5;
+    }
   }
   h2 {
     font-size: 2rem;
@@ -17,6 +33,32 @@
     border-top: 1px solid currentColor;
 
     scroll-margin-top: 2.5rem;
+    @include screen(sm) {
+      display: grid;
+      grid-column-gap: 2ch;
+      grid-template-columns: auto 1fr;
+    }
+    @include screen(lg) {
+      position: relative;
+      grid-column: 1 / span 6;
+      margin-top: 10rem;
+      margin-bottom: 0;
+      border-top: 0;
+      &:after {
+        // margin-left: calc(50% - 50vw);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 75rem;
+        height: 1px;
+        content: '';
+        background-color: currentColor;
+      }
+      + p {
+        margin-top: 10rem + 4.5rem;
+      }
+    }
     &:before {
       display: block;
       margin-bottom: 1em;
@@ -42,7 +84,25 @@
   li {
     margin-bottom: 0.5em;
   }
-  p code {
+  blockquote {
+    margin: 0;
+    padding: 1rem 1.5rem;
+    padding-right: 0;
+    border-left: 6px solid currentColor;
+
+    @include screen(lg) {
+      font-family: $font--display;
+      font-size: 1.5rem;
+      grid-column: 7 / span 7;
+    }
+    > p {
+      margin-top: 0;
+    }
+  }
+  pre {
+    @include screen(lg) {
+      grid-column: 7 / span 7;
+    }
   }
   p > code,
   li code {

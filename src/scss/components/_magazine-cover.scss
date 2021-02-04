@@ -16,7 +16,11 @@
       // font-size: clamp(7.25rem, 19vw, 18rem)
       font-size: 10rem;
       margin-bottom: -5rem;
-      // margin-top: 10rem;
+    }
+    @include screen(md) {
+      font-size: 18rem;
+      margin-top: 10rem;
+      margin-bottom: -9rem;
     }
   }
   &__subtitle {
@@ -37,6 +41,9 @@
       font-size: 1.5rem;
       max-width: 25rem;
     }
+    @include screen(md) {
+      top: 21rem;
+    }
   }
   &__image-wrapper {
     position: relative;
@@ -46,6 +53,12 @@
 
     @include screen(sm) {
       height: 50rem;
+    }
+    @include screen(md) {
+      max-width: 75rem;
+      height: auto;
+      margin: 0 auto;
+      padding-top: 1400 / 1200 * 100%;
     }
     &:before {
       font-family: $font--display;
@@ -66,6 +79,20 @@
         font-size: 10rem;
         top: -7.2rem;
       }
+      @include screen(md) {
+        font-size: 18rem;
+        top: -12.6rem;
+      }
+    }
+  }
+  &__image {
+    @include screen(md) {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 }

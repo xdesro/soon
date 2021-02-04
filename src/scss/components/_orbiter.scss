@@ -10,6 +10,11 @@
     bottom: 40rem;
     left: unset;
     transform: translateX(50%);
+
+    @include screen(md) {
+      top: 71rem;
+      bottom: unset;
+    }
   }
   &__ring {
     animation: orbit 60s linear infinite;

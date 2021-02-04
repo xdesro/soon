@@ -1,54 +1,63 @@
 .more-writing {
+  margin-bottom: 6rem;
   padding-top: 6rem;
   border-top: 1px solid currentColor;
-  margin-bottom: 6rem;
   &__title {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    font-size: 2rem;
-    text-transform: uppercase;
     font-family: $font--display;
+    font-size: 2rem;
     font-weight: 100;
     margin-bottom: 4.5rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    text-transform: uppercase;
+
+    @include screen(sm) {
+      font-size: 3rem;
+      max-width: unset;
+    }
+    @include screen(lg) {
+      font-size: 4rem;
+      text-align: center;
+    }
   }
 }
 .next-case-study {
   position: relative;
   border-top: 1px solid currentColor;
   &:before {
-    content: 'Next Case Study';
-    position: absolute;
     font-size: 0.75rem;
-    text-transform: uppercase;
-    padding-left: 1.5rem;
+    position: absolute;
     top: -2rem;
+    padding-left: 1.5rem;
+    content: 'Next Case Study';
+    text-transform: uppercase;
   }
   &__link {
-    padding-top: 4.5rem;
     display: block;
+    padding-top: 4.5rem;
     text-decoration: none;
   }
   &__title {
+    font-family: $font--display;
     font-size: 4.5rem;
     font-weight: 100;
-    font-family: $font--display;
-    text-transform: uppercase;
-    margin-bottom: 2.5rem;
-    margin-top: 0;
     line-height: 0.85;
     overflow: hidden;
-
-    padding-left: 1.5rem;
-  }
-  &__meta {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
     padding-left: 1.5rem;
     text-transform: uppercase;
+  }
+  &__meta {
     margin-bottom: 4.5rem;
+    padding-left: 1.5rem;
+    text-transform: uppercase;
     p {
       margin: 0;
     }
   }
   &__image {
+    width: 100%;
     height: 21rem;
     object-fit: cover;
   }

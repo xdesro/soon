@@ -9,7 +9,9 @@
       />
       <div class="project__intro">
         <div class="project__intro-row">
-          <h1 class="project__title">{{ project.clientName }}</h1>
+          <h1 class="project__title" v-html="project.clientName">
+            {{ project.clientName }}
+          </h1>
           <div class="project__meta">
             <p>Typography Foundry</p>
             <time :datetime="project.date">{{

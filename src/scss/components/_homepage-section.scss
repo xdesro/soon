@@ -39,6 +39,11 @@
     @include screen(sm) {
       margin-bottom: 6rem;
     }
+    @include screen(md) {
+      max-width: 28rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
     &:before {
       position: absolute;
       top: 0;
@@ -65,6 +70,9 @@
     @include screen(sm) {
       font-size: 3rem;
       max-width: unset;
+    }
+    @include screen(md) {
+      max-width: 30rem;
     }
   }
 }

@@ -4,5 +4,7 @@ $font--mono: 'SF Mono', 'SFMono-Regular', 'Fira Code', Consolas,
   'Liberation Mono', Menlo, Courier, monospace;
 
 $breakpoints: (
-  sm: 37.5rem
+  sm: 37.5rem,
+  md: 56rem,
+  lg: 75rem
 );

@@ -13,6 +13,10 @@
   text-transform: uppercase;
   border-bottom: 1px solid currentColor;
   background-color: #f5f5f5;
+
+  @include screen(md) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   &--difference {
     color: #f5f5f5;
     background-color: transparent;
@@ -28,6 +32,10 @@
     display: grid;
     grid-auto-flow: column;
     grid-column-gap: 1ch;
+
+    @include screen(md) {
+      justify-self: center;
+    }
     &:after {
       grid-column: 2;
       content: '—';
@@ -45,6 +53,9 @@
 
   @include screen(sm) {
     display: block;
+  }
+  @include screen(md) {
+    justify-self: end;
   }
   a {
     text-decoration: none;

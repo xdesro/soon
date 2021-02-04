@@ -235,57 +235,7 @@
           </div>
         </div>
         <h3 class="homepage-section__additional-title">Recognition & Honors</h3>
-        <table class="recognition-chart">
-          <thead>
-            <tr>
-              <th>Organization</th>
-              <th>Recognition</th>
-              <th>Project</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Awwwards</td>
-              <td>Mobile Excellence</td>
-              <td>Faculty 2020</td>
-            </tr>
-            <tr>
-              <td>Awwwards</td>
-              <td>Honors</td>
-              <td>Faculty 2020<br /></td>
-            </tr>
-            <tr>
-              <td>Awwwards</td>
-              <td>Mobile Excellence<br /></td>
-              <td>Sigil (Jr. Developer Portfolio)</td>
-            </tr>
-            <tr>
-              <td>Awwwards</td>
-              <td>Honors</td>
-              <td>Sigil (Jr. Developer Portfolio)<br /></td>
-            </tr>
-            <tr>
-              <td>Humans</td>
-              <td>Site Of The Day</td>
-              <td>Portfolio FW19</td>
-            </tr>
-            <tr>
-              <td>CSS Design Awards</td>
-              <td>Special Kudos</td>
-              <td>Portfolio FW19</td>
-            </tr>
-            <tr>
-              <td>Awwwards</td>
-              <td>Mobile Excellence</td>
-              <td>Portfolio FW19</td>
-            </tr>
-            <tr>
-              <td>Awwwards</td>
-              <td>Honors</td>
-              <td>Portfolio FW19</td>
-            </tr>
-          </tbody>
-        </table>
+        <RecognitionChart />
         <div class="recognition-mobile" aria-hidden="">
           <div class="recognition-mobile__section">
             <p class="recognition-mobile__org">Awwwards</p>
@@ -366,6 +316,7 @@
 <script>
 import TopNav from './_includes/TopNav.vue';
 import WorkListItem from './_includes/WorkListItem.vue';
+import RecognitionChart from './_includes/RecognitionChart.vue';
 
 export default {
   data: {
@@ -373,7 +324,8 @@ export default {
   },
   components: {
     TopNav,
-    WorkListItem
+    WorkListItem,
+    RecognitionChart
   }
 };
 </script>

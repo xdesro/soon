@@ -3,7 +3,9 @@
     <!-- {{ nextProject }} -->
     <a class="next-case-study__link" :href="`/work/${nextProject.slug}`">
       <article class="next-case-study__article">
-        <h1 class="next-case-study__title">{{ nextProject.clientName }}</h1>
+        <h1 class="next-case-study__title" v-html="nextProject.clientName">
+          {{ nextProject.clientName }}
+        </h1>
         <div class="next-case-study__meta">
           <p>Typography Foundry</p>
           <time :datetime="nextProject.date">{{
