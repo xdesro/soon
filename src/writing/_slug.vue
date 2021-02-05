@@ -30,24 +30,10 @@
 <script>
 import TopNav from '../_includes/TopNav.vue';
 import WritingFooter from '../_includes/WritingFooter.vue';
+import { markdownRenderer } from '../_lib/utils';
 
-const md = require('markdown-it')({
-  preset: 'default',
-  html: true,
-  typographer: true,
-  breaks: true
-})
-  .use(require('markdown-it-anchor'), {
-    level: [2],
-    permalink: true,
-    permalinkBefore: true,
-    permalinkSymbol: '⛓'
-  })
-  .use(require('markdown-it-prism'), {
-    defaultLanguageForUnknown: 'bash'
-  });
 const getTOC = (string) => {
-  const tokens = md.parse(string);
+  const tokens = markdownRenderer.parse(string);
   const toc = tokens
     .map((token, tokenIndex) => {
       if (token.type === 'heading_open' && token.tag === 'h2') {
@@ -83,7 +69,7 @@ export default {
       return getTOC(this.post.body);
     },
     body() {
-      return md.render(this.post.body);
+      return markdownRenderer.render(this.post.body);
     }
   },
   components: {

@@ -4,6 +4,7 @@ const markdownRenderer = require('markdown-it')({
   typographer: true,
   breaks: true
 })
+  .use(require('markdown-it-implicit-figures'))
   .use(require('markdown-it-anchor'), {
     level: [2],
     permalink: true,
@@ -13,7 +14,6 @@ const markdownRenderer = require('markdown-it')({
   .use(require('markdown-it-prism'), {
     defaultLanguageForUnknown: 'bash'
   });
-
 const dateFormatter = (dateString) => {
   return new Date(dateString).toLocaleDateString('en-US', {
     year: 'numeric',
