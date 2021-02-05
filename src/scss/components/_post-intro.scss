@@ -7,14 +7,12 @@
     padding-right: 1.5rem;
     padding-bottom: 6rem;
     padding-left: 1.5rem;
-    border-bottom: 1px solid currentColor;
 
     @include screen(lg) {
       position: relative;
       display: grid;
       grid-template-columns: repeat(16, 1fr);
       margin-top: 13rem;
-      border-bottom: unset;
       &:before {
         position: absolute;
         bottom: 0;

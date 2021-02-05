@@ -1,14 +1,16 @@
 .project {
   &__featured-image {
     width: 100%;
-    height: 45rem;
+    height: 30rem;
     object-fit: cover;
+    @include screen(sm) {
+      height: 45rem;
+    }
   }
   &__intro {
     overflow: hidden;
     margin-bottom: 5rem;
     padding-bottom: 6rem;
-    border-bottom: 1px solid currentColor;
 
     @include screen(lg) {
       padding-bottom: 0;
