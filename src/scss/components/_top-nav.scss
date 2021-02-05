@@ -12,7 +12,7 @@
   padding: 1rem 1.5rem;
   text-transform: uppercase;
   border-bottom: 1px solid currentColor;
-  background-color: #f5f5f5;
+  background-color: var(--color--background);
 
   @include screen(md) {
     grid-template-columns: 1fr 1fr 1fr;
@@ -22,14 +22,22 @@
     margin: 0 auto;
     padding-right: 0;
     padding-left: 0;
-    color: #f5f5f5;
+    color: var(--color--background);
     background-color: transparent;
     mix-blend-mode: difference;
+    [dark] & {
+      color: inherit;
+      mix-blend-mode: unset;
+    }
   }
   &--difference {
-    color: #f5f5f5;
+    color: var(--color--background);
     background-color: transparent;
     mix-blend-mode: difference;
+    [dark] & {
+      color: inherit;
+      mix-blend-mode: unset;
+    }
   }
   &__brand {
     text-decoration: none;

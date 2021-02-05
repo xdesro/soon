@@ -1,11 +1,25 @@
+:root {
+  --color--text-primary: #{$color--mono-14};
+  --color--text-secondary: #{$color--mono-43};
+  --color--background: #{$color--mono-96};
+  --color--contrast: #{$color--mono-96};
+  --color--mag-background: #{$color--mono-88};
+  --color--mag-text: #{$color--mono-14};
+  &[dark] {
+    --color--mag-background: #{$color--mono-19};
+    --color--text-primary: #{$color--mono-86};
+    --color--background: #{$color--mono-14};
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
 body {
   font-family: $font--text;
   margin: 0;
-  color: #202527;
-  background-color: #f5f5f5;
+  color: var(--color--text-primary);
+  background-color: var(--color--background);
 }
 a {
   color: inherit;

@@ -20,9 +20,13 @@
     margin: 0 auto 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: #fff;
+    color: var(--color--background);
     border-top: 1px solid currentColor;
     mix-blend-mode: difference;
+    [dark] & {
+      color: inherit;
+      mix-blend-mode: unset;
+    }
     div:nth-of-type(2) {
       justify-self: center;
     }
