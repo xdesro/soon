@@ -74,11 +74,23 @@
     @include screen(md) {
       max-width: 30rem;
     }
+    @include screen(lg) {
+      font-size: 4rem;
+      max-width: unset;
+      margin-bottom: 3.75rem;
+      text-align: center;
+      letter-spacing: -3px;
+    }
   }
 }
 
 .selected-works {
   margin-bottom: 10rem;
+  .case-studies-list {
+    @include screen(lg) {
+      margin-bottom: 10rem;
+    }
+  }
 }
 
 .about {

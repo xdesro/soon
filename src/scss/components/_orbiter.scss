@@ -4,6 +4,10 @@
   left: 0;
   width: 21.5rem;
   transform: translateX(-50%);
+
+  @include screen(lg) {
+    width: 32rem;
+  }
   &--last {
     top: unset;
     right: 0;
@@ -12,7 +16,7 @@
     transform: translateX(50%);
 
     @include screen(md) {
-      top: 71rem;
+      top: 60rem;
       bottom: unset;
     }
   }
@@ -26,6 +30,10 @@
     width: 18rem;
     transform: translateX(-50%) translateY(-50%);
     border-radius: 100%;
+
+    @include screen(lg) {
+      width: 27rem;
+    }
   }
   @keyframes orbit {
     from {

@@ -17,6 +17,15 @@
   @include screen(md) {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  @include screen(lg) {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding-right: 0;
+    padding-left: 0;
+    color: #f5f5f5;
+    background-color: transparent;
+    mix-blend-mode: difference;
+  }
   &--difference {
     color: #f5f5f5;
     background-color: transparent;

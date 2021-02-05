@@ -13,7 +13,6 @@
     text-transform: uppercase;
 
     @include screen(sm) {
-      // font-size: clamp(7.25rem, 19vw, 18rem)
       font-size: 10rem;
       margin-bottom: -5rem;
     }
@@ -60,6 +59,9 @@
       margin: 0 auto;
       padding-top: 1400 / 1200 * 100%;
     }
+    @include screen(lg) {
+      background-color: #e2dfdf;
+    }
     &:before {
       font-family: $font--display;
       font-size: 7.25rem;
@@ -75,7 +77,6 @@
       filter: blur(2px);
 
       @include screen(sm) {
-        // font-size: clamp(7.25rem, 19vw, 18rem)
         font-size: 10rem;
         top: -7.2rem;
       }
@@ -93,6 +94,12 @@
       left: 0;
       width: 100%;
       height: 100%;
+    }
+    @include screen(lg) {
+      top: 1.5rem;
+      left: 1.5rem;
+      width: calc(100% - 3rem);
+      height: calc(100% - 3rem);
     }
   }
 }

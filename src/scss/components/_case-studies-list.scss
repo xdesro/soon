@@ -10,8 +10,14 @@
   border-bottom: 1px solid currentColor;
 
   @include screen(md) {
-    max-width: 83.75rem;
+    max-width: 75rem;
     margin: 0 auto;
+  }
+  @include screen(lg) {
+    padding-top: 3rem;
+    padding-right: 0;
+    padding-bottom: 3rem;
+    padding-left: 0;
   }
   &__article {
     display: grid;
@@ -22,6 +28,9 @@
     @include screen(sm) {
       grid-template-columns: repeat(8, 1fr);
       grid-template-rows: 1fr;
+    }
+    @include screen(lg) {
+      grid-template-columns: repeat(16, 1fr);
     }
     &:before {
       font-size: 0.75rem;
@@ -40,7 +49,6 @@
     max-width: 15rem;
     margin-top: 0;
     margin-bottom: 0.25rem;
-    // word-wrap: break-word;
     text-transform: uppercase;
     hyphens: auto;
 
@@ -50,6 +58,12 @@
       grid-row: 1 / span 2;
       align-self: unset;
       max-width: 25rem;
+    }
+    @include screen(lg) {
+      font-size: 6rem;
+      grid-column: 2 / span 11;
+      grid-row: 1;
+      max-width: unset;
     }
   }
   &__meta {
@@ -64,6 +78,12 @@
       grid-row: unset;
       text-align: right;
     }
+    @include screen(lg) {
+      font-size: 1rem;
+      grid-column: 13 / span 3;
+      align-self: end;
+      margin: 0;
+    }
   }
   &__involvement {
     margin: 0;
@@ -77,9 +97,6 @@
     @include screen(sm) {
       position: absolute;
       opacity: 0;
-      // mix-blend-mode: difference;
-      // grid-row: unset;
-      // grid-column: 7 / span 2;
     }
   }
   &__link {
@@ -93,6 +110,10 @@
       grid-column: 7 / span 2;
       grid-row: unset;
       text-align: right;
+    }
+    @include screen(lg) {
+      grid-column: 16;
+      align-self: end;
     }
     &:before {
       position: absolute;
@@ -125,6 +146,10 @@
     grid-column-end: span 2;
     margin: 0;
     text-transform: uppercase;
+
+    @include screen(lg) {
+      font-size: 1.5rem;
+    }
   }
   &__meta {
     font-size: 0.75rem;
@@ -134,6 +159,13 @@
     font-size: 0.75rem;
     text-align: right;
     text-transform: uppercase;
+
+    @include screen(lg) {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
     &:after {
       content: '→';
       text-decoration: none;
