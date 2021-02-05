@@ -31,11 +31,30 @@
     padding-left: 1.5rem;
     content: 'Next Case Study';
     text-transform: uppercase;
+    @include screen(lg) {
+      max-width: 75rem;
+      width: 100%;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
   }
   &__link {
     display: block;
     padding-top: 4.5rem;
     text-decoration: none;
+    @include screen(lg) {
+      padding-top: 6rem;
+    }
+  }
+  &__article {
+    @include screen(lg) {
+      max-width: 75rem;
+      margin: 0 auto 6rem;
+      display: grid;
+      grid-template-columns: repeat(16, 1fr);
+      grid-column-gap: 1rem;
+    }
   }
   &__title {
     font-family: $font--display;
@@ -47,11 +66,21 @@
     margin-bottom: 2.5rem;
     padding-left: 1.5rem;
     text-transform: uppercase;
+    @include screen(lg) {
+      font-size: 9rem;
+      grid-column: 1 / span 10;
+      grid-row: span 2;
+      padding-left: 0;
+    }
   }
   &__meta {
     margin-bottom: 4.5rem;
     padding-left: 1.5rem;
     text-transform: uppercase;
+    @include screen(lg) {
+      grid-column: 13 / span 4;
+      text-align: right;
+    }
     p {
       margin: 0;
     }

@@ -6,7 +6,7 @@
       <div>of NYC-based creative technologist</div>
       <div>Henry Desroches</div>
     </nav>
-    <main class="homepage">
+    <main id="main" class="homepage">
       <div class="magazine-cover">
         <div class="magazine-cover__title">Soon</div>
         <h1 class="magazine-cover__subtitle">

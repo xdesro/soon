@@ -1,5 +1,6 @@
 .project {
   &__featured-image {
+    width: 100%;
     height: 45rem;
     object-fit: cover;
   }
@@ -8,6 +9,11 @@
     margin-bottom: 5rem;
     padding-bottom: 6rem;
     border-bottom: 1px solid currentColor;
+
+    @include screen(lg) {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
   }
   &__intro-row {
     margin-bottom: 4.5rem;
@@ -15,6 +21,16 @@
     padding-bottom: 4.5rem;
     padding-left: 1.5rem;
     border-bottom: 1px solid currentColor;
+  }
+  &__intro-inner {
+    @include screen(lg) {
+      display: grid;
+      grid-template-columns: repeat(16, 1fr);
+      max-width: 75rem;
+      margin-top: 6rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
   &__title {
     font-family: $font--display;
@@ -28,10 +44,22 @@
     @include screen(sm) {
       font-size: 6.75rem;
     }
+    @include screen(lg) {
+      font-size: 9rem;
+      grid-column: 1 / span 10;
+      grid-row: span 2;
+      margin-top: 0;
+    }
   }
   &__meta {
     margin-bottom: 3rem;
     text-transform: uppercase;
+
+    @include screen(lg) {
+      grid-column: 13 / span 4;
+      margin-bottom: 8rem;
+      text-align: right;
+    }
     p {
       margin: 0;
     }
@@ -40,6 +68,11 @@
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
+
+    @include screen(lg) {
+      grid-column: 13 / span 4;
+      text-align: right;
+    }
     &:hover {
       text-decoration: underline;
     }
@@ -48,5 +81,12 @@
     font-size: 1.25rem;
     max-width: 27.5rem;
     margin-bottom: 4.5rem;
+
+    @include screen(lg) {
+      grid-column: 1 / span 6;
+    }
+  }
+  .table-of-contents {
+    grid-column: 11 / span 6;
   }
 }

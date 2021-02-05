@@ -24,6 +24,7 @@
       <div v-html="body" class="grid rendered"></div>
     </main>
     <WritingFooter :posts="posts" :currentPost="post" />
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
   </div>
 </template>
 <script>

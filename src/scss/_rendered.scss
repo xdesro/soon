@@ -55,7 +55,7 @@
         content: '';
         background-color: currentColor;
       }
-      + p {
+      + :is(p, ul) {
         margin-top: 10rem + 4.5rem;
       }
     }
@@ -76,6 +76,7 @@
   }
   ul,
   ol {
+    line-height: 1.5;
     padding-left: 1rem;
   }
   ul {
@@ -99,7 +100,9 @@
       margin-top: 0;
     }
   }
-  pre {
+  pre,
+  .cp_embed_wrapper,
+  figure {
     @include screen(lg) {
       grid-column: 7 / span 7;
     }
@@ -130,4 +133,8 @@
     content: "Editor's Note";
     text-transform: uppercase;
   }
+}
+.cp_embed_wrapper {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
