@@ -48,6 +48,10 @@ img {
   text-align: center;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+
+  @include screen(lg) {
+    font-size: 9rem;
+  }
 }
 .writing-page {
   overflow-x: hidden;

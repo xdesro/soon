@@ -1,4 +1,6 @@
 .top-nav {
+  $this: &;
+
   font-size: 0.75rem;
   position: fixed;
   z-index: 2;
@@ -42,7 +44,30 @@
   &__brand {
     text-decoration: none;
     &:hover {
-      text-decoration: underline;
+      // text-decoration: underline;
+      #{$this}__brand-extension {
+        transform: translateX(0);
+        opacity: 1;
+        &:before {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+  &__brand-extension {
+    display: none;
+
+    @include screen(sm) {
+      display: inline-block;
+      transition: all 0.1s ease;
+      transform: translateX(-2ch);
+      opacity: 0;
+      &:before {
+        display: inline-block;
+        content: ' — ';
+        transition: all 0.1s ease;
+        transform: translateX(2ch);
+      }
     }
   }
   &__links {

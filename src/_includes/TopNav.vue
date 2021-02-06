@@ -1,30 +1,30 @@
 <template>
   <nav :class="isWork ? 'top-nav top-nav--difference' : 'top-nav'">
-    <a class="top-nav__brand" href="/">© SS21</a>
+    <a class="top-nav__brand" href="/">
+      ✷ SS21
+      <span class="top-nav__brand-extension">
+        {{ isHome ? '(you are already here)' : '(go home)' }}
+      </span>
+    </a>
     <div class="top-nav__links">
       <a class="top-nav__link" href="/work">Work</a>
       <a class="top-nav__link" href="/writing">Writing</a>
     </div>
-    <div class="spotify-widget">
-      <svg fill="currentColor" viewBox="0 0 12 12" width="12">
-        <path
-          d="M6 0C2.7 0 0 2.7 0 6s2.7 6 6 6 6-2.7 6-6a6 6 0 00-6-6zm2.76 8.67c-.12.18-.33.24-.51.12-1.41-.87-3.18-1.05-5.28-.57-.21.06-.39-.09-.45-.27-.06-.21.09-.39.27-.45 2.28-.51 4.26-.3 5.82.66.21.09.24.33.15.51zm.72-1.65c-.15.21-.42.3-.63.15a7.78 7.78 0 00-5.97-.69c-.24.06-.51-.06-.57-.3-.06-.24.06-.51.3-.57a8.78 8.78 0 016.75.81c.18.1.27.39.12.6zm.06-1.68C7.62 4.2 4.41 4.08 2.58 4.65c-.3.09-.6-.09-.69-.36-.09-.3.09-.6.36-.7 2.13-.62 5.64-.5 7.86.82.27.15.36.51.21.78-.15.21-.51.3-.78.15z"
-        />
-      </svg>
-      <a class="spotify-widget__track" href="#">Plastic</a>,
-      <span class="spotify-widget__artists">
-        <a href="#">Moses Sumney</a>
-      </span>
-    </div>
+    <SpotifyWidget />
   </nav>
 </template>
 
 <script>
+import SpotifyWidget from './SpotifyWidget.vue';
 export default {
   data() {
     return {
+      isHome: this.page.url === '/',
       isWork: this.page.url.includes('/work')
     };
+  },
+  components: {
+    SpotifyWidget
   }
 };
 </script>
