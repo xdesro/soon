@@ -18,6 +18,9 @@
     @for $i from 1 through 8 {
       &:nth-child(#{$i}) {
         color: nth($gradient, $i);
+        [dark] & {
+          color: inherit;
+        }
       }
     }
   }
