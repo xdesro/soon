@@ -1,0 +1,9 @@
+[dev]
+    command = 'npm run dev'
+    publish = 'dist'
+    functions = 'src/functions'
+
+[build]
+    command = 'npm run build'
+    publish = 'dist'
+    functions = 'src/functions'

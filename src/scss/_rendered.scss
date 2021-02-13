@@ -37,6 +37,7 @@
       display: grid;
       grid-column-gap: 2ch;
       grid-template-columns: auto 1fr;
+      scroll-margin-top: 3rem;
     }
     @include screen(lg) {
       position: relative;

@@ -58,7 +58,7 @@
       max-width: 75rem;
       height: auto;
       margin: 0 auto;
-      padding-top: 1400 / 1200 * 100%;
+      padding-top: min(12/14 * 100%, 87.5rem);
     }
     @include screen(lg) {
       background-color: var(--color--mag-background);
@@ -96,6 +96,7 @@
       left: 0;
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
     @include screen(lg) {
       top: 1.5rem;

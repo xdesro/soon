@@ -14,7 +14,7 @@
       </div>
       <img
         class="case-study-list-item__image"
-        src="/img/magazine-cover.png"
+        :src="project.heroImage.fields.file.url"
         alt=""
       />
       <a class="case-study-list-item__link" :href="`/work/${project.slug}`">

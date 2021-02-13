@@ -18,6 +18,9 @@
     position: sticky;
     top: 0;
     text-align: left;
+    tr:after {
+      transform: scaleX(1);
+    }
   }
   tr {
     position: relative;
@@ -41,6 +44,7 @@
       transform-origin: 0 0;
       background-color: currentColor;
     }
+
     &:hover {
       &:after {
         transform: scaleX(1);

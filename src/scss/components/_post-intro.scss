@@ -13,6 +13,8 @@
       display: grid;
       grid-template-columns: repeat(16, 1fr);
       margin-top: 13rem;
+
+      overflow: hidden;
       &:before {
         position: absolute;
         bottom: 0;
