@@ -1,6 +1,7 @@
 <template>
   <div>
-    <TopNav />
+    <TopNav :spotify="spotify" />
+
     <main class="writing-page">
       <h1 class="page-title">Writing</h1>
       <ul class="writing-list">
@@ -15,8 +16,11 @@ import TopNav from '../_includes/TopNav.vue';
 import WritingListItem from '../_includes/WritingListItem.vue';
 
 export default {
-  data: {
-    layout: 'layout.html'
+  data() {
+    return {
+      title: () => 'test',
+      layout: 'layout.html'
+    };
   },
   components: {
     TopNav,

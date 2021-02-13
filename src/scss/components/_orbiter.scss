@@ -7,6 +7,7 @@
 
   @include screen(lg) {
     width: 32rem;
+    transform: translateX(-20%);
   }
   &--last {
     top: unset;
@@ -18,6 +19,9 @@
     @include screen(md) {
       top: 60rem;
       bottom: unset;
+    }
+    @include screen(lg) {
+      transform: translateX(30%);
     }
   }
   &__ring {

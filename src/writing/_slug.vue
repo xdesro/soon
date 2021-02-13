@@ -1,6 +1,7 @@
 <template>
   <div>
-    <TopNav />
+    <TopNav :spotify="spotify" />
+
     <main id="main" class="post">
       <div class="post__intro">
         <h1 class="post__title">{{ post.title }}</h1>
@@ -61,7 +62,8 @@ export default {
         data: 'posts',
         alias: 'post'
       },
-      permalink: (data) => `writing/${data.post.slug}/index.html`
+      permalink: (data) => `writing/${data.post.slug}/index.html`,
+      title: (data) => data.post.title
     };
   },
   computed: {

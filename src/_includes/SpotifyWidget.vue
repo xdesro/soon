@@ -9,12 +9,8 @@
         />
       </svg>
     </a>
-    <a class="spotify-widget__track" href="#">Plastic </a>
-    ,
-    <span class="spotify-widget__artists">
-      <a href="#"> Moses Sumney </a>
-    </span>
-    <!-- <a class="spotify-widget__track" :href="spotify.url">
+
+    <a class="spotify-widget__track" :href="spotify.url">
       {{ spotify.name.trim() }}
     </a>
     ,
@@ -27,7 +23,7 @@
         {{ artist.name }}
         <span v-if="index + 1 < spotify.artists.length">, </span>
       </a>
-    </span> -->
+    </span>
   </div>
 </template>
 

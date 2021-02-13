@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopNav />
+    <TopNav :spotify="spotify" />
     <main id="main" class="project">
       <img
         :src="project.heroImage.fields.file.url"
@@ -21,9 +21,15 @@
                   month: 'long'
                 })
               }}</time>
-              <p>Web design & Development</p>
+              <p v-if="project.involvement">
+                {{ project.involvement.join(' & ') }}
+              </p>
             </div>
-            <a :href="project.link" class="project__live-link">
+            <a
+              v-if="project.link"
+              :href="project.link"
+              class="project__live-link"
+            >
               View The Project Live
             </a>
           </div>
