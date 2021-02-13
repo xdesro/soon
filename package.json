@@ -19,6 +19,7 @@
     "markdown-it-anchor": "^7.0.0",
     "markdown-it-implicit-figures": "^0.10.0",
     "markdown-it-prism": "^2.1.4",
+    "node-fetch": "^2.6.1",
     "nuxt": "^2.14.12",
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1"

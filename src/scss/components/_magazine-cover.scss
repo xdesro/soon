@@ -34,7 +34,6 @@
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
-    color: var(--color--mag-text);
     filter: blur(2px);
 
     @include screen(sm) {
@@ -58,7 +57,7 @@
       max-width: 75rem;
       height: auto;
       margin: 0 auto;
-      padding-top: min(12/14 * 100%, 87.5rem);
+      padding-top: min(15/12 * 100%, 87.5rem);
     }
     @include screen(lg) {
       background-color: var(--color--mag-background);
@@ -75,7 +74,6 @@
       text-align: center;
       letter-spacing: -0.25rem;
       text-transform: uppercase;
-      color: var(--color--mag-text);
       filter: blur(2px);
 
       @include screen(sm) {
@@ -103,12 +101,15 @@
       left: 1.5rem;
       width: calc(100% - 3rem);
       height: calc(100% - 3rem);
-      [dark] & {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
+    }
+    html[dark] & {
+      display: none;
+    }
+  }
+  &__image--dark {
+    display: none;
+    html[dark] & {
+      display: block;
     }
   }
 }

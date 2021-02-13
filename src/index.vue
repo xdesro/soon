@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopNav />
+    <TopNav :spotify="spotify" />
     <nav class="bottom-nav">
       <div>the personal site & portfolio</div>
       <div>of NYC-based creative technologist</div>
@@ -15,7 +15,12 @@
         <div class="magazine-cover__image-wrapper">
           <img
             class="magazine-cover__image"
-            src="/img/magazine-cover.png"
+            src="/img/daytime-no-treatment.jpg"
+            alt=""
+          />
+          <img
+            class="magazine-cover__image magazine-cover__image--dark"
+            src="/img/night-render-no-treatment.jpg"
             alt=""
           />
         </div>

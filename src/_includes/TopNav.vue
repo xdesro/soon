@@ -10,7 +10,7 @@
       <a class="top-nav__link" href="/work">Work</a>
       <a class="top-nav__link" href="/writing">Writing</a>
     </div>
-    <SpotifyWidget />
+    <SpotifyWidget :spotify="spotify" />
   </nav>
 </template>
 
@@ -23,6 +23,7 @@ export default {
       isWork: this.page.url.includes('/work')
     };
   },
+  props: ['spotify'],
   components: {
     SpotifyWidget
   }
