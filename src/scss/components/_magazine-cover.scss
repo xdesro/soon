@@ -76,6 +76,7 @@
       text-transform: uppercase;
       filter: blur(2px);
 
+      z-index: 2;
       @include screen(sm) {
         font-size: 10rem;
         top: -7.2rem;
@@ -86,8 +87,27 @@
       }
     }
   }
+  &__drifter {
+    overflow: hidden;
+    position: relative;
+    @include screen(md) {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @include screen(lg) {
+      top: 1.5rem;
+      left: 1.5rem;
+      width: calc(100% - 3rem);
+      height: calc(100% - 3rem);
+    }
+  }
   &__image {
     @include screen(md) {
+      --overflow: 120px;
       position: absolute;
       z-index: -1;
       top: 0;
@@ -96,12 +116,7 @@
       height: 100%;
       object-fit: cover;
     }
-    @include screen(lg) {
-      top: 1.5rem;
-      left: 1.5rem;
-      width: calc(100% - 3rem);
-      height: calc(100% - 3rem);
-    }
+
     html[dark] & {
       display: none;
     }

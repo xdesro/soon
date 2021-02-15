@@ -90,19 +90,9 @@
     }
   }
 }
-.spotify-widget {
-  display: none;
 
-  @include screen(sm) {
-    display: block;
-  }
-  @include screen(md) {
-    justify-self: end;
-  }
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
+// animation
+.top-nav {
+  &--pre {
   }
 }

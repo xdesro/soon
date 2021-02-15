@@ -18,7 +18,25 @@
     padding-top: #{10rem + $roman-numeral-size};
     padding-bottom: 10rem;
     text-decoration: none;
+    position: relative;
 
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transform-origin: 0 0;
+      transition: transform 0.2s ease;
+    }
+    &:hover {
+      &:before {
+        transform: scaleX(1);
+      }
+    }
     @include screen(sm) {
       padding-top: #{10rem + $roman-numeral-size--small};
     }
