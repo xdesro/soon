@@ -3,3 +3,29 @@
     @content;
   }
 }
+
+@mixin underlined-anim {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    right: 0;
+    background-color: currentColor;
+    bottom: 0;
+    transform: scaleX(0);
+    transition: transform 0.2s;
+    transform-origin: 100% 0;
+  }
+
+  &:hover {
+    // text-decoration: underline;
+    &:after {
+      transform-origin: 0 0;
+      transform: scaleX(1);
+    }
+  }
+}

@@ -1,16 +1,35 @@
 .spotify-widget {
   display: none;
-
+  overflow: hidden;
+  white-space: nowrap;
+  width: calc(100vw / 3);
+  height: 2ch;
+  text-align: right;
+  justify-content: end;
+  grid-gap: 0.5rem;
   @include screen(sm) {
-    display: block;
+    display: grid;
+    grid-auto-flow: column;
+    align-content: center;
   }
   @include screen(md) {
     justify-self: end;
   }
+  &__inner {
+    text-overflow: ellipsis;
+  }
   a {
+    display: inline-block;
     text-decoration: none;
-    &:hover {
-      text-decoration: underline;
+    white-space: nowrap;
+    @include underlined-anim;
+  }
+  &__artists {
+    a {
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }

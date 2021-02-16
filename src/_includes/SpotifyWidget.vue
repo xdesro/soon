@@ -9,21 +9,21 @@
         />
       </svg>
     </a>
-
-    <a class="spotify-widget__track" :href="spotify.url">
-      {{ spotify.name.trim() }}
-    </a>
-    ,
-    <span class="spotify-widget__artists">
-      <a
-        v-for="(artist, index) in spotify.artists"
-        :key="index"
-        :href="artist.url"
-      >
-        {{ artist.name }}
-        <span v-if="index + 1 < spotify.artists.length">, </span>
+    <div class="spotify-widget__inner">
+      <a class="spotify-widget__track" :href="spotify.url">
+        {{ spotify.name }},
       </a>
-    </span>
+      <span class="spotify-widget__artists">
+        <a
+          v-for="(artist, index) in spotify.artists"
+          :key="index"
+          :href="artist.url"
+        >
+          {{ artist.name.trim()
+          }}<span v-if="index + 1 < spotify.artists.length">,</span>&nbsp;</a
+        >
+      </span>
+    </div>
   </div>
 </template>
 

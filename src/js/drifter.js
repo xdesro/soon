@@ -108,7 +108,6 @@ class Drifter {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log(new Drifter([...document.querySelectorAll('[drifter]')][0]));
   const items = [...document.querySelectorAll('[drifter]')].map(
     (item) => new Drifter(item)
   );

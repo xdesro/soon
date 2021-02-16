@@ -13,9 +13,20 @@
   max-width: 100vw;
   padding: 1rem 1.5rem;
   text-transform: uppercase;
-  border-bottom: 1px solid currentColor;
+  // border-bottom: 1px solid currentColor;
   background-color: var(--color--background);
-
+  &:after {
+    content: '';
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: currentColor;
+    transition: transform 0.3s;
+    transform-origin: 0 0;
+    transform: scaleX(1);
+  }
   @include screen(md) {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -43,8 +54,21 @@
   }
   &__brand {
     text-decoration: none;
+
+    svg {
+      width: 1.5ch;
+      animation: svg-rotate 10s linear infinite;
+      @keyframes svg-rotate {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
     &:hover {
       // text-decoration: underline;
+      svg {
+        animation-play-state: paused;
+      }
       #{$this}__brand-extension {
         transform: translateX(0);
         opacity: 1;
@@ -74,7 +98,7 @@
     display: grid;
     grid-auto-flow: column;
     grid-column-gap: 1ch;
-
+    align-content: center;
     @include screen(md) {
       justify-self: center;
     }
@@ -85,14 +109,44 @@
   }
   &__link {
     text-decoration: none;
-    &:hover {
-      text-decoration: underline;
+    display: inline-block;
+    @include underlined-anim;
+    &--active {
+      &:after {
+        transform: scaleX(1);
+      }
     }
   }
 }
 
 // animation
 .top-nav {
-  &--pre {
+  &-enter {
+    &:after {
+      transition: 0.4s ease;
+      transform: scaleX(0);
+    }
   }
+  &-enter-to {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+  //   &__brand {
+  //     transition: all 0.3s;
+  //     transition-delay: 0.2s;
+  //   }
+  //   &--staged {
+  //     .top-nav__brand {
+  //       clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0 100%);
+  //     }
+  //     &:after {
+  //       transform: scaleX(0);
+  //     }
+  //   }
+  //   &--arrived {
+  //     .top-nav__brand {
+  //       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  //     }
+  //   }
 }
