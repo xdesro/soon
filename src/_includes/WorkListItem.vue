@@ -1,5 +1,5 @@
 <template>
-  <li class="case-study-list-item" reveal>
+  <li class="case-study-list-item" :reveal="page.url == '/'">
     <article class="case-study-list-item__article">
       <h1
         class="case-study-list-item__title"

@@ -1,3 +1,17 @@
+let visited = [];
+if (sessionStorage.getItem('visited')) {
+  visited = JSON.parse(sessionStorage.getItem('visited'));
+  if (visited.indexOf(window.location.pathname) > -1) {
+    const transitioningElements = [...document.querySelectorAll('[reveal]')];
+    transitioningElements.forEach((el) => el.removeAttribute('reveal'));
+  } else {
+    visited.push(window.location.pathname);
+  }
+} else {
+  visited = [window.location.pathname];
+}
+sessionStorage.setItem('visited', JSON.stringify(visited));
+
 Splitting();
 
 const DOM = {
@@ -8,10 +22,11 @@ const DOM = {
     }
   }
 };
+if (localStorage.getItem('darkMode') == 'true') {
+  document.documentElement.setAttribute('dark', true);
+}
 const handleInitialLoad = (e) => {
-  if (localStorage.getItem('darkMode') == 'true') {
-    document.documentElement.setAttribute('dark', true);
-  }
+  console.log(window.location.pathname);
   // fetch('/.netlify/functions/spotify')
   //   .then((res) => res.json())
   //   .then((data) => {

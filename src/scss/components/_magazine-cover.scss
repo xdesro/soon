@@ -9,7 +9,7 @@
       transform: translateY(-100%);
     }
     .magazine-cover__subtitle {
-      filter: blur(10px);
+      filter: blur(20px);
     }
   }
   &__title {
@@ -50,6 +50,7 @@
     max-width: 18rem;
     margin: 0 auto;
     transition: filter 0.5s ease;
+    transition-delay: 1s;
     text-align: center;
     text-transform: uppercase;
     filter: blur(2px);
@@ -90,7 +91,6 @@
     top: -5.2rem;
     right: 0;
     left: 0;
-    content: 'soon';
     text-align: center;
     letter-spacing: -0.25rem;
     text-transform: uppercase;

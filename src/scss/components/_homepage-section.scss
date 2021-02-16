@@ -14,31 +14,32 @@
     padding-top: $roman-numeral-size--small;
   }
   &__link {
+    position: relative;
     display: block;
     padding-top: #{10rem + $roman-numeral-size};
     padding-bottom: 10rem;
     text-decoration: none;
-    position: relative;
+
+    @include screen(sm) {
+      padding-top: #{10rem + $roman-numeral-size--small};
+    }
 
     &:before {
-      content: '';
       position: absolute;
       top: 0;
-      left: 0;
       right: 0;
+      left: 0;
       height: 2px;
-      background-color: currentColor;
+      content: '';
+      transition: transform 0.2s ease;
       transform: scaleX(0);
       transform-origin: 0 0;
-      transition: transform 0.2s ease;
+      background-color: currentColor;
     }
     &:hover {
       &:before {
         transform: scaleX(1);
       }
-    }
-    @include screen(sm) {
-      padding-top: #{10rem + $roman-numeral-size--small};
     }
   }
   &__title {
@@ -123,9 +124,57 @@
     margin: 0 auto;
     padding: 0 1.5rem;
     text-align: center;
+    &[reveal] {
+      ins {
+        opacity: 0;
+      }
+      :is(del, ins) {
+        &:before {
+          transform: scaleX(0);
+        }
+      }
+    }
 
     @include screen(sm) {
       font-size: 1.5rem;
+    }
+    del {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      &:before {
+        position: absolute;
+        top: 0.75em;
+        right: 0;
+        left: 0;
+        height: 1px;
+        content: '';
+        transition: transform 0.5s ease;
+        transform: scaleX(1);
+        transform-origin: 0 0;
+        background-color: currentColor;
+      }
+    }
+    ins {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      opacity: 1;
+      transition: opacity 0.2s ease;
+      transition-delay: 0.3s;
+      &:before {
+        position: absolute;
+        right: 0;
+        bottom: 3px;
+        left: 0;
+        height: 1px;
+        content: '';
+        transition: transform 0.5s ease;
+        transition-delay: 0.5s;
+        transform: scaleX(1);
+        transform-origin: 0 0;
+        background-color: currentColor;
+      }
     }
   }
   &__two-col {

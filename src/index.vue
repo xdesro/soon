@@ -99,7 +99,7 @@
         </section>
         <section class="homepage-section about">
           <h2 class="homepage-section__title">About</h2>
-          <p class="about__intro">
+          <p class="about__intro" reveal>
             I’m a creative developer (he/him/él) currently based in
             <del>Denver, Colorado</del> <ins>New York City</ins>. I’m really
             into CSS, animation, interaction, and deleting code.

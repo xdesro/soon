@@ -32,6 +32,7 @@
     justify-content: start;
     padding: 0.25rem 0;
     text-decoration: none;
+    @include underlined-anim;
   }
   &__item-icon {
     width: 1rem;
