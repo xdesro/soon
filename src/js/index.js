@@ -1,6 +1,14 @@
-const handleInitialLoad = (e) => {
-  const spotifyWidget = document.querySelector('.spotify-widget');
+Splitting();
 
+const DOM = {
+  spotifyWidget: document.querySelector('.spotify-widget'),
+  caseStudies: {
+    get chars() {
+      return [...document.querySelectorAll('.case-study-list-item__title')];
+    }
+  }
+};
+const handleInitialLoad = (e) => {
   if (localStorage.getItem('darkMode') == 'true') {
     document.documentElement.setAttribute('dark', true);
   }
@@ -42,3 +50,18 @@ document.addEventListener('keypress', (e) => {
 document.addEventListener('mousemove', (e) => {
   updateMousePosition(e);
 });
+
+const revealHandler = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.removeAttribute('reveal');
+    }
+  });
+};
+
+const revealObserver = new IntersectionObserver(revealHandler, {
+  rootMargin: `0px 0px -200px 0px`
+});
+[...document.querySelectorAll('[reveal]')].forEach((el) =>
+  revealObserver.observe(el)
+);

@@ -10,6 +10,28 @@
   border-bottom: 1px solid currentColor;
 
   @include screen(sm) {
+    border-bottom: 0;
+    &:before {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      content: '';
+      transition: transform 0.5s ease;
+      transform: scaleX(1);
+      transform-origin: 50% 0;
+      background-color: currentColor;
+    }
+    &[reveal] {
+      &:before {
+        transform: scaleX(0);
+      }
+      .char {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+    }
     &:after {
       position: absolute;
       bottom: -1px;
@@ -87,6 +109,17 @@
       grid-column: 2 / span 11;
       grid-row: 1;
       max-width: unset;
+    }
+    .word {
+      display: inline-block;
+      overflow: hidden;
+    }
+    .char {
+      display: inline-block;
+      transition: all 0.5s ease;
+      transition-delay: calc(var(--char-index) * 0.025s);
+      transform: translateY(0);
+      opacity: 1;
     }
   }
   &__meta {

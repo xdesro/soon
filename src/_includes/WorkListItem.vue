@@ -1,7 +1,11 @@
 <template>
-  <li class="case-study-list-item">
+  <li class="case-study-list-item" reveal>
     <article class="case-study-list-item__article">
-      <h1 class="case-study-list-item__title" v-html="project.clientName">
+      <h1
+        class="case-study-list-item__title"
+        v-html="project.clientName"
+        data-splitting
+      >
         {{ project.clientName }}
       </h1>
       <div class="case-study-list-item__meta">

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "ELEVENTY_EXPERIMENTAL=true concurrently 'npx @11ty/eleventy --serve' 'gulp sass:watch' ",
+    "dev": "ELEVENTY_EXPERIMENTAL=true concurrently 'npx @11ty/eleventy --serve' 'gulp watch' ",
     "build": "gulp sass && ELEVENTY_EXPERIMENTAL=true npx @11ty/eleventy"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "contentful": "^8.1.7",
     "core-js": "^3.8.2",
     "dotenv": "^8.2.0",
+    "gsap": "^3.6.0",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.1.0",
     "markdown-it": "^12.0.4",
@@ -23,7 +24,8 @@
     "node-fetch": "^2.6.1",
     "nuxt": "^2.14.12",
     "sass": "^1.32.5",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.1.1",
+    "splitting": "^1.0.6"
   },
   "devDependencies": {
     "eslint-config-prettier": "^7.1.0",
