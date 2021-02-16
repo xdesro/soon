@@ -2,11 +2,13 @@
   <div>
     <TopNav :spotify="spotify" />
     <main id="main" class="project">
-      <img
-        :src="project.heroImage.fields.file.url"
-        class="project__featured-image"
-        alt=""
-      />
+      <div class="project__featured-image-wrapper" drifter>
+        <img
+          :src="project.heroImage.fields.file.url"
+          class="project__featured-image"
+          alt=""
+        />
+      </div>
       <div class="project__intro">
         <div class="project__intro-row project__intro-row--main">
           <div class="project__intro-inner">

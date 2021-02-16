@@ -1,11 +1,22 @@
 .project {
-  &__featured-image {
+  &__featured-image-wrapper {
+    --overflow: 80px;
+
+    position: relative;
+    overflow: hidden;
     width: 100%;
     height: 30rem;
-    object-fit: cover;
+
     @include screen(sm) {
       height: 45rem;
     }
+  }
+  &__featured-image {
+    position: absolute;
+    width: 100%;
+    min-height: calc(100% + var(--overflow) + var(--overflow));
+    object-fit: cover;
+    margin-top: calc(var(--overflow) * -1);
   }
   &__intro {
     overflow: hidden;
