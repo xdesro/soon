@@ -8,12 +8,13 @@
     </nav>
     <main id="main" class="homepage" data-router-wrapper>
       <article data-router-view="home">
-        <div class="magazine-cover">
-          <div class="magazine-cover__title">Soon</div>
+        <div class="magazine-cover" reveal>
+          <div class="magazine-cover__title" data-splitting>Soon</div>
           <h1 class="magazine-cover__subtitle">
             You will have only a memory of this moment.
           </h1>
           <div class="magazine-cover__image-wrapper">
+            <div class="magazine-cover__blurred-title" data-splitting>Soon</div>
             <div class="magazine-cover__drifter" drifter>
               <img
                 class="magazine-cover__image"

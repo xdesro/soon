@@ -24,8 +24,7 @@
     "node-fetch": "^2.6.1",
     "nuxt": "^2.14.12",
     "sass": "^1.32.5",
-    "sass-loader": "^10.1.1",
-    "splitting": "^1.0.6"
+    "sass-loader": "^10.1.1"
   },
   "devDependencies": {
     "eslint-config-prettier": "^7.1.0",

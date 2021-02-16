@@ -1,6 +1,17 @@
 .magazine-cover {
   position: relative;
   margin-bottom: 10rem;
+  &[reveal] {
+    .magazine-cover__title .char {
+      transform: translateY(100%);
+    }
+    .magazine-cover__blurred-title .char {
+      transform: translateY(-100%);
+    }
+    .magazine-cover__subtitle {
+      filter: blur(10px);
+    }
+  }
   &__title {
     font-family: $font--display;
     font-size: 7.25rem;
@@ -21,6 +32,12 @@
       margin-top: 10rem;
       margin-bottom: -9rem;
     }
+    .char {
+      display: inline-block;
+      transition: transform 1s ease;
+      transition-delay: calc(var(--char-index) * 0.05s);
+      transform: translateY(0);
+    }
   }
   &__subtitle {
     font-size: 1rem;
@@ -32,6 +49,7 @@
     left: 0;
     max-width: 18rem;
     margin: 0 auto;
+    transition: filter 0.5s ease;
     text-align: center;
     text-transform: uppercase;
     filter: blur(2px);
@@ -62,34 +80,41 @@
     @include screen(lg) {
       background-color: var(--color--mag-background);
     }
-    &:before {
-      font-family: $font--display;
-      font-size: 7.25rem;
-      font-weight: 100;
-      position: absolute;
-      top: -5.2rem;
-      right: 0;
-      left: 0;
-      content: 'soon';
-      text-align: center;
-      letter-spacing: -0.25rem;
-      text-transform: uppercase;
-      filter: blur(2px);
+  }
+  &__blurred-title {
+    font-family: $font--display;
+    font-size: 7.25rem;
+    font-weight: 100;
+    position: absolute;
+    z-index: 2;
+    top: -5.2rem;
+    right: 0;
+    left: 0;
+    content: 'soon';
+    text-align: center;
+    letter-spacing: -0.25rem;
+    text-transform: uppercase;
+    filter: blur(2px);
 
-      z-index: 2;
-      @include screen(sm) {
-        font-size: 10rem;
-        top: -7.2rem;
-      }
-      @include screen(md) {
-        font-size: 18rem;
-        top: -12.6rem;
-      }
+    @include screen(sm) {
+      font-size: 10rem;
+      top: -7.2rem;
+    }
+    @include screen(md) {
+      font-size: 18rem;
+      top: -12.6rem;
+    }
+    .char {
+      display: inline-block;
+      transition: all 1s ease;
+      transition-delay: calc(var(--char-index) * 0.05s);
+      transform: translateY(0);
     }
   }
   &__drifter {
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
+
     @include screen(md) {
       position: absolute;
       z-index: -1;
@@ -107,11 +132,11 @@
   }
   &__image {
     @include screen(md) {
-      --overflow: 120px;
       position: absolute;
       z-index: -1;
       top: 0;
       left: 0;
+      --overflow: 120px;
       width: 100%;
       height: 100%;
       object-fit: cover;
