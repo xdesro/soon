@@ -30,9 +30,7 @@
           </div>
         </div>
         <section class="homepage-section selected-works" id="work">
-          <h2 class="homepage-section__title" data-splitting="lines">
-            Selected Works
-          </h2>
+          <h2 class="homepage-section__title">Selected Works</h2>
           <ul class="case-studies-list">
             <WorkListItem
               v-for="project in projects"
