@@ -25,6 +25,7 @@
     @include underlined-anim;
   }
   &__artists {
+    font-style: italic;
     a {
       opacity: 0.8;
       &:hover {

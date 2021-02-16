@@ -15,6 +15,7 @@ sessionStorage.setItem('visited', JSON.stringify(visited));
 Splitting();
 
 const DOM = {
+  themeToggle: document.querySelector('.theme-toggle'),
   spotifyWidget: document.querySelector('.spotify-widget'),
   caseStudies: {
     get chars() {
@@ -25,8 +26,25 @@ const DOM = {
 if (localStorage.getItem('darkMode') == 'true') {
   document.documentElement.setAttribute('dark', true);
 }
+const revealHandler = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.removeAttribute('reveal');
+    }
+  });
+};
+
+const revealObserver = new IntersectionObserver(revealHandler, {
+  rootMargin: `0px 0px -200px 0px`
+});
+[...document.querySelectorAll('[reveal]')].forEach((el) =>
+  revealObserver.observe(el)
+);
+
 const handleInitialLoad = (e) => {
-  console.log(window.location.pathname);
+  DOM.themeToggle.textContent = document.documentElement.hasAttribute('dark')
+    ? `☀️`
+    : `🌙`;
   // fetch('/.netlify/functions/spotify')
   //   .then((res) => res.json())
   //   .then((data) => {
@@ -42,9 +60,8 @@ const handleInitialLoad = (e) => {
   //       .join(', ')}`;
   //   }).catch()
 };
-
 const toggleDarkMode = ({ key }) => {
-  if (key == 'd') document.documentElement.toggleAttribute('dark');
+  if (key && key == 'd') document.documentElement.toggleAttribute('dark');
   localStorage.setItem(
     'darkMode',
     document.documentElement.hasAttribute('dark')
@@ -58,25 +75,19 @@ const updateMousePosition = ({ clientX, clientY }) => {
 document.addEventListener('DOMContentLoaded', (e) => {
   handleInitialLoad(e);
 });
-
 document.addEventListener('keypress', (e) => {
   toggleDarkMode(e);
 });
 document.addEventListener('mousemove', (e) => {
   updateMousePosition(e);
 });
-
-const revealHandler = (entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.removeAttribute('reveal');
-    }
-  });
-};
-
-const revealObserver = new IntersectionObserver(revealHandler, {
-  rootMargin: `0px 0px -200px 0px`
+DOM.themeToggle.addEventListener('click', (e) => {
+  document.documentElement.toggleAttribute('dark');
+  localStorage.setItem(
+    'darkMode',
+    document.documentElement.hasAttribute('dark')
+  );
+  DOM.themeToggle.textContent = document.documentElement.hasAttribute('dark')
+    ? `☀️`
+    : `🌙`;
 });
-[...document.querySelectorAll('[reveal]')].forEach((el) =>
-  revealObserver.observe(el)
-);

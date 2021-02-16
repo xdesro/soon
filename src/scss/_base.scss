@@ -79,3 +79,26 @@ img {
     border: 0;
   }
 }
+.theme-toggle {
+  font-size: 1.5rem;
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  border: 0;
+  filter: grayscale(1);
+  border-radius: 100%;
+  background-color: var(--color--text-primary);
+  width: 4rem;
+  height: 4rem;
+  z-index: 3;
+  @include screen(md) {
+    background-color: transparent;
+    font-size: 2rem;
+    right: 1rem;
+    bottom: 3rem;
+    width: unset;
+    height: unset;
+  }
+}
