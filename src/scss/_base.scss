@@ -47,6 +47,10 @@ img {
   text-align: center;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+  .char {
+    clip-path: polygon(0% 0%, 140% 0%, 140% 100%, 0% 100%);
+    display: inline-block;
+  }
 
   @include screen(lg) {
     font-size: 9rem;

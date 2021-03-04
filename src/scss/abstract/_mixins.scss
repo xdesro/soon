@@ -4,9 +4,13 @@
   }
 }
 
-@mixin underlined-anim {
+@mixin underlined-anim($before: false) {
   position: relative;
-  &:after {
+  $pseudo: after;
+  @if $before {
+    $pseudo: before;
+  }
+  &:#{$pseudo} {
     content: '';
     position: absolute;
     display: block;
@@ -23,7 +27,7 @@
 
   &:hover {
     // text-decoration: underline;
-    &:after {
+    &:#{$pseudo} {
       transform-origin: 0 0;
       transform: scaleX(1);
     }

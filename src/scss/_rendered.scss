@@ -37,6 +37,7 @@
       display: grid;
       grid-column-gap: 2ch;
       grid-template-columns: auto 1fr;
+
       scroll-margin-top: 3rem;
     }
     @include screen(lg) {
@@ -101,7 +102,11 @@
       grid-column: 7 / span 7;
     }
     > p {
+      line-height: 1.2;
+      max-width: 100%;
       margin-top: 0;
+      margin-bottom: 0;
+      text-align: justify;
     }
   }
   pre,

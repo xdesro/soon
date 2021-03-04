@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopNav :spotify="spotify" />
+    <TopNav :spotify="spotify" :difference="true" />
     <nav class="bottom-nav">
       <div>the personal site & portfolio</div>
       <div>of NYC-based creative technologist</div>

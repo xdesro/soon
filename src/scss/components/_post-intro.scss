@@ -8,7 +8,7 @@
     padding-bottom: 6rem;
     padding-left: 1.5rem;
 
-    @include screen(lg) {
+    @include screen(md) {
       position: relative;
       display: grid;
       grid-template-columns: repeat(16, 1fr);
@@ -36,7 +36,7 @@
     margin-bottom: 2.5rem;
     text-transform: uppercase;
 
-    @include screen(lg) {
+    @include screen(md) {
       font-size: 4.5rem;
       grid-column-end: span 9;
       margin-top: 0;
@@ -49,13 +49,13 @@
     list-style-type: none;
     text-transform: uppercase;
 
-    @include screen(lg) {
+    @include screen(md) {
       grid-column-end: span 9;
       grid-row: 2;
     }
   }
   .table-of-contents {
-    @include screen(lg) {
+    @include screen(md) {
       grid-column: 11 / span 6;
     }
   }

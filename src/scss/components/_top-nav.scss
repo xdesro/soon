@@ -28,25 +28,25 @@
     transform: scaleX(1);
   }
   @include screen(md) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, calc(100% / 3));
   }
   @include screen(lg) {
     max-width: 75rem;
     margin: 0 auto;
     padding-right: 0;
     padding-left: 0;
-    color: var(--color--background);
+    // color: var(--color--background);
     background-color: transparent;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
     [dark] & {
       color: inherit;
       mix-blend-mode: unset;
     }
   }
   &--difference {
-    color: var(--color--background);
+    // color: var(--color--background);
     background-color: transparent;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
     [dark] & {
       color: inherit;
       mix-blend-mode: unset;

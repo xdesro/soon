@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "ELEVENTY_EXPERIMENTAL=true concurrently 'npx @11ty/eleventy --serve' 'gulp watch' ",
-    "build": "gulp sass && ELEVENTY_EXPERIMENTAL=true npx @11ty/eleventy"
+    "start": "ELEVENTY_EXPERIMENTAL=true concurrently 'sass --no-source-map --watch ./src/scss:./dist/css' 'rollup --config --watch' 'npx @11ty/eleventy --serve'",
+    "build": "ELEVENTY_EXPERIMENTAL=true sass --no-source-map ./src/scss:./dist/css && rollup --config && npx @11ty/eleventy"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
@@ -24,9 +24,11 @@
     "node-fetch": "^2.6.1",
     "nuxt": "^2.14.12",
     "sass": "^1.32.5",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.1.1",
+    "splitting": "^1.0.6"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^11.2.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1"

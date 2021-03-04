@@ -1,3 +1,19 @@
+import gsap from 'gsap';
+import Highway from '@dogstudio/highway';
+import Fade from './transition.fade';
+import WorkListTransition from './transition.work';
+import WritingListTransition from './transition.writing';
+
+// Call Highway.Core once.
+const H = new Highway.Core({
+  transitions: {
+    default: Fade,
+    'work-list-page': WorkListTransition,
+    'writing-list-page': WritingListTransition
+  }
+});
+Splitting();
+
 let visited = [];
 if (sessionStorage.getItem('visited')) {
   visited = JSON.parse(sessionStorage.getItem('visited'));
@@ -11,8 +27,6 @@ if (sessionStorage.getItem('visited')) {
   visited = [window.location.pathname];
 }
 sessionStorage.setItem('visited', JSON.stringify(visited));
-
-Splitting();
 
 const DOM = {
   themeToggle: document.querySelector('.theme-toggle'),

@@ -1,10 +1,9 @@
 <template>
   <div>
-    <TopNav :spotify="spotify" />
-
+    <TopNav :spotify="spotify" :difference="false" />
     <main id="main" class="writing-page" data-router-wrapper>
-      <article data-router-view="writing-list">
-        <h1 class="page-title">Writing</h1>
+      <article data-router-view="writing-list-page">
+        <h1 class="page-title" data-splitting>Writing</h1>
         <ul class="writing-list">
           <WritingListItem
             v-for="post in posts"
@@ -18,8 +17,8 @@
 </template>
 
 <script>
-import TopNav from '../_includes/TopNav.vue';
-import WritingListItem from '../_includes/WritingListItem.vue';
+import TopNav from './_includes/TopNav.vue';
+import WritingListItem from './_includes/WritingListItem.vue';
 
 export default {
   data() {

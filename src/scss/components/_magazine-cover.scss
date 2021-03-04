@@ -106,7 +106,7 @@
     }
     .char {
       display: inline-block;
-      transition: all 1s ease;
+      transition: transform 1s ease;
       transition-delay: calc(var(--char-index) * 0.05s);
       transform: translateY(0);
     }

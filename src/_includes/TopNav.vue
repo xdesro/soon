@@ -1,5 +1,5 @@
 <template>
-  <nav :class="isWork ? 'top-nav top-nav--difference' : 'top-nav'">
+  <nav :class="difference ? 'top-nav top-nav--difference' : 'top-nav'">
     <a class="top-nav__brand" href="/">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@ export default {
       isWork: this.page.url.includes('/work')
     };
   },
-  props: ['spotify'],
+  props: ['spotify', 'difference'],
   components: {
     SpotifyWidget
   }
