@@ -4,7 +4,9 @@
       <h1 class="writing-list-item__title">
         {{ post.title }}
       </h1>
-      <p class="writing-list-item__category">Tutorial</p>
+      <p class="writing-list-item__category">
+        {{ post.category }}
+      </p>
       <ul class="writing-list-item__tags">
         <li v-for="tag in post.tags" :key="tag">{{ tag }}</li>
       </ul>

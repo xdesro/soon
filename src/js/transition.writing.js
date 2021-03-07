@@ -1,14 +1,26 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
 
+import PostListItemAnimation from './animation.postListItem';
+
+const ease = 'power4.inOut';
 class WritingListTransition extends Highway.Transition {
   in({ from, to, done }) {
     console.log('going to work page!');
     from.remove();
     Splitting();
+
+    const posts = to.querySelectorAll('.writing-list-item');
+    const postsReveal = gsap.timeline({ ease, stagger: 0.1 });
+    posts.forEach(caseStudy => {
+      postsReveal.add(PostListItemAnimation(caseStudy), '-=.3');
+    });
+    postsReveal.seek(0);
+    postsReveal.play();
+
     document
       .querySelectorAll('.top-nav__link')
-      .forEach((navLink) => navLink.classList.remove('top-nav__link--active'));
+      .forEach(navLink => navLink.classList.remove('top-nav__link--active'));
     document
       .querySelector('.top-nav__link[href="/writing"]')
       .classList.add('top-nav__link--active');
@@ -21,20 +33,21 @@ class WritingListTransition extends Highway.Transition {
       },
       opacity: 0,
       duration: 1,
-      ease: 'power4.inOut'
-    });
-    gsap.from('.writing-list-item', {
-      opacity: 0,
-      y: '30%',
-      delay: 0.3,
       ease: 'power4.inOut',
-      duration: 0.3,
-      stagger: {
-        each: 0.1,
-        from: 'start'
-      },
       onComplete: done
     });
+    // gsap.from('.writing-list-item', {
+    //   opacity: 0,
+    //   y: '30%',
+    //   delay: 0.3,
+    //   ease: 'power4.inOut',
+    //   duration: 0.3,
+    //   stagger: {
+    //     each: 0.1,
+    //     from: 'start'
+    //   },
+    //   onComplete: done
+    // });
   }
   out({ from, done }) {
     gsap.to('.page-title .char', {

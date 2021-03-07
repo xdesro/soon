@@ -1,63 +1,65 @@
 <template>
   <div>
     <TopNav :spotify="spotify" />
-    <main id="main" class="project">
-      <div class="project__featured-image-wrapper" drifter>
-        <img
-          :src="project.heroImage.fields.file.url"
-          class="project__featured-image"
-          alt=""
-        />
-      </div>
-      <div class="project__intro">
-        <div class="project__intro-row project__intro-row--main">
-          <div class="project__intro-inner">
-            <h1 class="project__title" v-html="project.clientName">
-              {{ project.clientName }}
-            </h1>
-            <div class="project__meta">
-              <p>Typography Foundry</p>
-              <time :datetime="project.date">{{
-                new Date(project.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long'
-                })
-              }}</time>
-              <p v-if="project.involvement">
-                {{ project.involvement.join(' & ') }}
-              </p>
+    <main id="main" data-router-wrapper>
+      <article data-router-view="project" class="project">
+        <div class="project__featured-image-wrapper" drifter>
+          <img
+            :src="project.heroImage.fields.file.url"
+            class="project__featured-image"
+            alt=""
+          />
+        </div>
+        <div class="project__intro">
+          <div class="project__intro-row project__intro-row--main">
+            <div class="project__intro-inner">
+              <h1 class="project__title" v-html="project.clientName">
+                {{ project.clientName }}
+              </h1>
+              <div class="project__meta">
+                <p>Typography Foundry</p>
+                <time :datetime="project.date">{{
+                  new Date(project.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long'
+                  })
+                }}</time>
+                <p v-if="project.involvement">
+                  {{ project.involvement.join(' & ') }}
+                </p>
+              </div>
+              <a
+                v-if="project.link"
+                :href="project.link"
+                class="project__live-link"
+              >
+                View The Project Live
+              </a>
             </div>
-            <a
-              v-if="project.link"
-              :href="project.link"
-              class="project__live-link"
-            >
-              View The Project Live
-            </a>
+          </div>
+          <div class="project__intro-row project__intro-row--excerpt">
+            <div class="project__intro-inner">
+              <p class="project__excerpt">{{ project.description }}</p>
+              <nav class="table-of-contents">
+                <ol class="table-of-contents__list">
+                  <li
+                    class="table-of-contents__list-item"
+                    v-for="link in toc"
+                    :key="link.id"
+                  >
+                    <a class="table-of-contents__link" :href="`#${link.id}`">
+                      {{ link.text }}
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
           </div>
         </div>
-        <div class="project__intro-row project__intro-row--excerpt">
-          <div class="project__intro-inner">
-            <p class="project__excerpt">{{ project.description }}</p>
-            <nav class="table-of-contents">
-              <ol class="table-of-contents__list">
-                <li
-                  class="table-of-contents__list-item"
-                  v-for="link in toc"
-                  :key="link.id"
-                >
-                  <a class="table-of-contents__link" :href="`#${link.id}`">
-                    {{ link.text }}
-                  </a>
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </div>
-      </div>
-      <div v-html="body" class="grid rendered"></div>
+        <div v-html="body" class="grid rendered"></div>
+        <WorkFooter :projects="projects" :currentProject="project" />
+      </article>
     </main>
-    <WorkFooter :projects="projects" :currentProject="project" />
     <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
   </div>
 </template>
@@ -65,7 +67,7 @@
 import TopNav from '../_includes/TopNav.vue';
 import WorkFooter from '../_includes/WorkFooter.vue';
 import { markdownRenderer } from '../_lib/utils';
-const getTOC = (string) => {
+const getTOC = string => {
   const tokens = markdownRenderer.parse(string);
   const toc = tokens
     .map((token, tokenIndex) => {
@@ -82,7 +84,7 @@ const getTOC = (string) => {
         };
       }
     })
-    .filter((token) => token !== undefined);
+    .filter(token => token !== undefined);
   return toc;
 };
 export default {
@@ -94,7 +96,7 @@ export default {
         data: 'projects',
         alias: 'project'
       },
-      permalink: (data) => `work/${data.project.slug}/index.html`
+      permalink: data => `work/${data.project.slug}/index.html`
     };
   },
   computed: {

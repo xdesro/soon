@@ -1,46 +1,41 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
 
-import caseStudyListItemAnimation from './animation.caseStudyListItem';
+import CaseStudyListItemAnimation from './animation.caseStudyListItem';
 
+const ease = 'power4.inOut';
 class WorkListTransition extends Highway.Transition {
   in({ from, to, done }) {
-    console.log('going to work page!');
     from.remove();
     Splitting();
+    const caseStudies = to.querySelectorAll('.case-study-list-item');
+    const caseStudiesReveal = gsap.timeline({ ease });
+
     document
       .querySelectorAll('.top-nav__link')
-      .forEach((navLink) => navLink.classList.remove('top-nav__link--active'));
+      .forEach(navLink => navLink.classList.remove('top-nav__link--active'));
     document
       .querySelector('.top-nav__link[href="/work"]')
       .classList.add('top-nav__link--active');
-    const ease = 'power4.inOut';
     gsap.from('.page-title .char', {
-      // x: to.offsetWidth,
       y: '100%',
       clipPath: 'polygon(0 100%, 140% 100%, 140% 100%, 0 100%)',
       stagger: {
         each: 0.05
       },
       opacity: 0,
-      duration: 1.2,
-      ease: 'power4.inOut',
+      duration: 1.4,
+      ease,
       onComplete: done
     });
-    const caseStudies = document.querySelectorAll('.case-study-list-item');
-    const caseStudiesReveal = gsap.timeline({
-      ease
+    caseStudies.forEach(caseStudy => {
+      caseStudiesReveal.add(CaseStudyListItemAnimation(caseStudy), '-=.7');
     });
-    caseStudies.forEach((caseStudy) => {
-      caseStudiesReveal.add(caseStudyListItemAnimation(caseStudy), '-=1.1');
-    });
-    console.log(caseStudiesReveal);
     caseStudiesReveal.seek(0);
     caseStudiesReveal.play();
   }
   out({ from, done }) {
     gsap.to('.page-title .char', {
-      // x: to.offsetWidth,
       y: '-100%',
       clipPath: 'polygon(0 100%, 140% 100%, 140% 100%, 0 100%)',
       stagger: {
@@ -48,14 +43,14 @@ class WorkListTransition extends Highway.Transition {
       },
       opacity: 0,
       duration: 1.2,
-      ease: 'power4.inOut',
+      ease,
       onComplete: done
     });
     gsap.to('.case-study-list-item', {
       opacity: 0,
       y: '30%',
       delay: 0.5,
-      ease: 'power4.inOut',
+      ease,
       duration: 0.3,
       stagger: {
         each: 0.1,

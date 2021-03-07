@@ -103,22 +103,11 @@ class Drifter {
     this.layout();
   }
   layout() {
-    this.DOM.image.style.transform = `translate3d(0,${this.renderedStyles.innerTranslationY.previous}px,0)`;
+    this.DOM.image.parentElement.style.setProperty(
+      '--drift',
+      `translate3d(0,${this.renderedStyles.innerTranslationY.previous}px,0)`
+    );
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const items = [...document.querySelectorAll('[drifter]')].map(
-    (item) => new Drifter(item)
-  );
-  const animate = () => {
-    for (const item of items) {
-      if (item.isVisible) {
-        item.render();
-      }
-    }
-    requestAnimationFrame(() => animate());
-  };
-
-  animate();
-});
+export default Drifter;

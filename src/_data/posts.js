@@ -10,5 +10,8 @@ module.exports = async () => {
     content_type: 'blogPost',
     order: '-fields.publishDate'
   });
-  return posts.items.map((post) => post.fields);
+  return posts.items.map(post => ({
+    ...post.fields,
+    category: post.fields.category.fields.title
+  }));
 };

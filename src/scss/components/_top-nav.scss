@@ -54,7 +54,7 @@
   }
   &__brand {
     text-decoration: none;
-
+    justify-self: start;
     svg {
       width: 1.5ch;
       animation: svg-rotate 10s linear infinite;

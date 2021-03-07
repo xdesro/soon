@@ -1,10 +1,17 @@
 import gsap from 'gsap';
 import Highway from '@dogstudio/highway';
+
+import SessionManager from './sessionManager';
+import Drifter from './drifter';
+
 import Fade from './transition.fade';
 import WorkListTransition from './transition.work';
 import WritingListTransition from './transition.writing';
 
-// Call Highway.Core once.
+import CaseStudyListItemAnimation from './animation.caseStudyListItem';
+
+const sessionManager = new SessionManager();
+
 const H = new Highway.Core({
   transitions: {
     default: Fade,
@@ -12,21 +19,10 @@ const H = new Highway.Core({
     'writing-list-page': WritingListTransition
   }
 });
+H.on('NAVIGATE_END', ({ to, from, trigger, location }) => {
+  sessionManager.mount();
+});
 Splitting();
-
-let visited = [];
-if (sessionStorage.getItem('visited')) {
-  visited = JSON.parse(sessionStorage.getItem('visited'));
-  if (visited.indexOf(window.location.pathname) > -1) {
-    const transitioningElements = [...document.querySelectorAll('[reveal]')];
-    transitioningElements.forEach((el) => el.removeAttribute('reveal'));
-  } else {
-    visited.push(window.location.pathname);
-  }
-} else {
-  visited = [window.location.pathname];
-}
-sessionStorage.setItem('visited', JSON.stringify(visited));
 
 const DOM = {
   themeToggle: document.querySelector('.theme-toggle'),
@@ -37,12 +33,20 @@ const DOM = {
     }
   }
 };
-if (localStorage.getItem('darkMode') == 'true') {
-  document.documentElement.setAttribute('dark', true);
-}
+
 const revealHandler = (entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
+  entries.forEach(entry => {
+    let anim = false;
+    if (
+      entry.target.classList.contains('case-study-list-item') &&
+      entry.target.hasAttribute('reveal')
+    ) {
+      anim = CaseStudyListItemAnimation(entry.target);
+      anim.pause();
+      anim.eventCallback('onComplete', anim.kill);
+    }
+    if (entry.isIntersecting && entry.target.hasAttribute('reveal')) {
+      anim && anim.play();
       entry.target.removeAttribute('reveal');
     }
   });
@@ -51,14 +55,31 @@ const revealHandler = (entries, observer) => {
 const revealObserver = new IntersectionObserver(revealHandler, {
   rootMargin: `0px 0px -200px 0px`
 });
-[...document.querySelectorAll('[reveal]')].forEach((el) =>
+[...document.querySelectorAll('[reveal]')].forEach(el =>
   revealObserver.observe(el)
 );
+// Orbiter
 
-const handleInitialLoad = (e) => {
+const handleInitialLoad = e => {
+  // Dark Mode Toggle
   DOM.themeToggle.textContent = document.documentElement.hasAttribute('dark')
     ? `☀️`
     : `🌙`;
+
+  // Drifter setup
+  const items = [...document.querySelectorAll('[drifter]')].map(
+    item => new Drifter(item)
+  );
+  const animate = () => {
+    for (const item of items) {
+      if (item.isVisible) {
+        item.render();
+      }
+    }
+    requestAnimationFrame(() => animate());
+  };
+
+  animate();
   // fetch('/.netlify/functions/spotify')
   //   .then((res) => res.json())
   //   .then((data) => {
@@ -74,33 +95,33 @@ const handleInitialLoad = (e) => {
   //       .join(', ')}`;
   //   }).catch()
 };
-const toggleDarkMode = ({ key }) => {
-  if (key && key == 'd') document.documentElement.toggleAttribute('dark');
+const setDOMThemeFromStorage = () => {
   localStorage.setItem(
     'darkMode',
     document.documentElement.hasAttribute('dark')
   );
+};
+const toggleDarkMode = ({ key }) => {
+  if (key && key == 'd') document.documentElement.toggleAttribute('dark');
+  setDOMThemeFromStorage();
 };
 const updateMousePosition = ({ clientX, clientY }) => {
   document.documentElement.style.setProperty('--mouseX', `${clientX}px`);
   document.documentElement.style.setProperty('--mouseY', `${clientY}px`);
 };
 
-document.addEventListener('DOMContentLoaded', (e) => {
+document.addEventListener('DOMContentLoaded', e => {
   handleInitialLoad(e);
 });
-document.addEventListener('keypress', (e) => {
+document.addEventListener('keypress', e => {
   toggleDarkMode(e);
 });
-document.addEventListener('mousemove', (e) => {
+document.addEventListener('mousemove', e => {
   updateMousePosition(e);
 });
-DOM.themeToggle.addEventListener('click', (e) => {
+DOM.themeToggle.addEventListener('click', e => {
   document.documentElement.toggleAttribute('dark');
-  localStorage.setItem(
-    'darkMode',
-    document.documentElement.hasAttribute('dark')
-  );
+  setDOMThemeFromStorage();
   DOM.themeToggle.textContent = document.documentElement.hasAttribute('dark')
     ? `☀️`
     : `🌙`;

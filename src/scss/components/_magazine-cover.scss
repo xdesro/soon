@@ -132,6 +132,7 @@
   }
   &__image {
     @include screen(md) {
+      transform: var(--drift);
       position: absolute;
       z-index: -1;
       top: 0;

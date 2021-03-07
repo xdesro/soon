@@ -14,7 +14,7 @@ const markdownRenderer = require('markdown-it')({
   .use(require('markdown-it-prism'), {
     defaultLanguageForUnknown: 'bash'
   });
-const dateFormatter = (dateString) => {
+const dateFormatter = dateString => {
   return new Date(dateString).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long'

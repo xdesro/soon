@@ -4,7 +4,6 @@
   left: 0;
   width: 21.5rem;
   transform: translateX(-50%);
-
   @include screen(lg) {
     width: 32rem;
     transform: translateX(-20%);
