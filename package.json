@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "ELEVENTY_EXPERIMENTAL=true concurrently 'sass --no-source-map --watch ./src/scss:./dist/css' 'rollup --config --watch' 'npx @11ty/eleventy --serve'",
-    "build": "ELEVENTY_EXPERIMENTAL=true sass --no-source-map ./src/scss:./dist/css && rollup --config && npx @11ty/eleventy"
+    "build": "sass --no-source-map ./src/scss:./dist/css && rollup --config && ELEVENTY_EXPERIMENTAL=true npx @11ty/eleventy"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
