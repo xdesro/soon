@@ -1,6 +1,8 @@
 .table-of-contents {
   max-width: 27.5rem;
   text-transform: uppercase;
+  --label-opacity: 1;
+  --label-position: 0;
   &__list {
     padding: 0;
     list-style-type: none;
@@ -11,12 +13,26 @@
       display: block;
       margin-bottom: 1rem;
       content: 'Table Of Contents';
+      opacity: var(--label-opacity);
+      transform: translateY(var(--label-position));
     }
   }
   &__list-item {
     position: relative;
     counter-increment: toc;
-    border-top: 1px solid currentColor;
+    // border-top: 1px solid currentColor;
+    --overline-scale: 1;
+    &:before {
+      content: '';
+      height: 1px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: currentColor;
+      transform: scaleX(var(--overline-scale));
+      transform-origin: 0 0;
+    }
     &:after {
       position: absolute;
       right: 0;
@@ -54,6 +70,7 @@
       display: inline-block;
       width: 0.75rem;
       height: 0.75rem;
+      margin-top: 0.25rem;
       content: '';
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 13 13'%3E%3Cpath fill='%23202527' d='M12.02.7h-2v7.9L1.42 0 0 1.41l8.6 8.61H.7v2h11.32V.71z'/%3E%3C/svg%3E%0A");
       background-size: contain;

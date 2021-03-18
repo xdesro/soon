@@ -40,7 +40,22 @@
   </head>
   <body>
     {{ content }}
-    <button class="theme-toggle" aria-label="theme-toggle">🌙</button>
+    <button class="theme-toggle" aria-label="theme-toggle">
+      <svg
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 267 267"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M133.5 244c61.027 0 110.5-49.473 110.5-110.5C244 72.472 194.527 23 133.5 23 72.472 23 23 72.472 23 133.5 23 194.527 72.472 244 133.5 244zm0 23c73.73 0 133.5-59.77 133.5-133.5C267 59.77 207.23 0 133.5 0 59.77 0 0 59.77 0 133.5 0 207.23 59.77 267 133.5 267z"
+        />
+        <path
+          d="M247 133c0-29.969-11.958-58.711-33.243-79.903C192.471 31.905 163.602 20 133.5 20c-30.102 0-58.971 11.905-80.257 33.097C31.958 74.288 20 103.03 20 133h227z"
+        />
+      </svg>
+    </button>
     <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script src="/js/index.js" type="module"></script>
   </body>

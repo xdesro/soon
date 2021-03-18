@@ -36,18 +36,6 @@ class WritingListTransition extends Highway.Transition {
       ease: 'power4.inOut',
       onComplete: done
     });
-    // gsap.from('.writing-list-item', {
-    //   opacity: 0,
-    //   y: '30%',
-    //   delay: 0.3,
-    //   ease: 'power4.inOut',
-    //   duration: 0.3,
-    //   stagger: {
-    //     each: 0.1,
-    //     from: 'start'
-    //   },
-    //   onComplete: done
-    // });
   }
   out({ from, done }) {
     gsap.to('.page-title .char', {
@@ -59,17 +47,17 @@ class WritingListTransition extends Highway.Transition {
       },
       opacity: 0,
       duration: 1,
-      ease: 'power4.inOut',
-      onComplete: done
+      ease: 'power4.inOut'
     });
     gsap.to('.writing-list-item', {
+      onComplete: done,
       opacity: 0,
       y: '30%',
       delay: 0.3,
       ease: 'power4.inOut',
       duration: 0.3,
       stagger: {
-        each: 0.1,
+        each: 0.05,
         from: 'start'
       }
     });

@@ -73,6 +73,11 @@
     margin-top: 1.5em;
     margin-bottom: 1em;
   }
+  h2 + h3 {
+    @include screen(md) {
+      margin-top: 14rem;
+    }
+  }
   p {
     line-height: 1.5;
   }

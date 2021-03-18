@@ -94,9 +94,15 @@ img {
   filter: grayscale(1);
   border-radius: 100%;
   background-color: var(--color--text-primary);
+  color: var(--color--background);
   width: 4rem;
   height: 4rem;
   z-index: 3;
+  opacity: 0.2;
+  transition: opacity 0.1s;
+  &:hover {
+    opacity: 1;
+  }
   @include screen(md) {
     background-color: transparent;
     font-size: 2rem;
@@ -104,5 +110,15 @@ img {
     bottom: 3rem;
     width: unset;
     height: unset;
+    color: var(--color--text-primary);
+  }
+  svg {
+    width: 2rem;
+    transition: transform 0.2s ease-in-out;
+    color: inherit;
+    transform: rotate(-45deg);
+    [dark] & {
+      transform: rotate(-45deg + 180);
+    }
   }
 }

@@ -7,6 +7,7 @@ import Drifter from './drifter';
 import Fade from './transition.fade';
 import WorkListTransition from './transition.work';
 import WritingListTransition from './transition.writing';
+import PostTransition from './transition.post';
 
 import CaseStudyListItemAnimation from './animation.caseStudyListItem';
 
@@ -16,7 +17,8 @@ const H = new Highway.Core({
   transitions: {
     default: Fade,
     'work-list-page': WorkListTransition,
-    'writing-list-page': WritingListTransition
+    'writing-list-page': WritingListTransition,
+    post: PostTransition
   }
 });
 H.on('NAVIGATE_END', ({ to, from, trigger, location }) => {
@@ -58,14 +60,8 @@ const revealObserver = new IntersectionObserver(revealHandler, {
 [...document.querySelectorAll('[reveal]')].forEach(el =>
   revealObserver.observe(el)
 );
-// Orbiter
 
 const handleInitialLoad = e => {
-  // Dark Mode Toggle
-  DOM.themeToggle.textContent = document.documentElement.hasAttribute('dark')
-    ? `☀️`
-    : `🌙`;
-
   // Drifter setup
   const items = [...document.querySelectorAll('[drifter]')].map(
     item => new Drifter(item)
@@ -122,7 +118,5 @@ document.addEventListener('mousemove', e => {
 DOM.themeToggle.addEventListener('click', e => {
   document.documentElement.toggleAttribute('dark');
   setDOMThemeFromStorage();
-  DOM.themeToggle.textContent = document.documentElement.hasAttribute('dark')
-    ? `☀️`
-    : `🌙`;
+  f;
 });
