@@ -7,15 +7,14 @@
     padding-right: 1.5rem;
     padding-bottom: 6rem;
     padding-left: 1.5rem;
-    --underline-scale: 1;
 
+    --underline-scale: 1;
     @include screen(md) {
       position: relative;
       display: grid;
+      overflow: hidden;
       grid-template-columns: repeat(16, 1fr);
       margin-top: 13rem;
-
-      overflow: hidden;
       &:before {
         position: absolute;
         bottom: 0;
@@ -23,9 +22,9 @@
         width: 100vw;
         height: 1px;
         margin-left: calc(50% - 50vw);
+        content: '';
         transform: scaleX(var(--underline-scale));
         transform-origin: 0 0;
-        content: '';
         background-color: currentColor;
       }
     }

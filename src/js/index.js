@@ -8,6 +8,7 @@ import Fade from './transition.fade';
 import WorkListTransition from './transition.work';
 import WritingListTransition from './transition.writing';
 import PostTransition from './transition.post';
+import ProjectTransition from './transition.project';
 
 import CaseStudyListItemAnimation from './animation.caseStudyListItem';
 
@@ -18,7 +19,8 @@ const H = new Highway.Core({
     default: Fade,
     'work-list-page': WorkListTransition,
     'writing-list-page': WritingListTransition,
-    post: PostTransition
+    post: PostTransition,
+    project: ProjectTransition
   }
 });
 H.on('NAVIGATE_END', ({ to, from, trigger, location }) => {
@@ -118,5 +120,4 @@ document.addEventListener('mousemove', e => {
 DOM.themeToggle.addEventListener('click', e => {
   document.documentElement.toggleAttribute('dark');
   setDOMThemeFromStorage();
-  f;
 });

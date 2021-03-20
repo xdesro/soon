@@ -19,11 +19,12 @@ class PostTransition extends Highway.Transition {
     document
       .querySelectorAll('.top-nav__link')
       .forEach(navLink => navLink.classList.remove('top-nav__link--active'));
+
     document
       .querySelector('.top-nav__link[href="/writing"]')
       .classList.add('top-nav__link--active');
 
-    const tl = gsap
+    gsap
       .timeline({
         defaults: { ease: 'power4.inOut' },
         onComplete: done
@@ -57,12 +58,12 @@ class PostTransition extends Highway.Transition {
         TableOfContentsAnimation(to.querySelector('.table-of-contents')),
         '-=1'
       )
-      .fromTo(
+      .from(
         '.post__intro + .rendered',
         {
-          opacity: 0
+          opacity: 0,
+          duration: 0.8
         },
-        { opacity: 1, duration: 0.5 },
         '-=.5'
       );
   }

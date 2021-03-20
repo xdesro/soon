@@ -27,18 +27,19 @@ const TableOfContentsAnimation = tableOfContents => {
       el.listItems,
       { '--overline-scale': 0 },
       { '--overline-scale': 1, duration: 0.3, stagger: 0.2 },
-      '-=.3'
+      '<.3'
     )
-    .fromTo(
+    .from(
       el.links,
       {
         y: '1rem',
-        opacity: 0
+        opacity: 0,
+        duration: 0.3,
+        stagger: 0.2
       },
-      { y: 0, opacity: 1, duration: 0.3, stagger: 0.2 },
-      '-=.2'
+      '<.2'
     );
-  return tl;
+  return tl.duration(1);
 };
 
 export default TableOfContentsAnimation;

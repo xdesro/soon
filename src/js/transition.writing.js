@@ -6,7 +6,6 @@ import PostListItemAnimation from './animation.postListItem';
 const ease = 'power4.inOut';
 class WritingListTransition extends Highway.Transition {
   in({ from, to, done }) {
-    console.log('going to work page!');
     from.remove();
     Splitting();
 
@@ -25,7 +24,6 @@ class WritingListTransition extends Highway.Transition {
       .querySelector('.top-nav__link[href="/writing"]')
       .classList.add('top-nav__link--active');
     gsap.from('.page-title .char', {
-      // x: to.offsetWidth,
       y: '100%',
       clipPath: 'polygon(0 0%, 140% 0%, 140% 0%, 0 0%)',
       stagger: {

@@ -7,7 +7,7 @@
         <div class="post__intro">
           <h1 class="post__title">{{ post.title }}</h1>
           <ul class="post__tags">
-            <li v-for="tag in post.tags" :key="tag">{{ tag }}</li>
+            <li v-for="(tag, index) in post.tags" :key="index">{{ tag }}</li>
           </ul>
           <nav class="table-of-contents">
             <ol class="table-of-contents__list">

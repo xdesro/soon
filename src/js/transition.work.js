@@ -17,6 +17,7 @@ class WorkListTransition extends Highway.Transition {
     document
       .querySelector('.top-nav__link[href="/work"]')
       .classList.add('top-nav__link--active');
+
     gsap.from('.page-title .char', {
       y: '100%',
       clipPath: 'polygon(0 100%, 140% 100%, 140% 100%, 0 100%)',
