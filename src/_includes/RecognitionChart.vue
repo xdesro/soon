@@ -15,6 +15,7 @@
         <td>
           <a :href="entry.link" class="recognition-chart__link">
             <svg
+              aria-label="Go check out the project"
               class="writing-list-item__icon"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"

@@ -39,7 +39,7 @@
             />
           </ul>
           <div class="container">
-            <h3 class="homepage-section__additional-title">Additional Works</h3>
+            <h2 class="homepage-section__additional-title">Additional Works</h2>
             <ul class="additional-works-list">
               <li class="additional-works-list-item">
                 <article class="additional-works-list-item__article">
@@ -250,7 +250,7 @@
             Recognition & Honors
           </h3>
           <RecognitionChart :recognition="recognition.items" />
-          <div class="recognition-mobile" aria-hidden="">
+          <div class="recognition-mobile" aria-hidden="true">
             <div
               class="recognition-mobile__section"
               v-for="publisher in Object.keys(recognition.publishers)"
