@@ -19,6 +19,7 @@
     top: 0;
     text-align: left;
     tr:after {
+      width: 100%;
       transform: scaleX(1);
     }
   }
@@ -33,10 +34,10 @@
     &:after {
       position: absolute;
       right: 0;
-      bottom: 0;
+      bottom: -1px;
       left: 0;
       display: block;
-      width: 100%;
+      width: 5rem;
       height: 2px;
       content: '';
       transition: transform 0.3s ease;

@@ -19,6 +19,7 @@ body {
   margin: 0;
   color: var(--color--text-primary);
   background-color: var(--color--background);
+  counter-reset: homepage-headers;
 }
 a {
   color: inherit;

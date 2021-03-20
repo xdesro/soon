@@ -5,6 +5,7 @@ import TableOfContentsAnimation from './animation.tableofContents';
 
 class PostTransition extends Highway.Transition {
   in({ from, to, done }) {
+    window.scrollTo(0, 0);
     from.remove();
     const results = Splitting({ target: '.post__title', by: 'lines' });
     to.querySelector('.post__title').innerHTML = results[0].lines
@@ -68,6 +69,7 @@ class PostTransition extends Highway.Transition {
       );
   }
   out({ from, done }) {
+    window.scrollTo(0, 0);
     gsap.to(from, { opacity: 0, duration: 0.3, onComplete: done });
   }
 }

@@ -9,9 +9,9 @@
     </thead>
     <tbody>
       <tr v-for="(entry, index) in recognition" :key="index">
-        <td>{{ entry.organization }}</td>
-        <td>{{ entry.recognition }}</td>
-        <td>{{ entry.project }}</td>
+        <td>{{ entry.publisher }}</td>
+        <td>{{ entry.award }}</td>
+        <td>{{ entry.title }}</td>
         <td>
           <a :href="entry.link" class="recognition-chart__link">
             <svg
@@ -35,61 +35,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      recognition: [
-        {
-          organization: 'Awwwards',
-          recognition: 'Mobile Excellence',
-          project: 'Faculty 2020',
-          link: '#'
-        },
-        {
-          organization: 'Awwwards',
-          recognition: 'Honors',
-          project: 'Faculty 2020',
-          link: '#'
-        },
-        {
-          organization: 'Awwwards',
-          recognition: 'Mobile Excellence',
-          project: 'Sigil (Jr. Developer Portfolio)',
-          link: '#'
-        },
-        {
-          organization: 'Awwwards',
-          recognition: 'Honors',
-          project: 'Sigil (Jr. Developer Portfolio)',
-          link: '#'
-        },
-        {
-          organization: 'Humans',
-          recognition: 'Site Of The Day',
-          project: 'Portfolio FW19',
-          link: '#'
-        },
-        {
-          organization: 'CSS',
-          recognition: 'Special Kudos',
-          project: 'Portfolio FW19',
-          link: '#'
-        },
-        {
-          organization: 'Awwwards',
-          recognition: 'Mobile Excellence',
-          project: 'Portfolio FW19',
-          link: '#'
-        },
-        {
-          organization: 'Awwwards',
-          recognition: 'Honors',
-          project: 'Portfolio FW19',
-          link: '#'
-        }
-      ]
-    };
-  }
+  props: ['recognition']
 };
 </script>
-
-<style></style>

@@ -18,7 +18,7 @@
       </div>
       <img
         class="case-study-list-item__image"
-        :src="project.heroImage.fields.file.url"
+        :src="`${project.heroImage.fields.file.url}?w=400`"
         alt=""
       />
       <a class="case-study-list-item__link" :href="`/work/${project.slug}`">

@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Henry From Online {% if project.title or title %}|{% endif %} {{
-      project.title if project.title else post.title else data.title else
-      title}}
+      Henry From Online {% if project.title or title %}|{% endif %} {% if
+      project.title %}{{ project.title }} {% elsif post.title %}{{ post.title }}
+      {% else %}{{ title }} {% endif %}
     </title>
 
     <link

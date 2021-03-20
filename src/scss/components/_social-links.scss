@@ -25,7 +25,7 @@
     }
   }
   &__item-link {
-    display: grid;
+    display: inline-grid;
     grid-auto-flow: column;
     grid-column-gap: 0.75rem;
     align-items: center;

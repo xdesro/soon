@@ -246,34 +246,30 @@
               </ul>
             </div>
           </div>
-          <h3 class="homepage-section__additional-title">
+          <h3 class="homepage-section__additional-title" id="recognition">
             Recognition & Honors
           </h3>
-          <RecognitionChart />
+          <RecognitionChart :recognition="recognition.items" />
           <div class="recognition-mobile" aria-hidden="">
-            <div class="recognition-mobile__section">
-              <p class="recognition-mobile__org">Awwwards</p>
-              <div class="recognition-mobile__row">
-                <span>Honorable Mention</span> <span>3x</span>
-              </div>
-              <div class="recognition-mobile__row">
-                <span>Mobile Excellence</span> <span>3x</span>
-              </div>
-            </div>
-            <div class="recognition-mobile__section">
-              <p class="recognition-mobile__org">Humans</p>
-              <div class="recognition-mobile__row">
-                <span>Site of the Day</span> <span>1x</span>
-              </div>
-            </div>
-            <div class="recognition-mobile__section">
-              <p class="recognition-mobile__org">CSS Design Awards</p>
-              <div class="recognition-mobile__row">
-                <span>Special Kudos</span> <span>1x</span>
+            <div
+              class="recognition-mobile__section"
+              v-for="publisher in Object.keys(recognition.publishers)"
+              :key="publisher"
+            >
+              <p class="recognition-mobile__org">{{ publisher }}</p>
+              <div
+                class="recognition-mobile__row"
+                v-for="award in Object.keys(recognition.publishers[publisher])"
+                :key="award"
+              >
+                <span>{{ award }}</span>
+                <span>
+                  {{ recognition.publishers[publisher][award].length }}x
+                </span>
               </div>
             </div>
           </div>
-          <div class="orbiter" aria-hidden="">
+          <div class="orbiter" aria-hidden="true">
             <svg
               class="orbiter__ring"
               xmlns="http://www.w3.org/2000/svg"
@@ -295,7 +291,7 @@
             </svg>
             <img class="orbiter__planet" src="/img/portrait-2.jpg" />
           </div>
-          <div class="orbiter orbiter--last" aria-hidden="">
+          <div class="orbiter orbiter--last" aria-hidden="true">
             <svg
               class="orbiter__ring"
               xmlns="http://www.w3.org/2000/svg"
