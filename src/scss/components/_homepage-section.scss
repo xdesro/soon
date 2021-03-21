@@ -120,6 +120,10 @@
     margin: 0 auto;
     padding: 0 1.5rem;
     text-align: center;
+
+    @include screen(sm) {
+      font-size: 1.5rem;
+    }
     &[reveal] {
       :is(del, ins) {
         &:before {
@@ -127,51 +131,47 @@
         }
       }
     }
-
-    @include screen(sm) {
-      font-size: 1.5rem;
-    }
+    ins,
     del {
-      position: relative;
-      display: inline-block;
-      text-decoration: none;
       &:before {
         position: absolute;
+        z-index: -1;
         right: 0;
         bottom: 3px;
         left: 0;
         height: 0.5em;
         content: '';
         transition: transform 0.3s ease;
-        transform: scaleX(1);
         transform-origin: 0 0;
-        // background-color: currentColor;
-        background-color: #fdb8c0;
+      }
+    }
+    del {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      &:before {
+        transform: scaleX(1);
         border-top: 1px solid currentColor;
-        z-index: -1;
+        background-color: #fdb8c0;
+        [dark] & {
+          opacity: 0.2;
+        }
       }
     }
     ins {
       position: relative;
       display: inline-block;
-      text-decoration: none;
-      opacity: 1;
       transition: opacity 0.3s ease;
       transition-delay: 0.3s;
+      text-decoration: none;
+      opacity: 1;
       &:before {
-        position: absolute;
-        right: 0;
-        bottom: 3px;
-        left: 0;
-        height: 0.5em;
-        content: '';
-        transition: transform 0.5s ease;
         transition-delay: 0.5s;
-        z-index: -1;
         transform: scaleX(1);
-        transform-origin: 0 0;
-        // background-color: #e6ffed;
         background-color: #acf2bd;
+        [dark] & {
+          opacity: 0.2;
+        }
       }
     }
   }
