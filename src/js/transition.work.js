@@ -6,6 +6,8 @@ import CaseStudyListItemAnimation from './animation.caseStudyListItem';
 const ease = 'power4.inOut';
 class WorkListTransition extends Highway.Transition {
   in({ from, to, done }) {
+    window.scrollTo(0, 0);
+
     from.remove();
     Splitting();
     const caseStudies = to.querySelectorAll('.case-study-list-item');

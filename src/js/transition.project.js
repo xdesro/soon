@@ -8,7 +8,11 @@ import TableOfContentsAnimation from './animation.tableofContents';
 class ProjectTransition extends Highway.Transition {
   in({ from, to, done }) {
     window.scrollTo(0, 0);
+
     from.remove();
+
+    document.querySelector('.bottom-nav').classList.add('bottom-nav--hidden');
+
     const results = Splitting({ target: '.project__title', by: 'lines' });
     to.querySelector('.project__title').innerHTML = results[0].lines
       .map(

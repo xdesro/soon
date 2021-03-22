@@ -69,7 +69,6 @@ class PostTransition extends Highway.Transition {
       );
   }
   out({ from, done }) {
-    window.scrollTo(0, 0);
     gsap.to(from, { opacity: 0, duration: 0.3, onComplete: done });
   }
 }

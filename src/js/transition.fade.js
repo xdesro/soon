@@ -7,7 +7,12 @@ class Fade extends Highway.Transition {
     window.scrollTo(0, 0);
 
     from.remove();
-    [...document.querySelectorAll('[reveal]')].forEach((el) =>
+
+    document
+      .querySelector('.bottom-nav')
+      .classList.remove('bottom-nav--hidden');
+
+    [...document.querySelectorAll('[reveal]')].forEach(el =>
       el.removeAttribute('reveal')
     );
     gsap.from(to, { duration: 0.3, opacity: 0, onComplete: done });
