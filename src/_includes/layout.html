@@ -8,6 +8,12 @@
       project.title %}{{ project.title }} {% elsif post.title %}{{ post.title }}
       {% else %}{{ title }} {% endif %}
     </title>
+    <meta
+      name="description"
+      content="{% if project.description %}{{- project.description -}}
+      {% elsif post.excerpt %}{{- post.excerpt -}}
+      {% else %}The personal site & portfolio of NYC-based creative technologist Henry Desroches{% endif %}"
+    />
 
     <link
       rel="apple-touch-icon"

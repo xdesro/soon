@@ -1,7 +1,6 @@
 <template>
   <div>
     <TopNav :spotify="spotify" />
-
     <main id="main" data-router-wrapper>
       <article data-router-view="post" class="post">
         <div class="post__intro">
