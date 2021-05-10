@@ -49,7 +49,24 @@
                   <div class="additional-works-list-item__meta">
                     <time>(December 2020)</time> — Web Design
                   </div>
-                  <a class="additional-works-list-item__link" href="#">
+                  <a
+                    class="additional-works-list-item__link"
+                    href="https://jdminnick.codes"
+                  >
+                    See The Work
+                  </a>
+                </article>
+              </li>
+              <li class="additional-works-list-item">
+                <article class="additional-works-list-item__article">
+                  <h1 class="additional-works-list-item__title">Faculty</h1>
+                  <div class="additional-works-list-item__meta">
+                    <time>(December 2020)</time> — Web Design
+                  </div>
+                  <a
+                    class="additional-works-list-item__link"
+                    href="https://faculty.com/"
+                  >
                     See The Work
                   </a>
                 </article>
@@ -76,7 +93,10 @@
                   <div class="additional-works-list-item__meta">
                     <time>(May 2020)</time> — Web Design
                   </div>
-                  <a class="additional-works-list-item__link" href="#">
+                  <a
+                    class="additional-works-list-item__link"
+                    href="https://boenish.codes/"
+                  >
                     See The Work
                   </a>
                 </article>
@@ -87,7 +107,10 @@
                   <div class="additional-works-list-item__meta">
                     <time>(April 2020)</time> — Web Design
                   </div>
-                  <a class="additional-works-list-item__link" href="#">
+                  <a
+                    class="additional-works-list-item__link"
+                    href="https://bryn.codes/"
+                  >
                     See The Work
                   </a>
                 </article>

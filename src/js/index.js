@@ -78,20 +78,21 @@ const handleInitialLoad = e => {
   };
 
   animate();
-  // fetch('/.netlify/functions/spotify')
-  //   .then((res) => res.json())
-  //   .then((data) => {
-  //     const track = spotifyWidget.querySelector('.spotify-widget__track');
-  //     const artists = spotifyWidget.querySelector('.spotify-widget__artists');
+  fetch('/.netlify/functions/spotify')
+    .then(res => res.json())
+    .then(data => {
+      const track = spotifyWidget.querySelector('.spotify-widget__track');
+      const artists = spotifyWidget.querySelector('.spotify-widget__artists');
 
-  //     track.setAttribute('href', data.url);
-  //     track.textContent = data.name;
-  //     const artistTemplate = (artist) =>
-  //       `<a href="${artist.url}">${artist.name}</a>`;
-  //     artists.innerHTML = `${data.artists
-  //       .map((artist) => artistTemplate(artist))
-  //       .join(', ')}`;
-  //   }).catch()
+      track.setAttribute('href', data.url);
+      track.textContent = data.name;
+      const artistTemplate = artist =>
+        `<a href="${artist.url}">${artist.name}</a>`;
+      artists.innerHTML = `${data.artists
+        .map(artist => artistTemplate(artist))
+        .join(', ')}`;
+    })
+    .catch();
 };
 const setDOMThemeFromStorage = () => {
   localStorage.setItem(

@@ -7,7 +7,7 @@
           {{ nextProject.clientName }}
         </h1>
         <div class="next-case-study__meta">
-          <p>Typography Foundry</p>
+          <p>{{ nextProject.clientType }}</p>
           <time :datetime="nextProject.date">{{
             new Date(nextProject.date).toLocaleDateString('en-US', {
               year: 'numeric',
@@ -32,7 +32,7 @@ export default {
   computed: {
     nextProject() {
       const currentIndex = this.projects.findIndex(
-        (project) => project.slug == this.currentProject.slug
+        project => project.slug == this.currentProject.slug
       );
       const nextIndex =
         currentIndex + 1 >= this.projects.length ? 0 : currentIndex + 1;

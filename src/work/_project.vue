@@ -17,7 +17,7 @@
                 {{ project.clientName }}
               </h1>
               <div class="project__meta">
-                <p>Typography Foundry</p>
+                <p>{{ project.clientType }}</p>
                 <time :datetime="project.date">{{
                   new Date(project.date).toLocaleDateString('en-US', {
                     year: 'numeric',
