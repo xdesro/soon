@@ -19,6 +19,7 @@
     "gulp-sass": "^4.1.0",
     "markdown-it": "^12.0.4",
     "markdown-it-anchor": "^7.0.0",
+    "markdown-it-attrs": "^4.0.0",
     "markdown-it-implicit-figures": "^0.10.0",
     "markdown-it-prism": "^2.1.4",
     "node-fetch": "^2.6.1",

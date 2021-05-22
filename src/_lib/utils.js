@@ -4,6 +4,7 @@ const markdownRenderer = require('markdown-it')({
   typographer: true,
   breaks: true
 })
+  .use(require('markdown-it-attrs'))
   .use(require('markdown-it-implicit-figures'))
   .use(require('markdown-it-anchor'), {
     level: [2],

@@ -30,7 +30,6 @@ Splitting();
 
 const DOM = {
   themeToggle: document.querySelector('.theme-toggle'),
-  spotifyWidget: document.querySelector('.spotify-widget'),
   caseStudies: {
     get chars() {
       return [...document.querySelectorAll('.case-study-list-item__title')];
@@ -81,8 +80,8 @@ const handleInitialLoad = e => {
   fetch('/.netlify/functions/spotify')
     .then(res => res.json())
     .then(data => {
-      const track = spotifyWidget.querySelector('.spotify-widget__track');
-      const artists = spotifyWidget.querySelector('.spotify-widget__artists');
+      const track = document.querySelector('.spotify-widget__track');
+      const artists = document.querySelector('.spotify-widget__artists');
 
       track.setAttribute('href', data.url);
       track.textContent = data.name;

@@ -7,8 +7,8 @@ class Fade extends Highway.Transition {
     window.scrollTo(0, 0);
 
     from.remove();
-
-    document
+    console.log(to.parentElement);
+    to.parentElement.parentElement
       .querySelector('.bottom-nav')
       .classList.remove('bottom-nav--hidden');
 

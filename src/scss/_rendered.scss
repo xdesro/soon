@@ -16,7 +16,7 @@
   h4,
   ul,
   ol,
-  .editors-note {
+  > .editors-note {
     max-width: 22.75rem;
 
     @include screen(lg) {
@@ -139,6 +139,7 @@
 }
 .editors-note {
   line-height: 1.5;
+  display: block;
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding-left: 1rem;
