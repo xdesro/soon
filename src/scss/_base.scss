@@ -17,9 +17,9 @@ html {
 body {
   font-family: $font--text;
   margin: 0;
+  counter-reset: homepage-headers;
   color: var(--color--text-primary);
   background-color: var(--color--background);
-  counter-reset: homepage-headers;
 }
 a {
   color: inherit;
@@ -37,7 +37,7 @@ img {
 }
 .page-title {
   font-family: $font--display;
-  font-size: 6rem;
+  font-size: 5.2rem;
   font-weight: 100;
   line-height: 0.9;
   position: relative;
@@ -48,13 +48,16 @@ img {
   text-align: center;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  .char {
-    clip-path: polygon(0% 0%, 140% 0%, 140% 100%, 0% 100%);
-    display: inline-block;
-  }
 
+  @include screen(sm) {
+    font-size: 6rem;
+  }
   @include screen(lg) {
     font-size: 9rem;
+  }
+  .char {
+    display: inline-block;
+    clip-path: polygon(0% 0%, 140% 0%, 140% 100%, 0% 100%);
   }
 }
 .writing-page {
@@ -87,37 +90,38 @@ img {
 .theme-toggle {
   font-size: 1.5rem;
   position: fixed;
+  z-index: 3;
   right: 0.5rem;
   bottom: 0.5rem;
-  padding: 1rem;
-  cursor: pointer;
-  border: 0;
-  filter: grayscale(1);
-  border-radius: 100%;
-  background-color: var(--color--text-primary);
-  color: var(--color--background);
   width: 4rem;
   height: 4rem;
-  z-index: 3;
-  opacity: 0.2;
+  padding: 1rem;
+  cursor: pointer;
   transition: opacity 0.1s;
-  &:hover {
-    opacity: 1;
-  }
+  opacity: 0.2;
+  color: var(--color--background);
+  border: 0;
+  border-radius: 100%;
+  filter: grayscale(1);
+  background-color: var(--color--text-primary);
+
   @include screen(md) {
-    background-color: transparent;
     font-size: 2rem;
     right: 1rem;
     bottom: 3rem;
     width: unset;
     height: unset;
     color: var(--color--text-primary);
+    background-color: transparent;
+  }
+  &:hover {
+    opacity: 1;
   }
   svg {
     width: 2rem;
     transition: transform 0.2s ease-in-out;
-    color: inherit;
     transform: rotate(-45deg);
+    color: inherit;
     [dark] & {
       transform: rotate(-45deg + 180);
     }

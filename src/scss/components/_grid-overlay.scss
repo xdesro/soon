@@ -1,0 +1,22 @@
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  grid-column-gap: 1rem;
+  grid-template-columns: repeat(16, 1fr);
+  max-width: 75rem;
+  margin: 0 auto;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.2;
+  &--active {
+    display: grid;
+  }
+  &__cell {
+    width: 100%;
+    border: 1px solid currentColor;
+  }
+}

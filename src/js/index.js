@@ -99,9 +99,13 @@ const setDOMThemeFromStorage = () => {
     document.documentElement.hasAttribute('dark')
   );
 };
-const toggleDarkMode = ({ key }) => {
-  if (key && key == 'd') document.documentElement.toggleAttribute('dark');
+const toggleDarkMode = () => {
+  document.documentElement.toggleAttribute('dark');
   setDOMThemeFromStorage();
+};
+const toggleGridOverlay = () => {
+  const gridOverlay = document.querySelector('.grid-overlay');
+  gridOverlay.classList.toggle('grid-overlay--active');
 };
 const updateMousePosition = ({ clientX, clientY }) => {
   document.documentElement.style.setProperty('--mouseX', `${clientX}px`);
@@ -111,8 +115,9 @@ const updateMousePosition = ({ clientX, clientY }) => {
 document.addEventListener('DOMContentLoaded', e => {
   handleInitialLoad(e);
 });
-document.addEventListener('keypress', e => {
-  toggleDarkMode(e);
+document.addEventListener('keypress', ({ key }) => {
+  if (key && key == 'd') toggleDarkMode();
+  if (key && key == 'g') toggleGridOverlay();
 });
 document.addEventListener('mousemove', e => {
   updateMousePosition(e);

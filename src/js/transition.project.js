@@ -11,7 +11,10 @@ class ProjectTransition extends Highway.Transition {
 
     from.remove();
 
-    document.querySelector('.bottom-nav').classList.add('bottom-nav--hidden');
+    to.parentElement.parentElement.querySelector('.bottom-nav') &&
+      to.parentElement.parentElement
+        .querySelector('.bottom-nav')
+        .classList.remove('bottom-nav--hidden');
 
     const results = Splitting({ target: '.project__title', by: 'lines' });
     to.querySelector('.project__title').innerHTML = results[0].lines

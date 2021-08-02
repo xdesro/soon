@@ -114,6 +114,20 @@
                     See The Work
                   </a>
                 </article>
+                <article class="additional-works-list-item__article">
+                  <h1 class="additional-works-list-item__title">
+                    Chris Merritt
+                  </h1>
+                  <div class="additional-works-list-item__meta">
+                    <time>(October 2019)</time> — Web Design & Development
+                  </div>
+                  <a
+                    class="additional-works-list-item__link"
+                    href="https://chrismerritt.cc/"
+                  >
+                    See The Work
+                  </a>
+                </article>
               </li>
             </ul>
           </div>

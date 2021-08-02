@@ -8,7 +8,9 @@
   @include screen(md) {
     display: block;
   }
-
+  @include screen(lg) {
+    padding: 0;
+  }
   thead,
   tbody {
     display: block;
