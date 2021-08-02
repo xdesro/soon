@@ -6,7 +6,7 @@ import PostListItemAnimation from './animation.postListItem';
 const ease = 'power4.inOut';
 class WritingListTransition extends Highway.Transition {
   in({ from, to, done }) {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
     from.remove();
     Splitting();

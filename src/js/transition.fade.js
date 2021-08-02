@@ -4,13 +4,13 @@ import gsap from 'gsap';
 // Fade
 class Fade extends Highway.Transition {
   in({ from, to, done }) {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
     from.remove();
-    console.log(to.parentElement);
-    to.parentElement.parentElement
-      .querySelector('.bottom-nav')
-      .classList.remove('bottom-nav--hidden');
+    to.parentElement.parentElement.querySelector('.bottom-nav') &&
+      to.parentElement.parentElement
+        .querySelector('.bottom-nav')
+        .classList.remove('bottom-nav--hidden');
 
     [...document.querySelectorAll('[reveal]')].forEach(el =>
       el.removeAttribute('reveal')

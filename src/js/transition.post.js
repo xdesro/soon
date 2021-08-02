@@ -5,7 +5,8 @@ import TableOfContentsAnimation from './animation.tableofContents';
 
 class PostTransition extends Highway.Transition {
   in({ from, to, done }) {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+
     from.remove();
     const results = Splitting({ target: '.post__title', by: 'lines' });
     to.querySelector('.post__title').innerHTML = results[0].lines
