@@ -17,7 +17,6 @@ class TopNav {
     };
   }
   setActiveLink(location) {
-    console.log('Set active link:', location);
     const linkActiveClass = 'top-nav__link--active';
     const activeLink = this.links[location];
     this.DOM.links.forEach(link => link.classList.remove(linkActiveClass));
@@ -25,7 +24,6 @@ class TopNav {
       this.DOM.nav.querySelector(activeLink).classList.add(linkActiveClass);
   }
   setNavText(location) {
-    console.log('Set nav text:', location);
     switch (location) {
       case 'home':
         this.DOM.brandExtension.textContent = this.navText['home'];

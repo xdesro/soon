@@ -1,4 +1,3 @@
-import gsap from 'gsap';
 import Highway from '@dogstudio/highway';
 
 import SessionManager from './sessionManager';
