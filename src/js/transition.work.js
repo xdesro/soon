@@ -1,8 +1,10 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
+import TopNav from './transition.nav';
 
 import CaseStudyListItemAnimation from './animation.caseStudyListItem';
 
+const navManager = new TopNav();
 const ease = 'power4.inOut';
 class WorkListTransition extends Highway.Transition {
   in({ from, to, done }) {
@@ -13,12 +15,8 @@ class WorkListTransition extends Highway.Transition {
     const caseStudies = to.querySelectorAll('.case-study-list-item');
     const caseStudiesReveal = gsap.timeline({ ease });
 
-    document
-      .querySelectorAll('.top-nav__link')
-      .forEach(navLink => navLink.classList.remove('top-nav__link--active'));
-    document
-      .querySelector('.top-nav__link[href="/work"]')
-      .classList.add('top-nav__link--active');
+    navManager.setActiveLink('work');
+    navManager.setNavText();
 
     gsap.from('.page-title .char', {
       y: '100%',

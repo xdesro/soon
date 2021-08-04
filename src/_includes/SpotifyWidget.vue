@@ -25,7 +25,7 @@
           :href="artist.url"
         >
           {{ artist.name.trim() }}
-          <span v-if="index + 1 < spotify.artists.length">,</span>&nbsp;</a
+          <span v-if="index + 1 < spotify.artists.length">,&nbsp;</span></a
         >
       </span>
     </div>

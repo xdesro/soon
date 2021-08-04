@@ -1,6 +1,8 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
+import TopNav from './transition.nav';
 
+const navManager = new TopNav();
 // Fade
 class Fade extends Highway.Transition {
   in({ from, to, done }) {
@@ -15,6 +17,9 @@ class Fade extends Highway.Transition {
     [...document.querySelectorAll('[reveal]')].forEach(el =>
       el.removeAttribute('reveal')
     );
+    navManager.setActiveLink();
+    navManager.setNavText('home');
+
     gsap.from(to, { duration: 0.3, opacity: 0, onComplete: done });
   }
 

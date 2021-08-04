@@ -1,8 +1,10 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
+import TopNav from './transition.nav';
 
 import TableOfContentsAnimation from './animation.tableofContents';
 
+const navManager = new TopNav();
 class PostTransition extends Highway.Transition {
   in({ from, to, done }) {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
@@ -17,14 +19,8 @@ class PostTransition extends Highway.Transition {
     </span>`
       )
       .join('');
-
-    document
-      .querySelectorAll('.top-nav__link')
-      .forEach(navLink => navLink.classList.remove('top-nav__link--active'));
-
-    document
-      .querySelector('.top-nav__link[href="/writing"]')
-      .classList.add('top-nav__link--active');
+    navManager.setActiveLink('writing');
+    navManager.setNavText();
 
     gsap
       .timeline({

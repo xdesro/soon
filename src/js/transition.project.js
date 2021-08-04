@@ -1,9 +1,11 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
+import TopNav from './transition.nav';
 
 import Drifter from './drifter';
 
 import TableOfContentsAnimation from './animation.tableofContents';
+const navManager = new TopNav();
 
 class ProjectTransition extends Highway.Transition {
   in({ from, to, done }) {
@@ -26,12 +28,8 @@ class ProjectTransition extends Highway.Transition {
       )
       .join('');
 
-    document
-      .querySelectorAll('.top-nav__link')
-      .forEach(navLink => navLink.classList.remove('top-nav__link--active'));
-    document
-      .querySelector('.top-nav__link[href="/work"]')
-      .classList.add('top-nav__link--active');
+    navManager.setActiveLink('work');
+    navManager.setNavText();
 
     gsap
       .timeline({

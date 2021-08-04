@@ -1,8 +1,10 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
+import TopNav from './transition.nav';
 
 import PostListItemAnimation from './animation.postListItem';
 
+const navManager = new TopNav();
 const ease = 'power4.inOut';
 class WritingListTransition extends Highway.Transition {
   in({ from, to, done }) {
@@ -19,12 +21,9 @@ class WritingListTransition extends Highway.Transition {
     postsReveal.seek(0);
     postsReveal.play();
 
-    document
-      .querySelectorAll('.top-nav__link')
-      .forEach(navLink => navLink.classList.remove('top-nav__link--active'));
-    document
-      .querySelector('.top-nav__link[href="/writing"]')
-      .classList.add('top-nav__link--active');
+    navManager.setActiveLink('writing');
+    navManager.setNavText();
+
     gsap.from('.page-title .char', {
       y: '100%',
       clipPath: 'polygon(0 0%, 140% 0%, 140% 0%, 0 0%)',

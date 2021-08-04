@@ -114,6 +114,8 @@
                     See The Work
                   </a>
                 </article>
+              </li>
+              <li class="additional-works-list-item">
                 <article class="additional-works-list-item__article">
                   <h1 class="additional-works-list-item__title">
                     Chris Merritt

@@ -39,7 +39,7 @@
       grid-column-gap: 2ch;
       grid-template-columns: auto 1fr;
       height: 1em;
-      scroll-margin-top: 3rem;
+      scroll-margin-top: calc(3rem - 1px);
     }
     @include screen(lg) {
       position: relative;
