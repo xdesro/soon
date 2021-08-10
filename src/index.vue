@@ -37,6 +37,7 @@
               :key="project.slug"
               :project="project"
             />
+            <canvas id="case-studies-canvas"></canvas>
           </ul>
           <div class="container">
             <h2 class="homepage-section__additional-title">Additional Works</h2>

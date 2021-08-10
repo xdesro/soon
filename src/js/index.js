@@ -26,7 +26,22 @@ H.on('NAVIGATE_END', ({ to, from, trigger, location }) => {
   sessionManager.mount();
 });
 Splitting();
+const fetchSpotify = () =>
+  fetch('/.netlify/functions/spotify')
+    .then(res => res.json())
+    .then(data => {
+      const track = document.querySelector('.spotify-widget__track');
+      const artists = document.querySelector('.spotify-widget__artists');
 
+      track.setAttribute('href', data.url);
+      track.textContent = data.name;
+      const artistTemplate = artist =>
+        `<a href="${artist.url}">${artist.name}</a>`;
+      artists.innerHTML = `${data.artists
+        .map(artist => artistTemplate(artist))
+        .join(', ')}`;
+    })
+    .catch();
 const DOM = {
   themeToggle: document.querySelector('.theme-toggle'),
   caseStudies: {
@@ -76,21 +91,7 @@ const handleInitialLoad = e => {
   };
 
   animate();
-  fetch('/.netlify/functions/spotify')
-    .then(res => res.json())
-    .then(data => {
-      const track = document.querySelector('.spotify-widget__track');
-      const artists = document.querySelector('.spotify-widget__artists');
-
-      track.setAttribute('href', data.url);
-      track.textContent = data.name;
-      const artistTemplate = artist =>
-        `<a href="${artist.url}">${artist.name}</a>`;
-      artists.innerHTML = `${data.artists
-        .map(artist => artistTemplate(artist))
-        .join(', ')}`;
-    })
-    .catch();
+  fetchSpotify();
 };
 const setDOMThemeFromStorage = () => {
   localStorage.setItem(

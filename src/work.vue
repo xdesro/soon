@@ -11,6 +11,7 @@
             :key="project.slug"
           />
         </ul>
+        <canvas id="case-studies-canvas"></canvas>
       </article>
     </main>
   </div>

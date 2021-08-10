@@ -1,6 +1,7 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
 import TopNav from './transition.nav';
+import { CaseStudySceneManager } from './caseStudyManager';
 
 import CaseStudyListItemAnimation from './animation.caseStudyListItem';
 
@@ -9,15 +10,18 @@ const ease = 'power4.inOut';
 class WorkListTransition extends Highway.Transition {
   in({ from, to, done }) {
     window.scrollTo(0, 0);
-
     from.remove();
     Splitting();
+
+    window.caseStudySceneManager = new CaseStudySceneManager(
+      to.querySelector('#case-studies-canvas')
+    );
+    window.caseStudySceneManager.init();
     const caseStudies = to.querySelectorAll('.case-study-list-item');
     const caseStudiesReveal = gsap.timeline({ ease });
 
     navManager.setActiveLink('work');
     navManager.setNavText();
-
     gsap.from('.page-title .char', {
       y: '100%',
       clipPath: 'polygon(0 100%, 140% 100%, 140% 100%, 0 100%)',
@@ -36,6 +40,7 @@ class WorkListTransition extends Highway.Transition {
     caseStudiesReveal.play();
   }
   out({ from, done }) {
+    window.caseStudySceneManager.setOpacity(0);
     gsap.to('.page-title .char', {
       y: '-100%',
       clipPath: 'polygon(0 100%, 140% 100%, 140% 100%, 0 100%)',

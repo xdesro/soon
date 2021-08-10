@@ -18,6 +18,7 @@
       </div>
       <img
         class="case-study-list-item__image"
+        :data-client-name="project.clientName"
         :src="`${project.heroImage.fields.file.url}?w=400`"
         alt=""
       />

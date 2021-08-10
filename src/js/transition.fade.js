@@ -1,6 +1,7 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
 import TopNav from './transition.nav';
+import { CaseStudySceneManager } from './caseStudyManager';
 
 const navManager = new TopNav();
 // Fade
@@ -17,6 +18,11 @@ class Fade extends Highway.Transition {
     [...document.querySelectorAll('[reveal]')].forEach(el =>
       el.removeAttribute('reveal')
     );
+    window.caseStudySceneManager = new CaseStudySceneManager(
+      to.querySelector('#case-studies-canvas')
+    );
+    window.caseStudySceneManager.init();
+
     navManager.setActiveLink();
     navManager.setNavText('home');
 

@@ -2,6 +2,7 @@
   padding: 0;
   list-style-type: none;
   counter-reset: case-studies;
+  position: relative;
 }
 .case-study-list-item {
   position: relative;
@@ -157,14 +158,16 @@
     object-fit: cover;
 
     @include screen(sm) {
-      position: fixed;
-      top: var(--mouseY);
-      left: var(--mouseX);
-      transition: opacity 0.2s;
-      transform: translateY(-50%) translateX(-50%);
-      pointer-events: none;
-      opacity: 0;
-      z-index: -1;
+      display: none;
+
+      // position: fixed;
+      // top: var(--mouseY);
+      // left: var(--mouseX);
+      // transition: opacity 0.2s;
+      // transform: translateY(-50%) translateX(-50%);
+      // pointer-events: none;
+      // opacity: 0;
+      // z-index: -1;
     }
   }
   &__link {

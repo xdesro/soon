@@ -21,5 +21,4 @@ const dateFormatter = dateString => {
     month: 'long'
   });
 };
-
 export { markdownRenderer, dateFormatter };

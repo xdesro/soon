@@ -21,6 +21,18 @@ body {
   color: var(--color--text-primary);
   background-color: var(--color--background);
 }
+#case-studies-canvas {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  bottom: 0;
+  @include screen(sm) {
+    display: block;
+  }
+}
 a {
   color: inherit;
 }
