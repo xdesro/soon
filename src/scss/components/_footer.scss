@@ -91,6 +91,7 @@
 
     @include screen(lg) {
       font-size: 9rem;
+      overflow: visible;
       grid-column: 1 / span 10;
       grid-row: span 2;
       padding-left: 0;
