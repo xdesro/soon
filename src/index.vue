@@ -9,12 +9,16 @@
           <div>Henry Desroches</div>
         </nav>
         <div class="magazine-cover" reveal>
-          <div class="magazine-cover__title" data-splitting>Soon</div>
+          <div class="magazine-cover__title">
+            <Soon />
+          </div>
           <h1 class="magazine-cover__subtitle">
             You will have only a memory of this moment.
           </h1>
           <div class="magazine-cover__image-wrapper">
-            <div class="magazine-cover__blurred-title" data-splitting>Soon</div>
+            <div class="magazine-cover__blurred-title">
+              <Soon />
+            </div>
             <div class="magazine-cover__drifter" drifter>
               <img
                 class="magazine-cover__image"
@@ -366,6 +370,7 @@
 
 <script>
 import TopNav from './_includes/TopNav.vue';
+import Soon from './_includes/Soon.vue';
 import WorkListItem from './_includes/WorkListItem.vue';
 import RecognitionChart from './_includes/RecognitionChart.vue';
 
@@ -375,6 +380,7 @@ export default {
   },
   components: {
     TopNav,
+    Soon,
     WorkListItem,
     RecognitionChart
   }
