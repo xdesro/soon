@@ -36,7 +36,7 @@ const fetchSpotify = () =>
       track.setAttribute('href', data.url);
       track.textContent = data.name;
       const artistTemplate = artist =>
-        `<a href="${artist.url}">${artist.name}</a>`;
+        `<a href="${artist.href}">${artist.name}</a>`;
       artists.innerHTML = `${data.artists
         .map(artist => artistTemplate(artist))
         .join(', ')}`;
@@ -91,7 +91,7 @@ const handleInitialLoad = e => {
   };
 
   animate();
-  fetchSpotify();
+  // fetchSpotify();
 };
 const setDOMThemeFromStorage = () => {
   localStorage.setItem(
