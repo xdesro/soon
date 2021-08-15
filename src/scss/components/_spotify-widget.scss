@@ -17,6 +17,7 @@
   }
   &__inner {
     text-overflow: ellipsis;
+    overflow: hidden;
   }
   a {
     display: inline-block;

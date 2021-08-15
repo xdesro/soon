@@ -38,6 +38,9 @@ class WorkListTransition extends Highway.Transition {
     });
     caseStudiesReveal.seek(0);
     caseStudiesReveal.play();
+
+    document.querySelector('.bottom-nav') &&
+      document.querySelector('.bottom-nav').classList.add('bottom-nav--hidden');
   }
   out({ from, done }) {
     window.caseStudySceneManager.setOpacity(0);

@@ -22,13 +22,14 @@ body {
   background-color: var(--color--background);
 }
 #case-studies-canvas {
-  display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: -1;
+  top: 0;
+  right: 0;
   bottom: 0;
+  left: 0;
+  display: none;
+
   @include screen(sm) {
     display: block;
   }
@@ -58,6 +59,7 @@ img {
   margin-top: 11rem;
   margin-bottom: 5rem;
   text-align: center;
+  white-space: nowrap;
   letter-spacing: -0.03em;
   text-transform: uppercase;
 

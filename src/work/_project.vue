@@ -3,7 +3,7 @@
     <TopNav :spotify="spotify" />
     <main id="main" data-router-wrapper>
       <article data-router-view="project" class="project">
-        <div class="project__featured-image-wrapper" drifter>
+        <div class="project__featured-image-wrapper">
           <img
             :src="project.heroImage.fields.file.url"
             class="project__featured-image"

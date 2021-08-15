@@ -2,21 +2,13 @@ import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
 import TopNav from './transition.nav';
 
-import Drifter from './drifter';
+gsap.config({ nullTargetWarn: false });
 
 import TableOfContentsAnimation from './animation.tableofContents';
 const navManager = new TopNav();
-
 class ProjectTransition extends Highway.Transition {
   in({ from, to, done }) {
-    window.scrollTo(0, 0);
-
     from.remove();
-
-    to.parentElement.parentElement.querySelector('.bottom-nav') &&
-      to.parentElement.parentElement
-        .querySelector('.bottom-nav')
-        .classList.remove('bottom-nav--hidden');
 
     const results = Splitting({ target: '.project__title', by: 'lines' });
     to.querySelector('.project__title').innerHTML = results[0].lines
@@ -30,7 +22,7 @@ class ProjectTransition extends Highway.Transition {
 
     navManager.setActiveLink('work');
     navManager.setNavText();
-
+    window.scrollTo(0, 0);
     gsap
       .timeline({
         defaults: { ease: 'power4.inOut' },
@@ -111,20 +103,6 @@ class ProjectTransition extends Highway.Transition {
         },
         '-=.5'
       );
-
-    const items = [...document.querySelectorAll('[drifter]')].map(
-      item => new Drifter(item)
-    );
-    const animate = () => {
-      for (const item of items) {
-        if (item.isVisible) {
-          item.render();
-        }
-      }
-      requestAnimationFrame(() => animate());
-    };
-
-    animate();
   }
   out({ from, done }) {
     gsap.to(from, { opacity: 0, duration: 0.3, onComplete: done });

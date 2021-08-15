@@ -5,9 +5,6 @@
   margin-bottom: 10rem;
   padding: 0 1.5rem;
   text-transform: uppercase;
-  &--hidden {
-    display: none;
-  }
 
   @include screen(md) {
     position: absolute;
@@ -41,5 +38,8 @@
     position: fixed;
     max-width: 75rem;
     margin: 0 auto;
+  }
+  &--hidden {
+    display: none;
   }
 }

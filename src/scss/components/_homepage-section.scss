@@ -157,7 +157,7 @@
         border-top: 1px solid currentColor;
         background-color: #fdb8c0;
         [dark] & {
-          opacity: 0.2;
+          background-color: rgba(#fdb8c0, 0.2);
         }
       }
     }

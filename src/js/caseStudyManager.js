@@ -141,7 +141,7 @@ class CaseStudySceneManager {
       y: mapRange(e.clientY, 0, window.innerHeight, 0.7, -0.7) * -1,
       duration: 0.5
     });
-    if (e.target.classList.contains('case-study-list-item__link')) {
+    if (e.target?.classList.contains('case-study-list-item__link')) {
       const clientName = e.target.previousElementSibling.dataset.clientName;
       this.updateTexture(clientName);
       this.setOpacity(1);

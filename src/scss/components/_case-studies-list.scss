@@ -89,7 +89,7 @@
   }
   &__title {
     font-family: $font--display;
-    font-size: 3rem;
+    font-size: 2.4rem;
     font-weight: 100;
     line-height: 0.85;
     grid-column-end: span 3;
@@ -97,7 +97,7 @@
     align-self: end;
     max-width: 15rem;
     margin-top: 0;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     text-transform: uppercase;
     hyphens: auto;
 
@@ -107,6 +107,7 @@
       grid-row: 1 / span 2;
       align-self: unset;
       max-width: 25rem;
+      margin-bottom: 0.25rem;
     }
     @include screen(lg) {
       font-size: 6rem;
