@@ -133,6 +133,9 @@
     font-size: 0.875rem;
     word-break: break-word;
     color: #466a8e;
+    [dark] & {
+      color: #6299d0;
+    }
   }
 }
 .header-anchor {
@@ -146,9 +149,13 @@
   padding-left: 1rem;
   color: #637278;
   border-left: 4px solid currentColor;
+  [dark] & {
+    color: #88979d;
+  }
   &:before {
     font-size: 0.75rem;
     font-weight: bold;
+    font-style: normal;
     display: block;
     margin-bottom: 1em;
     content: "Editor's Note";

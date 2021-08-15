@@ -31,10 +31,12 @@
   &__intro-row {
     position: relative;
     overflow: hidden;
-    margin-bottom: 4.5rem;
     padding-right: 1.5rem;
     padding-bottom: 4.5rem;
     padding-left: 1.5rem;
+    &:not(:first-of-type) {
+      margin-bottom: 4.5rem;
+    }
     &:before {
       position: absolute;
       bottom: 0;
