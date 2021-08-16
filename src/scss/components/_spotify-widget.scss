@@ -8,9 +8,9 @@
   justify-content: end;
   grid-gap: 0.5rem;
   @include screen(sm) {
-    display: grid;
-    grid-auto-flow: column;
-    align-content: center;
+    display: flex;
+    align-items: center;
+    line-height: 1.1;
   }
   @include screen(md) {
     justify-self: end;
@@ -18,13 +18,14 @@
   &__inner {
     text-overflow: ellipsis;
     overflow: hidden;
+    a {
+      display: inline-block;
+      text-decoration: none;
+      white-space: nowrap;
+      @include underlined-anim;
+    }
   }
-  a {
-    display: inline-block;
-    text-decoration: none;
-    white-space: nowrap;
-    @include underlined-anim;
-  }
+
   &__artists {
     font-style: italic;
     a {

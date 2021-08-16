@@ -16,29 +16,19 @@
     </a>
     <div class="spotify-widget__inner">
       <a class="spotify-widget__track" :href="spotify.url">
-        {{ spotify.name }},
-      </a>
+        {{ spotify.name }} </a
+      >,
       <span class="spotify-widget__artists">
         <span v-for="(artist, index) in spotify.artists" :key="index"
           >{{ artist.name.trim() }}
           <span v-if="index + 1 < spotify.artists.length">,&nbsp;</span>
         </span>
       </span>
-      <!-- <a
-          v-for="(artist, index) in spotify.artists"
-          :key="index"
-          :href="artist.href"
-        >
-          {{ artist.name.trim() }}
-          <span v-if="index + 1 < spotify.artists.length">,&nbsp;</span></a
-        >
-      </span> -->
     </div>
   </div>
 </template>
 
 <script>
-// https://dev.henry.codes/.netlify/functions/spotify
 export default {
   props: ['spotify']
 };

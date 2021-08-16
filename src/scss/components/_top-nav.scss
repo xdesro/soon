@@ -55,8 +55,11 @@
   &__brand {
     text-decoration: none;
     justify-self: start;
+    display: flex;
+    align-items: center;
     svg {
       width: 1.5ch;
+      margin-right: 0.5ch;
       animation: svg-rotate 10s linear infinite;
       @keyframes svg-rotate {
         to {
@@ -117,36 +120,4 @@
       }
     }
   }
-}
-
-// animation
-.top-nav {
-  &-enter {
-    &:after {
-      transition: 0.4s ease;
-      transform: scaleX(0);
-    }
-  }
-  &-enter-to {
-    &:after {
-      transform: scaleX(1);
-    }
-  }
-  //   &__brand {
-  //     transition: all 0.3s;
-  //     transition-delay: 0.2s;
-  //   }
-  //   &--staged {
-  //     .top-nav__brand {
-  //       clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0 100%);
-  //     }
-  //     &:after {
-  //       transform: scaleX(0);
-  //     }
-  //   }
-  //   &--arrived {
-  //     .top-nav__brand {
-  //       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  //     }
-  //   }
 }

@@ -112,6 +112,8 @@ img {
   padding: 1rem;
   cursor: pointer;
   transition: opacity 0.1s;
+  display: flex;
+  align-items: center;
   opacity: 0.2;
   color: var(--color--background);
   border: 0;
@@ -130,6 +132,21 @@ img {
   }
   &:hover {
     opacity: 1;
+    &:before {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  &:before {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateX(2rem);
+    margin-right: 0.5rem;
+    transition: all 0.2s ease;
+    @include screen(sm) {
+      content: 'Press (D)';
+    }
   }
   svg {
     width: 2rem;
