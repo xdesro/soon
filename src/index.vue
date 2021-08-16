@@ -41,8 +41,8 @@
               :key="project.slug"
               :project="project"
             />
-            <canvas id="case-studies-canvas"></canvas>
           </ul>
+          <canvas id="case-studies-canvas"></canvas>
           <div class="container">
             <h2 class="homepage-section__additional-title">Additional Works</h2>
             <ul class="additional-works-list">
