@@ -20,4 +20,5 @@ const mapRange = (value, inputMin, inputMax, outputMin, outputMax, clamp) => {
   }
 };
 
-export { mapRange };
+const lerp = (min, max, t) => min * (1 - t) + max * t;
+export { mapRange, lerp };

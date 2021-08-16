@@ -1,16 +1,4 @@
-const mapRange = (value, inputMin, inputMax, outputMin, outputMax) => {
-  // Reference:
-  // https://openframeworks.cc/documentation/math/ofMath/
-  if (Math.abs(inputMin - inputMax) < Number.EPSILON) {
-    return outputMin;
-  } else {
-    return (
-      ((value - inputMin) / (inputMax - inputMin)) * (outputMax - outputMin) +
-      outputMin
-    );
-  }
-};
-const lerp = (min, max, t) => min * (1 - t) + max * t;
+import { mapRange, lerp } from './client-utils';
 
 let windowSize;
 const getWindowSize = () =>
@@ -60,10 +48,8 @@ class Drifter {
     };
 
     this.update();
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach(
-        (entry) => (this.isVisible = entry.intersectionRatio > 0)
-      );
+    this.observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => (this.isVisible = entry.intersectionRatio > 0));
     });
     this.observer.observe(this.DOM.el);
     this.initEvents();

@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import { mapRange } from './client-utils';
 import vertexShader from '../glsl/vertex.glsl';
 import fragmentShader from '../glsl/fragment.glsl';
-// import imageList from '/img/images';
 
 class CaseStudySceneManager {
   constructor(el) {

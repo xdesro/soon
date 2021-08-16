@@ -11,10 +11,7 @@ module.exports = async () => {
   //   name: 'Summon The Fire',
   //   url: 'https://open.spotify.com/track/5c44MldQ2CvroamP73V1lp'
   // };
-  return await fetch('https://henry.codes/.netlify/functions/spotify')
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      return data;
-    });
+  return await fetch(
+    'https://henry.codes/.netlify/functions/spotify'
+  ).then(res => res.json());
 };
