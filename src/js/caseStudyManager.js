@@ -22,6 +22,7 @@ class CaseStudySceneManager {
       antialias: true,
       alpha: true
     });
+    this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setClearColor(0xffffff, 0);
 

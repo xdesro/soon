@@ -2,6 +2,7 @@ import Highway from '@dogstudio/highway';
 
 import SessionManager from './sessionManager';
 import Drifter from './drifter';
+import { CaseStudySceneManager } from './caseStudyManager';
 
 import Fade from './transition.fade';
 import WorkListTransition from './transition.work';
@@ -24,6 +25,12 @@ const H = new Highway.Core({
 });
 H.on('NAVIGATE_END', ({ to, from, trigger, location }) => {
   sessionManager.mount();
+  if (document.querySelector('#case-studies-canvas')) {
+    window.caseStudySceneManager = new CaseStudySceneManager(
+      document.querySelector('#case-studies-canvas')
+    );
+    window.caseStudySceneManager.init();
+  }
 });
 Splitting();
 const fetchSpotify = () =>
@@ -90,6 +97,12 @@ const handleInitialLoad = e => {
     requestAnimationFrame(() => animate());
   };
 
+  if (document.querySelector('#case-studies-canvas')) {
+    window.caseStudySceneManager = new CaseStudySceneManager(
+      document.querySelector('#case-studies-canvas')
+    );
+    window.caseStudySceneManager.init();
+  }
   animate();
   // fetchSpotify();
 };

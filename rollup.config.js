@@ -10,14 +10,5 @@ export default [
       format: 'umd'
     },
     plugins: [glslify(), nodeResolve()]
-  },
-  {
-    input: 'src/js/case-studies-gl.js',
-    output: {
-      compact: true,
-      file: 'dist/js/case-studies-gl.js',
-      format: 'umd'
-    },
-    plugins: [glslify(), nodeResolve()]
   }
 ];
