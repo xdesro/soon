@@ -46,92 +46,19 @@
           <div class="container">
             <h2 class="homepage-section__additional-title">Additional Works</h2>
             <ul class="additional-works-list">
-              <li class="additional-works-list-item">
+              <li
+                class="additional-works-list-item"
+                v-for="{ project, date, involvement, url } in additionalWorks"
+                :key="project"
+              >
                 <article class="additional-works-list-item__article">
                   <h1 class="additional-works-list-item__title">
-                    Sigil (JR. Developer Portfolio)
+                    {{ project }}
                   </h1>
                   <div class="additional-works-list-item__meta">
-                    <time>(December 2020)</time> — Web Design
+                    <time>({{ date }})</time> — {{ involvement }}
                   </div>
-                  <a
-                    class="additional-works-list-item__link"
-                    href="https://jdminnick.codes"
-                  >
-                    See The Work
-                  </a>
-                </article>
-              </li>
-              <li class="additional-works-list-item">
-                <article class="additional-works-list-item__article">
-                  <h1 class="additional-works-list-item__title">Faculty</h1>
-                  <div class="additional-works-list-item__meta">
-                    <time>(December 2020)</time> — Web Design
-                  </div>
-                  <a
-                    class="additional-works-list-item__link"
-                    href="https://faculty.com/"
-                  >
-                    See The Work
-                  </a>
-                </article>
-              </li>
-              <li class="additional-works-list-item">
-                <article class="additional-works-list-item__article">
-                  <h1 class="additional-works-list-item__title">
-                    Remedies For Light
-                  </h1>
-                  <div class="additional-works-list-item__meta">
-                    <time>(November 2020)</time> — 3D Illustration & Print
-                    Design
-                  </div>
-                  <a class="additional-works-list-item__link" href="#">
-                    See The Work
-                  </a>
-                </article>
-              </li>
-              <li class="additional-works-list-item">
-                <article class="additional-works-list-item__article">
-                  <h1 class="additional-works-list-item__title">
-                    Levi Boenish
-                  </h1>
-                  <div class="additional-works-list-item__meta">
-                    <time>(May 2020)</time> — Web Design
-                  </div>
-                  <a
-                    class="additional-works-list-item__link"
-                    href="https://boenish.codes/"
-                  >
-                    See The Work
-                  </a>
-                </article>
-              </li>
-              <li class="additional-works-list-item">
-                <article class="additional-works-list-item__article">
-                  <h1 class="additional-works-list-item__title">Bryn Newell</h1>
-                  <div class="additional-works-list-item__meta">
-                    <time>(April 2020)</time> — Web Design
-                  </div>
-                  <a
-                    class="additional-works-list-item__link"
-                    href="https://bryn.codes/"
-                  >
-                    See The Work
-                  </a>
-                </article>
-              </li>
-              <li class="additional-works-list-item">
-                <article class="additional-works-list-item__article">
-                  <h1 class="additional-works-list-item__title">
-                    Chris Merritt
-                  </h1>
-                  <div class="additional-works-list-item__meta">
-                    <time>(October 2019)</time> — Web Design & Development
-                  </div>
-                  <a
-                    class="additional-works-list-item__link"
-                    href="https://chrismerritt.cc/"
-                  >
+                  <a class="additional-works-list-item__link" :href="url">
                     See The Work
                   </a>
                 </article>
