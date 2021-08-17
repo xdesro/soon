@@ -1,4 +1,18 @@
-import * as THREE from 'three';
+// import * as THREE from 'three';
+import {
+  Scene,
+  Raycaster,
+  PerspectiveCamera,
+  WebGLRenderer,
+  Clock,
+  PlaneGeometry,
+  DefaultLoadingManager,
+  ShaderMaterial,
+  TextureLoader,
+  Mesh,
+  NormalBlending,
+  DoubleSide
+} from 'three';
 import gsap from 'gsap';
 import { mapRange } from './client-utils';
 import vertexShader from '../glsl/vertex.glsl';
@@ -6,9 +20,9 @@ import fragmentShader from '../glsl/fragment.glsl';
 
 class CaseStudySceneManager {
   constructor(el) {
-    this.scene = new THREE.Scene();
-    this.raycaster = new THREE.Raycaster();
-    this.camera = new THREE.PerspectiveCamera(
+    this.scene = new Scene();
+    this.raycaster = new Raycaster();
+    this.camera = new PerspectiveCamera(
       45,
       window.innerWidth / window.innerHeight,
       0.1,
@@ -16,7 +30,7 @@ class CaseStudySceneManager {
     );
     this.camera.position.z = 2.0;
 
-    this.renderer = new THREE.WebGLRenderer({
+    this.renderer = new WebGLRenderer({
       canvas: el,
       antialias: true,
       alpha: true
@@ -25,7 +39,7 @@ class CaseStudySceneManager {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setClearColor(0xffffff, 0);
 
-    this.clock = new THREE.Clock();
+    this.clock = new Clock();
 
     this.onResize();
     this.imageList = [
@@ -35,12 +49,12 @@ class CaseStudySceneManager {
     this.textures = [];
     this.texIndex = 0;
     this.meshes = [];
-    this.geometry = new THREE.PlaneGeometry(0.5, 0.5, 20, 20);
-    this.material = new THREE.ShaderMaterial({
+    this.geometry = new PlaneGeometry(0.5, 0.5, 20, 20);
+    this.material = new ShaderMaterial({
       vertexShader,
       fragmentShader,
       transparent: true,
-      blending: THREE.NormalBlending,
+      blending: NormalBlending,
       uniforms: {
         uTime: { value: 0.0 },
         uTexture: { value: null },
@@ -51,14 +65,14 @@ class CaseStudySceneManager {
         }
       },
       //   wireframe: true,
-      side: THREE.DoubleSide
+      side: DoubleSide
     });
     this.mouseDown = false;
     this.mouseX = 0;
   }
   init() {
     this.loadImages();
-    THREE.DefaultLoadingManager.onProgress = (item, loaded, total) => {
+    DefaultLoadingManager.onProgress = (item, loaded, total) => {
       if (loaded === total) {
         this.createMeshes();
       }
@@ -66,7 +80,7 @@ class CaseStudySceneManager {
     this.addEvents();
   }
   loadImages() {
-    const textureLoader = new THREE.TextureLoader();
+    const textureLoader = new TextureLoader();
 
     this.imageList.forEach(img => {
       textureLoader.load(img.src, tex => {
@@ -78,7 +92,7 @@ class CaseStudySceneManager {
   createMeshes() {
     const meshCount = this.imageList.length;
     const material = this.material.clone();
-    const mesh = new THREE.Mesh(this.geometry, material);
+    const mesh = new Mesh(this.geometry, material);
     //   mesh.position.x = i * 0.5;
     mesh.scale.set(
       1,
