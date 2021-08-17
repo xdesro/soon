@@ -77,9 +77,8 @@
             <div class="about__additional-content">
               <div class="about__subtitle">Availability</div>
               <p>
-                I am not currently available for freelance work, but I'd love
-                for you to come work with us
-                <a href="https://faculty.com">at Faculty</a>.
+                I'm always looking for cool projects and collaborators! Reach
+                out and touch faith, let's get some cool websites going.
               </p>
               <div class="about__subtitle">Contact</div>
               <p>
