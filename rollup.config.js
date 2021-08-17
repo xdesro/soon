@@ -8,7 +8,15 @@ export default [
     output: {
       compact: true,
       format: 'iife',
-      minifyInternalExports: true,
+      dir: 'dist/js'
+    },
+    plugins: [glslify(), nodeResolve(), terser()]
+  },
+  {
+    input: 'src/js/transitions.js',
+    output: {
+      compact: true,
+      format: 'iife',
       dir: 'dist/js'
     },
     plugins: [glslify(), nodeResolve(), terser()]
