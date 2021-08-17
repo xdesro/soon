@@ -1,7 +1,6 @@
 import Highway from '@dogstudio/highway';
 import gsap from 'gsap';
 import TopNav from './transition.nav';
-import { CaseStudySceneManager } from './caseStudyManager';
 
 import CaseStudyListItemAnimation from './animation.caseStudyListItem';
 
@@ -12,11 +11,6 @@ class WorkListTransition extends Highway.Transition {
     window.scrollTo(0, 0);
     from.remove();
     Splitting();
-
-    window.caseStudySceneManager = new CaseStudySceneManager(
-      to.querySelector('#case-studies-canvas')
-    );
-    window.caseStudySceneManager.init();
     const caseStudies = to.querySelectorAll('.case-study-list-item');
     const caseStudiesReveal = gsap.timeline({ ease });
 

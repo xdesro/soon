@@ -147,6 +147,17 @@ class CaseStudySceneManager {
       });
     });
   }
+  setCanvas(el) {
+    this.renderer = new WebGLRenderer({
+      canvas: el,
+      antialias: true,
+      alpha: true
+    });
+    this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setClearColor(0xffffff, 0);
+    this.init();
+  }
   mouseHandler(e) {
     const { scene, meshes, raycaster, camera, renderer } = this;
     gsap.to(camera.position, {

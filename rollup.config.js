@@ -10,6 +10,15 @@ export default [
       format: 'iife',
       dir: 'dist/js'
     },
+    plugins: [nodeResolve(), terser()]
+  },
+  {
+    input: 'src/js/gl.js',
+    output: {
+      compact: true,
+      format: 'iife',
+      dir: 'dist/js'
+    },
     plugins: [glslify(), nodeResolve(), terser()]
   },
   {
@@ -19,6 +28,6 @@ export default [
       format: 'iife',
       dir: 'dist/js'
     },
-    plugins: [glslify(), nodeResolve(), terser()]
+    plugins: [nodeResolve(), terser()]
   }
 ];

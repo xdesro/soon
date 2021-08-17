@@ -1,5 +1,4 @@
 import Drifter from './drifter';
-import { CaseStudySceneManager } from './caseStudyManager';
 
 import CaseStudyListItemAnimation from './animation.caseStudyListItem';
 
@@ -68,12 +67,6 @@ const handleInitialLoad = e => {
     requestAnimationFrame(() => animate());
   };
 
-  if (document.querySelector('#case-studies-canvas')) {
-    window.caseStudySceneManager = new CaseStudySceneManager(
-      document.querySelector('#case-studies-canvas')
-    );
-    window.caseStudySceneManager.init();
-  }
   animate();
   // fetchSpotify();
 };
@@ -95,10 +88,6 @@ const updateMousePosition = ({ clientX, clientY }) => {
   document.documentElement.style.setProperty('--mouseX', `${clientX}px`);
   document.documentElement.style.setProperty('--mouseY', `${clientY}px`);
 };
-
-document.addEventListener('DOMContentLoaded', e => {
-  handleInitialLoad(e);
-});
 document.addEventListener('keypress', ({ key }) => {
   if (key && key == 'd') toggleDarkMode();
   if (key && key == 'g') toggleGridOverlay();
@@ -109,4 +98,7 @@ document.addEventListener('mousemove', e => {
 DOM.themeToggle.addEventListener('click', e => {
   document.documentElement.toggleAttribute('dark');
   setDOMThemeFromStorage();
+});
+document.addEventListener('DOMContentLoaded', e => {
+  handleInitialLoad(e);
 });

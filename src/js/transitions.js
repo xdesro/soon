@@ -8,8 +8,6 @@ import WritingListTransition from './transition.writing';
 import PostTransition from './transition.post';
 import ProjectTransition from './transition.project';
 
-import { CaseStudySceneManager } from './caseStudyManager';
-
 const sessionManager = new SessionManager();
 
 const H = new Highway.Core({
@@ -24,7 +22,7 @@ const H = new Highway.Core({
 H.on('NAVIGATE_END', ({ to, from, trigger, location }) => {
   sessionManager.mount();
   if (document.querySelector('#case-studies-canvas')) {
-    window.caseStudySceneManager = new CaseStudySceneManager(
+    window.caseStudySceneManager.setCanvas(
       document.querySelector('#case-studies-canvas')
     );
     window.caseStudySceneManager.init();
