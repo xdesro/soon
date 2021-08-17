@@ -90,7 +90,6 @@ const getTOC = string => {
 export default {
   data() {
     return {
-      layout: 'layout.html',
       pagination: {
         size: 1,
         data: 'projects',

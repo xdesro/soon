@@ -57,16 +57,21 @@ const getTOC = string => {
 export default {
   data() {
     return {
-      layout: 'layout.html',
       pagination: {
         size: 1,
         data: 'posts',
         alias: 'post'
       },
       permalink: data => `writing/${data.post.slug}/index.html`,
-      title: data => data.post.title
+      title: data => data.post.title,
+      eleventyComputed: {
+        og: data => ({
+          url: data.post.socialSharingImage.fields.file.url
+        })
+      }
     };
   },
+
   computed: {
     toc() {
       return getTOC(this.post.body);

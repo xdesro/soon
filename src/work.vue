@@ -23,8 +23,7 @@ import WorkListItem from './_includes/WorkListItem.vue';
 
 export default {
   data: {
-    title: 'Work',
-    layout: 'layout.html'
+    title: 'Work'
   },
   components: {
     TopNav,

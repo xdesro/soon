@@ -197,9 +197,6 @@ import RecognitionChart from './_includes/RecognitionChart.vue';
 import IconSocial from './_includes/IconSocial.vue';
 
 export default {
-  data: {
-    layout: 'layout.html'
-  },
   components: {
     TopNav,
     Soon,

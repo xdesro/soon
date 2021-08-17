@@ -62,6 +62,38 @@
       if (localStorage.getItem('darkMode') == 'true')
         document.documentElement.setAttribute('dark', true);
     </script>
+
+    <meta name="twitter:site" content="@xdesro" />
+    {% if og %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Henry From Online {% if project.title or title %}|{% endif %} {% if
+    project.title %}{{ project.title }} {% elsif post.title %}{{ post.title }}
+    {% else %}{{ title }} {% endif %}"
+    />
+    <meta
+      name="twitter:description"
+      content="{% if project.description %}{{- project.description -}}
+  {% elsif post.excerpt %}{{- post.excerpt -}}
+  {% else %}The personal site & portfolio of NYC-based creative technologist Henry Desroches{% endif %}"
+    />
+    <meta name="twitter:image" content="{{ og.url }}" />
+    {% else %}
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Henry From Online | Creative Technologist"
+    />
+    <meta
+      name="twitter:description"
+      content="The personal site & portfolio of NYC-based creative technologist Henry Desroches"
+    />
+    <meta
+      name="twitter:image"
+      content="https://henry.codes/meta/og-default.jpg"
+    />
+    {% endif %}
   </head>
   <body>
     {{ content }}

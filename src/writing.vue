@@ -23,8 +23,7 @@ import WritingListItem from './_includes/WritingListItem.vue';
 export default {
   data() {
     return {
-      title: 'Writing',
-      layout: 'layout.html'
+      title: 'Writing'
     };
   },
   components: {
