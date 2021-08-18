@@ -161,15 +161,6 @@
 
     @include screen(sm) {
       display: none;
-
-      // position: fixed;
-      // top: var(--mouseY);
-      // left: var(--mouseX);
-      // transition: opacity 0.2s;
-      // transform: translateY(-50%) translateX(-50%);
-      // pointer-events: none;
-      // opacity: 0;
-      // z-index: -1;
     }
   }
   &__link {

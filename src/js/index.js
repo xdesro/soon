@@ -54,6 +54,7 @@ const revealObserver = new IntersectionObserver(revealHandler, {
 );
 
 const handleInitialLoad = e => {
+  fetchSpotify();
   // Drifter setup
   const items = [...document.querySelectorAll('[drifter]')].map(
     item => new Drifter(item)
@@ -68,7 +69,6 @@ const handleInitialLoad = e => {
   };
 
   animate();
-  // fetchSpotify();
 };
 const setDOMThemeFromStorage = () => {
   localStorage.setItem(
@@ -84,16 +84,9 @@ const toggleGridOverlay = () => {
   const gridOverlay = document.querySelector('.grid-overlay');
   gridOverlay.classList.toggle('grid-overlay--active');
 };
-const updateMousePosition = ({ clientX, clientY }) => {
-  document.documentElement.style.setProperty('--mouseX', `${clientX}px`);
-  document.documentElement.style.setProperty('--mouseY', `${clientY}px`);
-};
 document.addEventListener('keypress', ({ key }) => {
   if (key && key == 'd') toggleDarkMode();
   if (key && key == 'g') toggleGridOverlay();
-});
-document.addEventListener('mousemove', e => {
-  updateMousePosition(e);
 });
 DOM.themeToggle.addEventListener('click', e => {
   document.documentElement.toggleAttribute('dark');
