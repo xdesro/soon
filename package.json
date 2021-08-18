@@ -15,8 +15,6 @@
     "core-js": "^3.8.2",
     "dotenv": "^8.2.0",
     "gsap": "^3.6.0",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.1.0",
     "markdown-it": "^12.0.4",
     "markdown-it-anchor": "^7.0.0",
     "markdown-it-attrs": "^4.0.0",
@@ -25,8 +23,6 @@
     "node-fetch": "^2.6.1",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.32.5",
-    "sass-loader": "^10.1.1",
-    "splitting": "^1.0.6",
     "three": "^0.131.3"
   },
   "devDependencies": {
