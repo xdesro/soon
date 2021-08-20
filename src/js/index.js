@@ -12,11 +12,8 @@ const fetchSpotify = () =>
 
       track.setAttribute('href', data.url);
       track.textContent = data.name;
-      const artistTemplate = artist =>
-        `<a href="${artist.href}">${artist.name}</a>`;
-      artists.innerHTML = `${data.artists
-        .map(artist => artistTemplate(artist))
-        .join(', ')}`;
+
+      artists.innerHTML = `${data.artists.join(', ')}`;
     })
     .catch();
 const DOM = {
