@@ -13,7 +13,9 @@ const fetchSpotify = () =>
       track.setAttribute('href', data.url);
       track.textContent = data.name;
 
-      artists.innerHTML = `${data.artists.join(', ')}`;
+      artists.innerHTML = `${data.artists
+        .map(artist => artist.name)
+        .join(', ')}`;
     })
     .catch();
 const DOM = {
