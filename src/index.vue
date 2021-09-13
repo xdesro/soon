@@ -77,8 +77,11 @@
             <div class="about__additional-content">
               <div class="about__subtitle">Availability</div>
               <p>
-                I'm always looking for cool projects and collaborators! Reach
-                out and touch faith, let's get some cool websites going.
+                I've recently taken a role at
+                <a href="https://oddcommon.com/"><strong>OddCommon</strong></a
+                >, making cool things for the internet, but I'm still taking on
+                freelance projects on a case-by-case basis. Reach out and touch
+                faith. ↓
               </p>
               <div class="about__subtitle">Contact</div>
               <p>
