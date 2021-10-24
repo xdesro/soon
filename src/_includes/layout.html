@@ -1,136 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Henry From Online {% if project.title or title %}|{% endif %} {% if
-      project.title %}{{ project.title }} {% elsif post.title %}{{ post.title }}
-      {% else %}{{ title }} {% endif %}
-    </title>
-    <meta
-      name="description"
-      content="{% if project.description %}{{- project.description -}}
-      {% elsif post.excerpt %}{{- post.excerpt -}}
-      {% else %}The personal site & portfolio of NYC-based creative technologist Henry Desroches{% endif %}"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/meta/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/meta/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/meta/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/meta/site.webmanifest" />
-    <link rel="mask-icon" href="/meta/safari-pinned-tab.svg" color="#000000" />
-    <meta name="msapplication-TileColor" content="#f5f5f5" />
-    <meta name="theme-color" content="#F5F5F5" />
 
-    <link
-      rel="preload"
-      href="/fonts/silk-serif/silk-serif.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/neue-haas-grotesk/neue-haas-grotesk.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/fonts/neue-haas-grotesk/neue-haas-grotesk-bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link rel="stylesheet" href="/css/index.css" />
-    <script>
-      if (localStorage.getItem('darkMode') == 'true')
-        document.documentElement.setAttribute('dark', true);
-    </script>
-
-    <meta name="twitter:site" content="@xdesro" />
-    <meta
-      name="twitter:title"
-      content="Henry From Online {% if project.title or title %}|{% endif %} {% if
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Henry From Online {% if project.title or title %}|{% endif %} {% if
     project.title %}{{ project.title }} {% elsif post.title %}{{ post.title }}
-    {% else %}{{ title }} {% endif %}"
-    />
-    {% if og %}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:description"
-      content="{% if project.description %}{{- project.description -}}
+    {% else %}{{ title }} {% endif %}
+  </title>
+  <meta name="description" content="{% if project.description %}{{- project.description -}}
+      {% elsif post.excerpt %}{{- post.excerpt -}}
+      {% else %}The personal site & portfolio of NYC-based creative technologist Henry Desroches{% endif %}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/meta/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/meta/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/meta/favicon-16x16.png" />
+  <link rel="manifest" href="/meta/site.webmanifest" />
+  <link rel="mask-icon" href="/meta/safari-pinned-tab.svg" color="#000000" />
+  <meta name="msapplication-TileColor" content="#f5f5f5" />
+  <meta name="theme-color" content="#F5F5F5" />
+
+  <link rel="preload" href="/fonts/silk-serif/silk-serif.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/neue-haas-grotesk/neue-haas-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/neue-haas-grotesk/neue-haas-grotesk-bold.woff2" as="font" type="font/woff2"
+    crossorigin />
+  <link rel="stylesheet" href="/css/index.css" />
+  <script>
+    if (localStorage.getItem('darkMode') == 'true')
+      document.documentElement.setAttribute('dark', true);
+  </script>
+
+  <meta name="twitter:site" content="@xdesro" />
+  <meta name="twitter:title" content="Henry From Online {% if project.title or title %}|{% endif %} {% if
+    project.title %}{{ project.title }} {% elsif post.title %}{{ post.title }}
+    {% else %}{{ title }} {% endif %}" />
+  {% if og %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:description" content="{% if project.description %}{{- project.description -}}
   {% elsif post.excerpt %}{{- post.excerpt -}}
-  {% else %}The personal site & portfolio of NYC-based creative technologist Henry Desroches{% endif %}"
-    />
-    <meta name="twitter:image" content="https:{{ og.url }}" />
-    {% else %}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:description"
-      content="The personal site & portfolio of NYC-based creative technologist Henry Desroches"
-    />
-    <meta
-      name="twitter:image"
-      content="https://henry.codes/meta/og-default.jpg"
-    />
-    {% endif %}
-  </head>
-  <body>
-    {{ content }}
-    <button class="theme-toggle" aria-label="theme-toggle">
-      <svg
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 267 267"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M133.5 244c61.027 0 110.5-49.473 110.5-110.5C244 72.472 194.527 23 133.5 23 72.472 23 23 72.472 23 133.5 23 194.527 72.472 244 133.5 244zm0 23c73.73 0 133.5-59.77 133.5-133.5C267 59.77 207.23 0 133.5 0 59.77 0 0 59.77 0 133.5 0 207.23 59.77 267 133.5 267z"
-        />
-        <path
-          d="M247 133c0-29.969-11.958-58.711-33.243-79.903C192.471 31.905 163.602 20 133.5 20c-30.102 0-58.971 11.905-80.257 33.097C31.958 74.288 20 103.03 20 133h227z"
-        />
-      </svg>
-    </button>
-    <div class="grid-overlay">
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-      <div class="grid-overlay__cell"></div>
-    </div>
-    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-    <script src="/js/index.js" type="module"></script>
-    <script src="/js/transitions.js" type="module"></script>
-    <script src="/js/gl.js" type="module"></script>
-    <!-- <script src="/js/case-studies-gl.js" type="module"></script> -->
-  </body>
+  {% else %}The personal site & portfolio of NYC-based creative technologist Henry Desroches{% endif %}" />
+  <meta name="twitter:image" content="https:{{ og.url }}" />
+  {% else %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:description"
+    content="The personal site & portfolio of NYC-based creative technologist Henry Desroches" />
+  <meta name="twitter:image" content="https://henry.codes/meta/og-default.jpg" />
+  {% endif %}
+</head>
+
+<body>
+  {{ content }}
+  <button class="theme-toggle" aria-label="theme-toggle">
+    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267 267">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M133.5 244c61.027 0 110.5-49.473 110.5-110.5C244 72.472 194.527 23 133.5 23 72.472 23 23 72.472 23 133.5 23 194.527 72.472 244 133.5 244zm0 23c73.73 0 133.5-59.77 133.5-133.5C267 59.77 207.23 0 133.5 0 59.77 0 0 59.77 0 133.5 0 207.23 59.77 267 133.5 267z" />
+      <path
+        d="M247 133c0-29.969-11.958-58.711-33.243-79.903C192.471 31.905 163.602 20 133.5 20c-30.102 0-58.971 11.905-80.257 33.097C31.958 74.288 20 103.03 20 133h227z" />
+    </svg>
+  </button>
+  <div class="grid-overlay">
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+    <div class="grid-overlay__cell"></div>
+  </div>
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <script src="/js/index.js" type="module"></script>
+  <script async src="/js/transitions.js" type="module"></script>
+  <!-- <script defer src="/js/gl.js" type="module"></script> -->
+  <script async src="/js/gl.js" type="module"></script>
+  <!-- <script src="/js/case-studies-gl.js" type="module"></script> -->
+</body>
+
 </html>
