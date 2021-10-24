@@ -1,4 +1,5 @@
 import Drifter from './drifter';
+import egg from './egg';
 
 import CaseStudyListItemAnimation from './animation.caseStudyListItem';
 
@@ -66,6 +67,7 @@ const handleInitialLoad = e => {
     }
     requestAnimationFrame(() => animate());
   };
+  console.log(egg, 'color: lightslategray');
 
   animate();
 };
