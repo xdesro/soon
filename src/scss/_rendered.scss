@@ -21,7 +21,7 @@
     max-width: 22.75rem;
 
     @include screen(lg) {
-      grid-column: 8 / span 5;
+      grid-column: 7 / span 6;
     }
   }
   h2 {
@@ -112,7 +112,7 @@
     }
     @include screen(lg) {
       font-size: 1.2rem;
-      grid-column: 7 / span 7;
+      grid-column: 7 / span 8;
       max-width: unset;
     }
     > p {
@@ -129,7 +129,7 @@
   .cp_embed_wrapper,
   figure {
     @include screen(lg) {
-      grid-column: 7 / span 7;
+      grid-column: 7 / span 8;
     }
   }
   p > code,
