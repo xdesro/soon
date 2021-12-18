@@ -136,6 +136,7 @@
     }
     @include screen(lg) {
       grid-column: 13 / span 2;
+      text-align: left;
     }
   }
   &__tags {
