@@ -132,6 +132,9 @@
       grid-column: 7 / span 8;
     }
   }
+  code {
+    font-family: $font--mono;
+  }
   p > code,
   li code {
     font-family: $font--mono;
