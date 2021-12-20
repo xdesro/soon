@@ -145,7 +145,7 @@ img {
     margin-right: 0.5rem;
     transition: all 0.2s ease;
     @include screen(sm) {
-      content: 'Press (D)';
+      content: 'Press (Shift + D)';
     }
   }
   svg {

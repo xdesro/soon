@@ -85,9 +85,9 @@ const toggleGridOverlay = () => {
   const gridOverlay = document.querySelector('.grid-overlay');
   gridOverlay.classList.toggle('grid-overlay--active');
 };
-document.addEventListener('keypress', ({ key }) => {
-  if (key && key == 'd') toggleDarkMode();
-  if (key && key == 'g') toggleGridOverlay();
+document.addEventListener('keypress', ({ shiftKey, key }) => {
+  if (shiftKey && key && key == 'D') toggleDarkMode();
+  if (shiftKey && key && key == 'G') toggleGridOverlay();
 });
 DOM.themeToggle.addEventListener('click', e => {
   document.documentElement.toggleAttribute('dark');
