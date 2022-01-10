@@ -86,6 +86,7 @@
       "max-height",
       "object-fit",
       "object-position",
+      "aspect-ratio",
       "margin",
       "margin-top",
       "margin-right",

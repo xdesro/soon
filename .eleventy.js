@@ -1,22 +1,16 @@
-const Image = require('@11ty/eleventy-img');
+// const Image = require('@11ty/eleventy-img');
 const eleventyVue = require('@11ty/eleventy-plugin-vue');
+const eleventyRSS = require('@11ty/eleventy-plugin-rss');
 
-async function imageShortcode(src, alt, sizes) {
-  let metadata = await Image(src, {
-    widths: [300, 600],
-    formats: ['avif', 'jpeg']
-  });
-
-  let imageAttributes = {
-    alt,
-    sizes,
-    loading: 'lazy',
-    decoding: 'async'
-  };
-
-  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-  return Image.generateHTML(metadata, imageAttributes);
-}
+// TODO: This is defined both here, and in `src/_lib/utils.js`, except without Prism. Conflicts with CJS or something, idk.
+const markdownRenderer = require('markdown-it')({
+  preset: 'default',
+  html: true,
+  typographer: true,
+  breaks: true
+})
+  .use(require('markdown-it-attrs'))
+  .use(require('markdown-it-implicit-figures'));
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/fonts');
@@ -26,8 +20,13 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setWatchThrottleWaitTime(200);
   eleventyConfig.addWatchTarget('./src/scss');
-  eleventyConfig.addPlugin(eleventyVue);
 
+  eleventyConfig.addPlugin(eleventyVue);
+  eleventyConfig.addPlugin(eleventyRSS);
+
+  eleventyConfig.addNunjucksFilter('renderMarkdown', str =>
+    markdownRenderer.render(str)
+  );
   return {
     dir: {
       input: 'src',

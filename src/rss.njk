@@ -1,0 +1,42 @@
+---json
+{
+  "permalink": "feed.xml",
+  "eleventyExcludeFromCollections": true,
+  "layout": false,
+  "metadata": {
+    "title": "Henry From Online | Writing",
+    "subtitle": "The incredibly well-written and eloquent blog of NYC-based creative technologist Henry Desroches",
+    "url": "https://henry.codes",
+    "blogUrl": "https://henry.codes/writing/",
+    "feedUrl": "https://henry.codes/feed.xml",
+    "author": {
+      "name": "Henry Desroches",
+      "email": "yo@henry.codes"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.subtitle }}</subtitle>
+  <link href="{{ metadata.feedUrl }}" rel="self"/>
+  <link href="{{ metadata.url }}"/>
+  <updated>{{ posts[0].publishDate }}</updated>
+  <id>{{ metadata.url }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  {%- for post in posts %}
+  {% set absolutePostUrl %}{{ metadata.blogUrl + post.slug | url  }}{% endset %}
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.publishDate }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <summary>{{ post.excerpt }}</summary>
+    <content type="html">{{ post.body | renderMarkdown | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>
