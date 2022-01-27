@@ -8,8 +8,8 @@
     "url": "https://github.com/xdesro/soon/"
   },
   "scripts": {
-    "start": "concurrently 'sass --no-source-map --watch ./src/scss:./dist/css' 'rollup --config --watch' 'npx @11ty/eleventy --serve'",
-    "build": "sass --no-source-map --style compressed ./src/scss:./dist/css && rollup --config && npx @11ty/eleventy"
+    "start": "ELEVENTY_EXPERIMENTAL=true concurrently 'sass --no-source-map --watch ./src/scss:./dist/css' 'rollup --config --watch' 'npx @11ty/eleventy --serve'",
+    "build": "sass --no-source-map --style compressed ./src/scss:./dist/css && rollup --config && ELEVENTY_EXPERIMENTAL=true npx @11ty/eleventy"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",

@@ -103,7 +103,7 @@
                     .socialLinks"
                   :key="id"
                 >
-                  <a class="social-links__item-link" :href="url">
+                  <a class="social-links__item-link" rel="me" :href="url">
                     <IconSocial
                       class="social-links__item-icon"
                       :name="name.toLowerCase()"
