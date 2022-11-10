@@ -77,15 +77,17 @@
             <div class="about__additional-content">
               <div class="about__subtitle">Availability</div>
               <p>
-                <del>I'm still taking on
-                freelance projects on a case-by-case basis. Reach out and touch
-                faith. ↓</del> I'm not currently taking on any freelance
-                projects. Thanks for your interest!
+                <del
+                  >I'm still taking on freelance projects on a case-by-case
+                  basis. Reach out and touch faith. ↓</del
+                >
+                I'm not currently taking on any freelance projects. Thanks for
+                your interest!
               </p>
               <div class="about__subtitle">Contact</div>
               <p>
                 I’m most active and reachable
-                <a href="https://twitter.com/xdesro">on Twitter</a> or
+                <a href="https://twitter.com/404boyfriend">on Twitter</a> or
                 <a href="mailto:yo@henry.codes">via email</a>, but you can find
                 me most places on the internet as <strong>@xdesro</strong>. You
                 can also
