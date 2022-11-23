@@ -87,10 +87,7 @@
               <div class="about__subtitle">Contact</div>
               <p>
                 I’m most active and reachable
-                <a href="https://twitter.com/404boyfriend">on Twitter</a> or
-                <a href="mailto:yo@henry.codes">via email</a>, but you can find
-                me most places on the internet as <strong>@xdesro</strong>. You
-                can also
+                <a href="mailto:yo@henry.codes">via email</a>. You can also
                 <a href="https://resume.henry.codes">check out my resume</a>, if
                 you’re into that sort of thing.
               </p>
