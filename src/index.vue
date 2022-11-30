@@ -97,9 +97,8 @@
               <ul class="social-links">
                 <li
                   class="social-links__item"
-                  v-for="{ fields: { name, url }, sys: { id } } in author.fields
-                    .socialLinks"
-                  :key="id"
+                  v-for="{ name, url } in socialLinks"
+                  :key="url"
                 >
                   <a class="social-links__item-link" rel="me" :href="url">
                     <IconSocial
@@ -212,6 +211,12 @@ export default {
     WorkListItem,
     RecognitionChart,
     IconSocial
+  },
+  computed: {
+    socialLinks() {
+      const fields = this.author.fields.socialLinks.map(link => link.fields);
+      return fields.filter(field => field && field);
+    }
   }
 };
 </script>
