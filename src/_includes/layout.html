@@ -48,17 +48,30 @@
   <meta name="twitter:title" content="Henry From Online {% if project.title or title %}|{% endif %} {% if
     project.title %}{{ project.title }} {% elsif post.title %}{{ post.title }}
     {% else %}{{ title }} {% endif %}" />
+  <meta property="og:title" content="Henry From Online {% if project.title or title %}|{% endif %} {% if
+    project.title %}{{ project.title }} {% elsif post.title %}{{ post.title }}
+    {% else %}{{ title }} {% endif %}">
+  <meta property="og:type" content="website">
+
   {% if og %}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:description" content="{% if project.description %}{{- project.description -}}
-  {% elsif post.excerpt %}{{- post.excerpt -}}
-  {% else %}The personal site & portfolio of NYC-based creative technologist Henry Desroches{% endif %}" />
-  <meta name="twitter:image" content="https:{{ og.url }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="{% if project.description %}{{- project.description -}}
+    {% elsif post.excerpt %}{{- post.excerpt -}}
+    {% else %}The personal site & portfolio of NYC-based creative technologist Henry Desroches{% endif %}" />
+    <meta name="twitter:image" content="https:{{ og.url }}" />
+
+    <meta property="og:description" content="The personal site & portfolio of NYC-based creative technologist Henry Desroches">
+    <meta property="og:image" content="https:{{ og.url }}">
   {% else %}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:description"
-    content="The personal site & portfolio of NYC-based creative technologist Henry Desroches" />
-  <meta name="twitter:image" content="https://henry.codes/meta/og-default.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description"
+      content="The personal site & portfolio of NYC-based creative technologist Henry Desroches" />
+    <meta name="twitter:image" content="https://henry.codes/meta/og-default.jpg" />
+
+    <meta property="og:url" content="https://henry.codes">
+    <meta property="og:title" content="Henry From Online">
+    <meta property="og:description" content="The personal site & portfolio of NYC-based creative technologist Henry Desroches">
+    <meta property="og:image" content="https://henry.codes/meta/og-default.jpg">
   {% endif %}
 </head>
 
