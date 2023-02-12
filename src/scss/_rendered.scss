@@ -33,6 +33,9 @@
     padding-top: 4.5rem;
     counter-increment: h2s;
     border-top: 1px solid currentColor;
+    &:first-child {
+      border-top: 0;
+    }
 
     @include screen(sm) {
       display: grid;
