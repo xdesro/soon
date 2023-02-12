@@ -60,6 +60,16 @@
       + :is(p, ul) {
         margin-top: 10rem + 4.5rem;
       }
+      &:first-child {
+        margin-top: 0;
+        &:after {
+          content: unset;
+        }
+        + :is(p, ul) {
+margin-top: 4.5rem;
+        }
+      }
+     
     }
     &:before {
       display: block;
