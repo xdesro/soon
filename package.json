@@ -12,7 +12,7 @@
     "build": "sass --no-source-map --style compressed ./src/scss:./dist/css && rollup --config && ELEVENTY_EXPERIMENTAL=true npx @11ty/eleventy"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-plugin-vue": "^0.2.2",
     "@dogstudio/highway": "^2.2.1",
     "concurrently": "^5.3.0",

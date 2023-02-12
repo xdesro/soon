@@ -63,11 +63,11 @@ export default {
         alias: 'post'
       },
       permalink: data => `writing/${data.post.slug}/index.html`,
-      title: data => data.post.title,
       eleventyComputed: {
         og: data => ({
           url: data.post.socialSharingImage.fields.file.url
-        })
+        }),
+        title: data => data.post.title
       }
     };
   },
