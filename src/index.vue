@@ -69,9 +69,9 @@
         <section class="homepage-section about">
           <h2 class="homepage-section__title">About</h2>
           <p class="about__intro" reveal>
-            I’m a creative developer (he/him/él) currently based in New York
-            City. I’m really into CSS, animation, interaction, and deleting
-            code.
+            I’m a creative developer (he/him/él) currently based in
+            <del>New York City</del> <ins>Denver, Colorado</ins>. I’m really
+            into CSS, animation, interaction, and deleting code.
           </p>
           <div class="container about__two-col">
             <div class="about__additional-content">
