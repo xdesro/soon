@@ -4,7 +4,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6f238570-fa2d-4fdd-bd40-6f4e95119bb2/deploy-status)](https://app.netlify.com/sites/wonderful-nobel-831198/deploys)
 
-Wow, this is an absolutely stunning, I mean really just astounding portfolio/resume/personal site for the NYC-based creative developer and UX engineer Henry Desroches. Inspired by editorial fashion print layouts. Really something. [Looking for a resume](https://github.com/xdesro/resume)? [Looking for the previous iteration](https://github.com/xdesro/vogue)?
+Wow, this is an absolutely stunning, I mean really just astounding portfolio/resume/personal site for the Denver-based creative developer and UX engineer Henry Desroches. Inspired by editorial fashion print layouts. Really something. [Looking for a resume](https://github.com/xdesro/resume)? [Looking for the previous iteration](https://github.com/xdesro/vogue)?
 
 ## 📝 Colophon
 

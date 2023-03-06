@@ -5,7 +5,7 @@
       <article data-router-view="home">
         <nav class="bottom-nav">
           <div>the personal site & portfolio</div>
-          <div>of NYC-based creative technologist</div>
+          <div>of Denver-based creative technologist</div>
           <div>Henry Desroches</div>
         </nav>
         <div class="magazine-cover" reveal>
