@@ -158,6 +158,7 @@
               class="orbiter__planet"
               src="/img/portrait-2.jpg"
               loading="lazy"
+              alt="A portrait of the author, a young man with blonde hair, looking pensively at a ghostly floating glass laptop computer."
             />
           </div>
           <div class="orbiter orbiter--last" aria-hidden="true">
@@ -184,6 +185,7 @@
               class="orbiter__planet"
               src="/img/portrait-1.jpg"
               loading="lazy"
+              alt="Another portrait of the author looking at a floating glass computer, but now he is caught in motion, walking out of frame with such grace as to scarcely be believed."
             />
           </div>
         </section>
