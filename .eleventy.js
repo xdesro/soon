@@ -17,6 +17,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/functions');
   eleventyConfig.addPassthroughCopy('src/img');
   eleventyConfig.addPassthroughCopy('src/meta');
+  eleventyConfig.addPassthroughCopy('src/robots.txt');
 
   eleventyConfig.setWatchThrottleWaitTime(200);
   eleventyConfig.addWatchTarget('./src/scss');
