@@ -17,7 +17,8 @@
   h4,
   ul,
   ol,
-  > .editors-note {
+  > .editors-note,
+  svg {
     max-width: 22.75rem;
 
     @include screen(lg) {
@@ -140,11 +141,12 @@ margin-top: 4.5rem;
   }
   pre,
   .cp_embed_wrapper,
-  figure {
+  figure{
     @include screen(lg) {
       grid-column: 7 / span 8;
     }
   }
+
   code {
     font-family: $font--mono;
   }
