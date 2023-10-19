@@ -4,6 +4,7 @@ const markdownRenderer = require('markdown-it')({
   typographer: true,
   breaks: true
 })
+  .use(require('@iktakahiro/markdown-it-katex'), { throwOnError: true, output: 'mathml' })
   .use(require('markdown-it-attrs'))
   .use(require('markdown-it-implicit-figures'))
   .use(require('markdown-it-anchor'), {
@@ -22,3 +23,4 @@ const dateFormatter = dateString => {
   });
 };
 export { markdownRenderer, dateFormatter };
+
