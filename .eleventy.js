@@ -9,7 +9,6 @@ const markdownRenderer = require('markdown-it')({
   typographer: true,
   breaks: true
 })
-  .use(require('markdown-it-katex'))
   .use(require('markdown-it-attrs'))
   .use(require('markdown-it-implicit-figures'));
 
