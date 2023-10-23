@@ -34,9 +34,6 @@
     padding-top: 4.5rem;
     counter-increment: h2s;
     border-top: 1px solid currentColor;
-    &:first-child {
-      border-top: 0;
-    }
 
     @include screen(sm) {
       display: grid;
@@ -74,6 +71,9 @@ margin-top: 4.5rem;
         }
       }
      
+    }
+    &:first-child {
+      border-top: 0;
     }
     &:before {
       display: block;
@@ -144,6 +144,31 @@ margin-top: 4.5rem;
   figure{
     @include screen(lg) {
       grid-column: 7 / span 8;
+    }
+  }
+
+  .katex-block{
+    max-width: unset;
+    @include screen(lg) {
+      grid-column: 7 / span 7;
+    }
+
+  }
+  math {
+    overflow: scroll;
+    max-width: 100%;
+    padding: 1em;
+    border: 1px solid $color--mono-88;
+    border-radius: 0.3em;
+
+    display: grid;
+    place-content: center;
+
+    @include screen(sm) {
+      display: math;
+    }
+    @include screen(lg) {
+      display: math block;
     }
   }
 
