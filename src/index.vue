@@ -194,6 +194,8 @@
             <h2 class="homepage-section__title">Writing</h2>
           </a>
         </section>
+        <iframe id="ChiaHouse" src="https://las-pinas.com/h.html?i=henrycodes" onload="javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+&quot;px&quot;;}(this));" style="width:100vw; min-height: 600px;border:none;overflow:scroll;" houseid="henrycodes"></iframe>
+
       </article>
     </main>
   </div>
